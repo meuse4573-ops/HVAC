@@ -1,0 +1,6 @@
+{
+  "name": "EmmaDesk",
+  "description": "AI voice receptionist for HVAC businesses",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

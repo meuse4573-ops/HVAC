@@ -1,0 +1,1767 @@
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { 
+  ChevronRight,
+  Play, 
+  Check, 
+  Share2, 
+  Layout, 
+  Monitor, 
+  ArrowUpRight,
+  Menu,
+  X,
+  Globe,
+  Upload,
+  Plus,
+  ShoppingBag,
+  ShoppingCart,
+  Users,
+  Tag,
+  Zap,
+  Mail,
+  BarChart3,
+  Wallet,
+  Settings,
+  LogOut,
+  ExternalLink,
+  MoreVertical,
+  Search,
+  Phone,
+  Calendar,
+  Star
+} from 'lucide-react';
+
+// --- Components ---
+
+const Header = ({ onNavigate, simple = false }: { onNavigate: (view: 'landing' | 'login' | 'signup' | 'call') => void, simple?: boolean }) => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${isScrolled ? 'py-4 bg-black/80 backdrop-blur-lg shadow-lg border-b border-white/5' : 'py-6'}`}>
+      {!isScrolled && (
+        <div className="absolute inset-0 backdrop-blur-md bg-black/30 [mask-image:linear-gradient(180deg,black_0%,black_40%,transparent_100%)] pointer-events-none" />
+      )}
+      <div className="page-wrapper flex items-center justify-between relative">
+        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 cursor-pointer group" onClick={() => onNavigate('landing')}>
+            <span className="text-xl sm:text-2xl font-title text-white">EmmaDesk</span>
+            {!simple && <ChevronRight className="w-4 h-4 text-white rotate-90 group-hover:-rotate-90 transition-transform hidden sm:block" />}
+          </div>
+        </div>
+
+        {!simple && (
+          <nav className="hidden lg:flex items-center gap-1">
+            {['Why Emma', 'Features', 'Integrations', 'Results', 'Pricing'].map((item) => (
+              <a 
+                key={item} 
+                href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
+                className="px-3 py-1.5 text-sm font-medium text-[#a8a8a8] hover:text-white hover:bg-white/10 rounded-lg transition-all"
+              >
+                {item}
+              </a>
+            ))}
+          </nav>
+        )}
+
+        <div className="flex items-center gap-2">
+          {!simple && (
+            <button 
+              onClick={() => onNavigate('login')}
+              className="common-button common-button-secondary-glass px-4 py-2 text-sm hidden sm:block"
+            >
+              Log in
+            </button>
+          )}
+          <button 
+            onClick={() => onNavigate('call')}
+            className="common-button common-button-primary px-4 py-2 text-sm whitespace-nowrap"
+          >
+            Call Emma Now
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+const Hero = ({ onNavigate }: { onNavigate: (view: 'landing' | 'login' | 'signup' | 'call') => void }) => (
+  <section className="relative pt-32 pb-16 overflow-hidden min-h-[90vh] flex items-center">
+    {/* Hero Background Gradient */}
+    <div className="hero-gradient" />
+
+    <div className="page-wrapper relative z-10 w-full">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div className="max-w-2xl">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="common-title text-5xl lg:text-7xl mb-6"
+          >
+            Meet Emma, the simplest way to never miss an HVAC call again.
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-lg text-[#a8a8a8] mb-8 max-w-lg leading-relaxed"
+          >
+            She answers your phone. Books the appointment. Follows up on the lead. Runs your front desk — automatically, professionally, every time.
+          </motion.p>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col items-start gap-4"
+          >
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button 
+                onClick={() => onNavigate('call')}
+                className="common-button common-button-primary px-6 py-3 text-base flex items-center gap-2 shadow-[0_0_30px_rgba(43,108,255,0.4)]"
+              >
+                📞 Call Emma Right Now →
+              </button>
+              <a 
+                href="https://cal.com/emmadesk/emma-desk"
+                className="common-button common-button-secondary-dark px-6 py-3 text-base flex items-center gap-2 border border-white/20 hover:border-white/40"
+              >
+                Book a free 15-min call
+              </a>
+            </div>
+            <div className="text-xs text-[#a8a8a8] font-medium pl-1">
+              She answers 24/7. Call her right now — she is live.
+            </div>
+          </motion.div>
+        </div>
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="relative w-full lg:w-1/2 flex justify-end"
+        >
+          <div className="relative glass-card p-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl max-w-md w-full transform lg:translate-x-12">
+            <div className="flex items-center justify-between mb-4 pb-2 border-bottom border-white/5">
+              <div className="text-[10px] text-white/40 font-mono">EmmaDesk · Calls · Bookings · Reviews</div>
+              <div className="flex gap-1">
+                <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+                <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+                <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
+              </div>
+            </div>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-blue-500" />
+              <div>
+                <div className="text-sm font-medium text-white">Cool Breeze HVAC</div>
+                <div className="text-[10px] text-white/40">Calls · Bookings · Reviews</div>
+              </div>
+            </div>
+            <div className="space-y-3">
+              <div className="p-3 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between">
+                <div>
+                  <div className="text-xs font-medium text-white">Emergency AC call — Phoenix, AZ</div>
+                  <div className="text-[10px] text-white/40">Booked ✓</div>
+                </div>
+                <button className="px-3 py-1 rounded-lg bg-white text-black text-[10px] font-bold">Details</button>
+              </div>
+              <div className="p-3 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between">
+                <div>
+                  <div className="text-xs font-medium text-white">Furnace inspection — Dallas, TX</div>
+                  <div className="text-[10px] text-white/40">Booked ✓</div>
+                </div>
+                <button className="px-3 py-1 rounded-lg bg-white text-black text-[10px] font-bold">Details</button>
+              </div>
+            </div>
+            <div className="mt-6 pt-4 border-t border-white/5 flex justify-between items-center">
+              <div className="text-[10px] text-white/40 uppercase tracking-widest">CALLS ANSWERED THIS MONTH</div>
+              <div className="text-lg font-title text-white">94 <span className="text-[10px] font-sans opacity-40 font-normal">out of 94</span></div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  </section>
+);
+
+const Customers = () => (
+  <>
+    <section className="py-16 border-t border-white/5">
+      <div className="page-wrapper">
+        <p className="text-center text-sm mb-10 flex items-center justify-center gap-2 flex-wrap">
+          <span className="font-medium text-[#d9f5fd]">Built to connect with the tools you already use</span>
+        </p>
+        <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-10 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+          {['ServiceTitan', 'Housecall Pro', 'Jobber', 'Google Local', 'Yelp', 'QuickBooks'].map((logo) => (
+            <span key={logo} className="text-xl font-title text-white font-bold">{logo}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Change 3: Results Number Bar */}
+    <section className="py-12 bg-black border-y border-white/5">
+      <div className="page-wrapper">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="text-center md:text-left">
+            <div className="text-4xl md:text-5xl font-title font-bold text-white mb-2">94%</div>
+            <div className="text-xs uppercase tracking-widest text-[#a8a8a8] font-medium">Call answer rate</div>
+          </div>
+          <div className="text-center md:text-left">
+            <div className="text-4xl md:text-5xl font-title font-bold text-white mb-2">48hrs</div>
+            <div className="text-xs uppercase tracking-widest text-[#a8a8a8] font-medium">Average setup time</div>
+          </div>
+          <div className="text-center md:text-left">
+            <div className="text-4xl md:text-5xl font-title font-bold text-white mb-2">0</div>
+            <div className="text-xs uppercase tracking-widest text-[#a8a8a8] font-medium">Calls sent to voicemail</div>
+          </div>
+          <div className="text-center md:text-left">
+            <div className="text-4xl md:text-5xl font-title font-bold text-white mb-2">60 days</div>
+            <div className="text-xs uppercase tracking-widest text-[#a8a8a8] font-medium">Avg time to double reviews</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </>
+);
+
+const Why = () => (
+  <section id="why" className="py-24 relative overflow-hidden">
+    <div className="absolute inset-0 z-0">
+      <img 
+        src="https://hugo.ai/_ipx/w_2800&f_png/components/home/HomeWhy/background_stars.png" 
+        alt="Stars" 
+        className="w-full h-full object-cover opacity-50"
+        referrerPolicy="no-referrer"
+      />
+    </div>
+    <div className="page-wrapper relative z-10">
+      <div className="mb-24 relative max-w-4xl">
+        <h2 className="common-title text-6xl md:text-8xl tracking-tight text-white mb-6 !leading-tight">
+          $12,800.
+        </h2>
+        <p className="text-white text-xl md:text-2xl mt-6 max-w-3xl leading-relaxed font-light">
+          That is how much the average HVAC owner loses every month to missed calls. 8 missed calls per week. $400 per job. 4 weeks. Do the math.
+        </p>
+        <p className="text-base text-[#a8a8a8] mt-6 italic">
+          Emma answers every single one.
+        </p>
+      </div>
+
+      {/* Change 4: Before vs After Section */}
+      <div className="mb-32">
+        <div className="text-center mb-16">
+          <h2 className="common-title text-4xl md:text-6xl mb-4">Your day before Emma. Your day after Emma.</h2>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Before Card */}
+          <div className="glass-card bg-[#2a0a0a] border border-red-900/30 p-8 md:p-12 rounded-[32px]">
+            <div className="text-[10px] uppercase tracking-[0.2em] font-mono text-red-500/60 mb-8 font-bold">BEFORE EMMA</div>
+            <div className="space-y-4">
+              {[
+                "Phone rings at 8pm. You're finishing a job.",
+                "Goes to voicemail. Customer hears a beep.",
+                "They hang up and call your competitor.",
+                "$400 job goes to someone else.",
+                "You don't even know it happened.",
+                "Repeat this 8 times a week.",
+                "That's $12,800 gone every single month."
+              ].map((text, i) => (
+                <div key={i} className="flex items-start gap-4 text-white/80">
+                  <span className="text-red-500 font-bold shrink-0 mt-1">✗</span>
+                  <span className="text-lg md:text-xl font-light">{text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* After Card */}
+          <div className="glass-card bg-[#032b35] border border-blue- accent/20 p-8 md:p-12 rounded-[32px]">
+            <div className="text-[10px] uppercase tracking-[0.2em] font-mono text-blue-accent/60 mb-8 font-bold">AFTER EMMA</div>
+            <div className="space-y-4">
+              {[
+                "Phone rings at 8pm. Emma picks up immediately.",
+                "She greets them using your business name.",
+                "She collects their details and books the job.",
+                "Customer gets an instant confirmation text.",
+                "You get an SMS alert with the booking details.",
+                "$400 job is yours. While you finished the last one.",
+                "Every single night. Every single weekend."
+              ].map((text, i) => (
+                <div key={i} className="flex items-start gap-4 text-white">
+                  <span className="text-blue-accent font-bold shrink-0 mt-1">✓</span>
+                  <span className="text-lg md:text-xl font-light">{text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { title: "Built for the HVAC owner-operator.", desc: "Emma was designed for one type of business. The owner who is also the technician — on the roof, under a unit, driving between jobs. We handle the phones so you handle the work." },
+          { title: "Grounded in your booked jobs.", desc: "Every feature exists to get you more appointments. Your calls, your leads, your follow-ups — all handled while you are on the job site." },
+          { title: "Engineered to protect your revenue.", desc: "Every missed call is a job going to your competitor. Emma stops that permanently. No hiring. No training. No missed calls — ever again." },
+          { title: "Transparent by design.", desc: "See exactly how many calls Emma answered, how many jobs were booked, and how many reviews were collected — every single month in a clean report sent directly to you." }
+        ].map((card, i) => (
+          <motion.div 
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+            className="glass-card p-8"
+          >
+            <h3 className="text-xl text-white mb-4 font-medium">{card.title}</h3>
+            <p className="text-[#a8a8a8] leading-relaxed">{card.desc}</p>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+const Solutions = () => (
+  <section id="solutions" className="py-24">
+    <div className="page-wrapper">
+      <h2 className="common-title text-6xl lg:text-8xl mb-20">
+        <span className="block">1 phone number.</span>
+        <span className="block opacity-70">Every call answered.</span>
+        <span className="block opacity-40">Zero missed jobs.</span>
+      </h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
+        {[
+          { icon: <Monitor className="w-8 h-8 text-[#a8a8a8]" />, title: "One number. Every call handled.", desc: "Emma answers from a single dedicated line. Every call your business receives, answered within one ring, 24 hours a day." },
+          { icon: <Layout className="w-8 h-8 text-[#a8a8a8]" />, title: "Instant booking. Every time.", desc: "The second a customer calls, Emma collects their details and books directly into your calendar. No manual steps. No missed appointments." },
+          { icon: <Share2 className="w-8 h-8 text-[#a8a8a8]" />, title: "Your reviews, growing automatically.", desc: "Every completed job triggers a one-click Google review request. Build your reputation automatically without asking a single customer yourself." }
+        ].map((item, i) => (
+          <div key={i} className="flex flex-col gap-6">
+            {item.icon}
+            <div>
+              <h3 className="text-white font-medium mb-2">{item.title}</h3>
+              <p className="text-[#a8a8a8] leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="h-px w-full bg-white/10 mb-20" />
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { label: "CALLING LAYER", title: "Twilio as your call layer.", desc: "Every call runs through a dedicated Twilio number configured for your business. Reliable, professional, and live within 48 hours of setup.", img: "badge_security" },
+          { label: "FOLLOW UP", title: "Every lead followed up automatically.", desc: "Callers who don't book enter a 3-message follow-up sequence over 5 days. Unsold quotes get a 4-message sequence over 7 days. Nothing falls through the cracks.", img: "badge_compliance" },
+          { label: "REPUTATION", title: "Reputation protected automatically.", desc: "Every completed job triggers a check-in. Unhappy customers are caught before they post publicly. You are alerted immediately and given 30 minutes to respond.", img: "badge_hosting" }
+        ].map((item, i) => (
+          <div key={i} className="glass-card p-8 h-[260px] flex flex-col justify-between">
+            <div className="flex justify-between items-start">
+              <span className="text-[10px] uppercase tracking-widest font-mono text-[#707070]">{item.label}</span>
+              <img src={`https://hugo.ai/_ipx/s_80x80/components/home/HomeSolutions/${item.img}.svg`} alt={item.label} className="w-16 h-16" referrerPolicy="no-referrer" />
+            </div>
+            <div>
+              <h3 className="text-lg text-white mb-2 font-medium">{item.title}</h3>
+              <p className="text-sm text-[#a8a8a8]">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+const Features = () => (
+  <section id="features" className="py-24 bg-white text-black rounded-t-[40px] md:rounded-t-[80px]">
+    <div className="page-wrapper">
+      <div className="text-center mb-16 md:mb-32 sticky top-[10vh] z-10 py-4 bg-white/80 backdrop-blur-sm">
+        <h2 className="common-title text-black text-3xl md:text-6xl mb-4 leading-tight">Everything your front desk should do. Handled.</h2>
+        <p className="text-lg md:text-2xl text-black/40 font-title italic">Here is exactly how Emma works.</p>
+      </div>
+
+      <div className="relative flex flex-col gap-[60px] md:gap-[120px] pb-32">
+        {[
+          { color: "bg-[#2c150c]", title: "Answer every call on every shift at once.", desc: "Emma covers mornings, evenings, weekends, and holidays — without overtime, without sick days, without training. Your customers always reach a live, professional voice no matter when they call." },
+          { color: "bg-[#032b35]", title: "Turn every job into a five-star review.", desc: "The moment a job is marked complete, Emma sends the customer a one-click Google review request. Two hours later she checks if everything is working. Happy customers become your best marketing." },
+          { color: "bg-[#1d2c0c]", title: "Emma is live in under 48 hours. No tech needed.", desc: "You give us your business details. We configure Emma completely. You touch zero technology. Within 48 hours your calls are being answered, leads are being followed up, and jobs are being booked." },
+        ].map((card, i) => (
+          <div 
+            key={i} 
+            className={`sticky top-[25vh] md:top-[30vh] w-full min-h-[400px] md:min-h-[500px] rounded-[32px] md:rounded-[48px] overflow-hidden shadow-2xl ${card.color} text-white transition-all duration-700 ease-in-out flex items-center justify-center text-center`}
+            style={{ 
+              zIndex: i + 1,
+              transform: `translateY(${i * 16}px)`
+            }}
+          >
+            {/* Content Layer */}
+            <div className="relative z-10 p-8 md:p-24 max-w-4xl">
+              <h3 className="common-title text-3xl md:text-6xl mb-6 md:mb-10 leading-[1.1] tracking-tight">{card.title}</h3>
+              <p className="text-white/80 text-base md:text-2xl leading-relaxed font-sans font-light max-w-3xl mx-auto">{card.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Change 9: How a call works visual step section */}
+      <div className="py-24 border-t border-black/5">
+        <div className="mb-20">
+          <div className="text-[10px] uppercase tracking-[0.2em] font-mono text-[#a8a8a8] mb-4 font-bold">What happens on every single call.</div>
+          <p className="text-xl text-black/40 font-title italic">From first ring to booked job in under 3 minutes.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {[
+            { num: "01", title: "Your phone rings.", desc: "Your customer calls your existing number. It rings once on your phone and simultaneously routes to Emma as backup." },
+            { num: "02", title: "Emma answers in your business name.", desc: "\"Thank you for calling Cool Breeze HVAC, this is Emma — are you calling about an emergency or a routine service today?\"" },
+            { num: "03", title: "She collects details and books the job.", desc: "Name, address, equipment type, issue description — all collected in real time and booked directly into your calendar without you touching anything." },
+            { num: "04", title: "You get an instant SMS alert.", desc: "You receive a text with the customer's full details and booking confirmation within 60 seconds. The job is yours. You never missed a thing." }
+          ].map((step, i) => (
+            <div key={i} className="flex flex-col gap-6">
+              <div className="text-3xl font-title font-bold text-black/20">{step.num}</div>
+              <div>
+                <h4 className="text-xl font-bold mb-3">{step.title}</h4>
+                <p className="text-black/60 leading-relaxed">{step.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="relative flex flex-col gap-[60px] md:gap-[120px] pb-32">
+        {[
+          { color: "bg-[#361e02]", title: "Summer is here. Your phone is ringing right now.", desc: "Peak AC season means double the calls, double the emergencies, double the revenue — if you answer. Emma makes sure you never miss a single one. Not at 9pm. Not on Saturday. Not when you are 40 feet up on a rooftop." },
+          { color: "bg-[#2c150c]", title: "Fill slow seasons on autopilot.", desc: "Every past customer is automatically enrolled in seasonal outreach. Before summer heat hits and before winter cold arrives, Emma sends a personalized tune-up reminder to every customer in your history. Slow seasons become busy ones." },
+          { color: "bg-[#032b35]", title: "See exactly how your front desk is performing.", desc: "Track every call answered, every appointment booked, every lead recovered, and every review collected. Your monthly report tells the full story so you always know what Emma is winning for you." },
+          { color: "bg-[#1d2c0c]", title: "Your front desk updates the moment you do.", desc: "Add a new service, change your hours, update your service area — everything is adjusted in Emma instantly. No downtime, no re-training, no waiting. Changes go live immediately." }
+        ].map((card, i) => (
+          <div 
+            key={i} 
+            className={`sticky top-[25vh] md:top-[30vh] w-full min-h-[400px] md:min-h-[500px] rounded-[32px] md:rounded-[48px] overflow-hidden shadow-2xl ${card.color} text-white transition-all duration-700 ease-in-out flex items-center justify-center text-center`}
+            style={{ 
+              zIndex: i + 1,
+              transform: `translateY(${i * 16}px)`
+            }}
+          >
+            {/* Content Layer */}
+            <div className="relative z-10 p-8 md:p-24 max-w-4xl">
+              <h3 className="common-title text-3xl md:text-6xl mb-6 md:mb-10 leading-[1.1] tracking-tight">{card.title}</h3>
+              <p className="text-white/80 text-base md:text-2xl leading-relaxed font-sans font-light max-w-3xl mx-auto">{card.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+const CaseStudies = () => (
+  <section id="case-studies" className="py-24 bg-black text-white">
+    <div className="page-wrapper">
+      <h2 className="common-title text-5xl mb-4">Real HVAC owners, real results.</h2>
+      <p className="text-2xl text-white/50 font-title mb-20">See what happens when no call goes unanswered.</p>
+
+      <div className="flex flex-col lg:flex-row gap-6 h-auto lg:h-[560px]">
+        {[
+          { 
+            name: "Mike R. — Phoenix, AZ", 
+            role: "HVAC Owner", 
+            company: "EmmaDesk Client", 
+            quote: "I was missing calls every single day while out on jobs. Emma paid for herself in the first week. I haven't missed a call since she went live.",
+            img: "afs_foil"
+          },
+          { 
+            name: "James T. — Dallas, TX", 
+            role: "Owner-Operator", 
+            company: "EmmaDesk Client", 
+            quote: "The follow-up sequence alone recovered 3 leads in the first month that I would have completely lost. This thing runs itself.",
+            img: "emma"
+          },
+          { 
+            name: "Carlos M. — Houston, TX", 
+            role: "Solo Operator", 
+            company: "EmmaDesk Client", 
+            quote: "Setup took less than 48 hours. Emma answered her first real call the next morning. My Google reviews went from 31 to 47 in 60 days.",
+            img: "spidervo"
+          }
+        ].map((item, i) => (
+          <div 
+            key={i}
+            className="group relative flex-1 hover:flex-[2.5] transition-all duration-500 ease-out rounded-2xl overflow-hidden cursor-pointer"
+          >
+            <div className="absolute inset-0 z-0">
+              <img 
+                src={`https://hugo.ai/_ipx/w_2800&f_png/components/home/HomeCases/${item.img}.webp`} 
+                alt={item.name} 
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/20 transition-all duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40 opacity-0 group-hover:opacity-100 transition-all duration-500" />
+            </div>
+
+            <div className="relative z-10 h-full p-8 flex flex-col justify-between">
+              <div className="flex justify-between items-center">
+                <div className="text-white font-title text-2xl opacity-50 group-hover:opacity-100 transition-opacity">
+                  {item.company}
+                </div>
+                <ArrowUpRight className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+
+              <div className="max-w-xl">
+                <p className="text-white text-lg leading-relaxed mb-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+                  “{item.quote}”
+                </p>
+                <div className="flex items-center gap-2">
+                  <span className="font-medium text-white">{item.name}</span>
+                  <span className="text-white/60 opacity-0 group-hover:opacity-100 transition-opacity">· {item.role}</span>
+                </div>
+              </div>
+            </div>
+              
+            <div className="absolute inset-0 backdrop-blur-0 group-hover:backdrop-blur-md [mask-image:linear-gradient(0deg,black_0%,black_25%,transparent_100%)] pointer-events-none transition-all duration-500" />
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-12 text-center text-white/40 text-sm max-w-md mx-auto leading-relaxed">
+        Results may vary. Testimonials represent typical outcomes for owner-operated HVAC businesses.
+      </div>
+    </div>
+  </section>
+);
+
+const Guarantee = () => (
+  <section className="bg-black text-white py-24">
+    <div className="page-wrapper">
+      <div className="glass-card bg-[#032b35] border border-blue-accent/20 p-12 md:p-20 rounded-[48px] text-center shadow-2xl relative overflow-hidden">
+        {/* Subtle glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-accent/5 blur-[120px] rounded-full pointer-events-none" />
+        
+        <div className="relative z-10 w-full max-w-4xl mx-auto">
+          <h2 className="common-title text-4xl md:text-6xl text-white mb-8">We stand behind every call Emma answers.</h2>
+          <p className="text-lg md:text-2xl text-white/80 leading-relaxed mb-12">
+            If you set up Emma and do not see a measurable difference<br className="hidden md:block" />
+            in your answered calls within the first 30 days —<br className="hidden md:block" />
+            we will refund your first month. No paperwork. No argument.<br className="hidden md:block" />
+            Just tell us and we will process it the same day.
+          </p>
+          <p className="text-lg md:text-2xl text-white/80 leading-relaxed mb-16">
+            And if Emma ever misses a call due to a technical failure<br className="hidden md:block" />
+            on our end — we credit that month's fee automatically.<br className="hidden md:block" />
+            No questions asked.
+          </p>
+          <div className="text-xl md:text-3xl font-title text-white mb-16 italic opacity-80">We only win when you win.</div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pt-12 border-t border-white/10">
+            <div>
+              <div className="text-3xl md:text-5xl font-title font-bold text-white mb-2">30 days</div>
+              <div className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Money-back guarantee</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-5xl font-title font-bold text-white mb-2">100%</div>
+              <div className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Call credit if we fail</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-5xl font-title font-bold text-white mb-2">0</div>
+              <div className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Questions asked to refund</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+
+const FAQ = ({ onNavigate }: { onNavigate: (view: 'landing' | 'login' | 'signup') => void }) => (
+  <section id="faq" className="py-24 bg-black text-white">
+    <div className="page-wrapper">
+      <div className="flex flex-col lg:flex-row gap-20">
+        <div className="lg:w-1/3 lg:sticky lg:top-32 h-fit">
+          <h2 className="common-title text-5xl mb-4">Got questions?</h2>
+          <p className="text-2xl text-white/50 font-title mb-8">We have the answers.</p>
+          <button 
+            onClick={() => onNavigate('signup')}
+            className="common-button common-button-primary px-6 py-3 text-sm flex items-center gap-2"
+          >
+            Ask us a question →
+          </button>
+        </div>
+
+        <div className="lg:w-2/3 flex flex-col gap-12">
+          {[
+            { q: "Will Emma sound robotic to my customers?", a: "No. Call the demo number right now and hear for yourself. Emma sounds like a warm, professional front desk employee who has worked at your company for years. Your customers will not know the difference." },
+            { q: "How long does setup take?", a: "Most HVAC businesses are fully live within 48 hours. You provide your business details, we configure everything. You touch zero technology." },
+            { q: "What if I already have a receptionist?", a: "Emma handles after-hours calls, weekends, overflow calls, and busy periods. She works alongside your existing team — not against it. Most owners use Emma to cover the hours their receptionist cannot." },
+            { q: "Do I need any special equipment or phone system?", a: "No. Emma works with your existing phone number through a simple call forwarding setup. No new hardware. No apps to install. No technical knowledge needed." },
+            { q: "What happens if Emma cannot answer a question?", a: "Emma collects the caller's name, number, and issue, then immediately sends you an SMS alert so you can call back when you are free. No lead is ever lost." },
+            { q: "What happens if I want to cancel?", a: "No long-term contracts. Cancel anytime with 30 days notice. Your call data, customer records, and booking history are exported and sent to you immediately. And if Emma ever misses a call due to a technical failure on our end — we credit that month's fee. No questions asked. We stand behind every call she answers." },
+            { q: "What if my customers don't want to talk to a machine?", a: "Call +1 774 315 1065 right now and speak to Emma yourself. She does not sound like a machine. She sounds like a real, warm, professional front desk employee. We built her specifically so your customers cannot tell the difference. Most HVAC owners call the demo number expecting a robot and hang up surprised. Try it before you decide anything." }
+          ].map((item, i) => (
+            <div key={i} className="flex flex-col gap-4 overflow-hidden">
+              <motion.div 
+                initial={{ x: 100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="flex justify-end"
+              >
+                <div className="bg-black border border-[#383838] rounded-2xl rounded-tr-sm p-4 max-w-[80%]">
+                  <p className="text-white text-lg">{item.q}</p>
+                </div>
+              </motion.div>
+              <motion.div 
+                initial={{ x: -100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                className="flex justify-start"
+              >
+                <div className="bg-gradient-to-b from-[#1c1c1c] to-[#383838] rounded-2xl rounded-tl-sm p-4 max-w-[80%] shadow-xl border border-white/5">
+                  <p className="text-white text-lg">{item.a}</p>
+                </div>
+              </motion.div>
+              {i < 4 && <div className="h-px w-full bg-white/10 mt-8" />}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const Footer = ({ onNavigate }: { onNavigate?: (view: 'landing' | 'login' | 'signup' | 'call') => void }) => (
+  <footer className="pt-24 pb-12 bg-white text-black">
+    <div className="page-wrapper">
+      <div className="mb-24 text-center">
+        <h2 className="common-title text-black text-4xl md:text-6xl mb-6">Stop missing calls. Start booking more jobs.</h2>
+        <p className="text-xl text-black/50 mb-10 max-w-2xl mx-auto">HVAC businesses across the USA are setting up Emma before the summer rush hits. Early clients get locked-in pricing and priority setup.</p>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="https://cal.com/emmadesk/emma-desk" className="common-button common-button-primary px-8 py-4 text-lg">Book a free 15-min call →</a>
+          <button 
+            onClick={() => onNavigate?.('call')}
+            className="common-button bg-[#ebebeb] text-black px-8 py-4 text-lg"
+          >
+            Hear Emma now ▷
+          </button>
+        </div>
+        <p className="mt-4 text-xs text-black/40">Free setup call · No contracts · Live in 48 hours</p>
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-24">
+        <div className="flex flex-col gap-4">
+          <p className="font-bold text-sm uppercase tracking-widest text-black/30">Product</p>
+          {['Why Emma', 'Features', 'Integrations'].map(item => (
+            <a key={item} href="#" className="font-title text-2xl text-[#707070] hover:text-black transition-colors">{item}</a>
+          ))}
+        </div>
+        <div className="flex flex-col gap-4">
+          <p className="font-bold text-sm uppercase tracking-widest text-black/30">Company</p>
+          {['About', 'Results', 'Contact', 'Privacy Policy'].map(item => (
+            <a key={item} href="#" className="font-title text-2xl text-[#707070] hover:text-black transition-colors">{item}</a>
+          ))}
+        </div>
+        <div className="flex flex-col gap-4">
+          <p className="font-bold text-sm uppercase tracking-widest text-black/30">Social</p>
+          {['X (Twitter)', 'Facebook', 'Instagram', 'LinkedIn'].map(item => (
+            <a key={item} href="#" className="font-title text-2xl text-[#707070] hover:text-black transition-colors">{item}</a>
+          ))}
+        </div>
+        <div className="flex flex-col gap-4">
+          <p className="text-[#707070] text-sm">Have questions?</p>
+          <a href="mailto:rahul@emmadesk.xyz" className="common-button bg-[#ebebeb] text-black px-6 py-3 text-sm flex items-center justify-between w-full">
+            Contact us <ChevronRight className="w-4 h-4 text-[#8c8c8c]" />
+          </a>
+        </div>
+      </div>
+
+      <div className="border-t border-black/10 pt-8 flex flex-col gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-[#8c8c8c]">
+          <div className="flex items-center gap-2 bg-[#ebebeb] px-3 py-1.5 rounded-lg text-black cursor-pointer">
+            <span>🇺🇸</span> English (United States) <ChevronRight className="w-3 h-3 rotate-90" />
+          </div>
+          <div className="flex gap-4">
+            <a href="#" className="hover:text-black">Terms & conditions</a>
+            <span>·</span>
+            <a href="#" className="hover:text-black">Privacy policy</a>
+          </div>
+          <div>© 2025 EmmaDesk AI. All rights reserved.</div>
+        </div>
+        <div className="text-[15vw] font-title text-black/5 leading-none text-center select-none">EmmaDesk</div>
+      </div>
+    </div>
+  </footer>
+);
+
+const LiveDemoSection = ({ onNavigate }: { onNavigate?: (view: 'landing' | 'login' | 'signup' | 'call') => void }) => (
+  <section className="py-24 bg-black text-white relative overflow-hidden border-t border-white/5">
+    {/* Subtle glow for the premium look */}
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-accent/10 blur-[120px] rounded-full pointer-events-none opacity-50" />
+    
+    <div className="page-wrapper relative z-10">
+      <div className="flex flex-col lg:flex-row items-center gap-24">
+        <div className="flex-1 w-full max-w-md mx-auto">
+          <div className="glass-card bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-6 shadow-2xl relative overflow-hidden">
+            <div className="text-center pb-4 border-b border-white/10 mb-6 font-mono text-xs text-white">
+              📞 Live Call — Cool Breeze HVAC — 9:47 PM
+            </div>
+            <div className="space-y-4 flex flex-col">
+              <div className="bg-white/10 text-white rounded-2xl rounded-tl-sm p-4 text-sm w-[85%] self-start">
+                Caller: "Hi yeah my AC just stopped working, <br/>
+                it's 94 degrees in my house right now"
+              </div>
+              <div className="bg-[#2b6dff] text-white rounded-2xl rounded-tr-sm p-4 text-sm w-[85%] self-end">
+                Emma: "I'm so sorry to hear that — let's get <br/>
+                someone out to you tonight. Can I get your <br/>
+                address and the best number to reach you?"
+              </div>
+              <div className="bg-white/10 text-white rounded-2xl rounded-tl-sm p-4 text-sm w-[85%] self-start">
+                Caller: "Yeah it's 4821 Maple Drive, <br/>
+                my number is 602-555-0184"
+              </div>
+              <div className="bg-[#2b6dff] text-white rounded-2xl rounded-tr-sm p-4 text-sm w-[85%] self-end">
+                Emma: "Perfect. I've got Mike scheduled <br/>
+                for tonight between 9 and 11 PM. <br/>
+                You'll get a confirmation text right now."
+              </div>
+            </div>
+            <div className="mt-6 pt-4 border-t border-white/10 text-center">
+              <p className="text-[10px] text-[#a8a8a8] leading-relaxed">
+                This is Emma. This is what your <br/>
+                customers hear. Every call. Every night.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="flex-1">
+          <h2 className="common-title text-4xl mb-4">This is what your customers hear.</h2>
+          <p className="text-lg text-[#a8a8a8] leading-relaxed mb-8">
+            Emma answers exactly like this — warm, <br />
+            professional, and calm — whether it is <br />
+            9 in the morning or 11 at night. <br />
+            Your customers never reach voicemail. <br />
+            Your competitors never get the job.
+          </p>
+          <div 
+            onClick={() => onNavigate?.('call')}
+            className="glass-card bg-white/5 border border-white/20 backdrop-blur-[80px] rounded-[32px] p-8 text-center shadow-[0_32px_64px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.4),inset_0_0_40px_rgba(255,255,255,0.05)] relative overflow-hidden cursor-pointer group hover:bg-white/10 transition-colors duration-500"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+            {/* Subtle top highlight for 3D effect */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent" />
+            
+            <div className="relative z-10 transition-transform duration-500 group-hover:scale-105">
+              <p className="text-blue-accent mb-3 text-sm font-bold uppercase tracking-widest drop-shadow-[0_0_15px_rgba(35,119,246,0.5)]">📞 Hear Emma yourself right now</p>
+              <p className="text-4xl md:text-5xl font-bold text-white mb-3 tracking-tight !leading-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70">+1 774 315 1065</p>
+              <p className="text-white/60 text-sm">She is live right now. Call her.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const Integrations = () => (
+  <section id="integrations" className="py-24 bg-black text-white border-t border-white/5">
+    <div className="page-wrapper">
+      <div className="text-center mb-20">
+        <h2 className="common-title text-5xl mb-4">Works with the tools your business already runs on.</h2>
+        <p className="text-xl text-white/60">Connect your existing calendar and phone system. Everything is configured for you.</p>
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {[
+          { name: "Google", desc: "Reviews collected automatically" },
+          { name: "iPhone", desc: "Works with your existing number" },
+          { name: "Google Calendar", desc: "Appointments booked in real time" },
+          { name: "Yelp", desc: "Review requests sent after every job" },
+          { name: "Housecall Pro", desc: "Syncs with your job management" },
+          { name: "ServiceTitan", desc: "Connects to your existing workflow" },
+          { name: "Android", desc: "Works with your existing number" },
+          { name: "Zapier", desc: "Automate anything" }
+        ].map((item, i) => (
+          <div key={i} className="glass-card p-6 text-center">
+            <div className="text-lg font-bold mb-1">{item.name}</div>
+            <div className="text-xs text-white/40">{item.desc}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+const AuthPage = ({ initialMode, onBack, onComplete }: { initialMode: 'login' | 'signup', onBack: () => void, onComplete: () => void }) => {
+  const [mode, setMode] = useState<'login' | 'signup'>(initialMode);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (mode === 'signup') {
+      onComplete();
+    } else {
+      // For demo, login also goes to onboarding if first time, but here we just complete
+      onComplete();
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-black text-white relative overflow-hidden flex flex-col">
+      {/* Background Glows */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-[#ff007f]/20 blur-[120px] rounded-full" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-[#0070f3]/10 blur-[120px] rounded-full" />
+      </div>
+
+      <header className="relative z-10 py-8 px-6 md:px-12 flex items-center justify-between">
+        <div className="flex items-center gap-2 cursor-pointer group" onClick={onBack}>
+          <span className="text-2xl font-title text-white">EmmaDesk</span>
+          <ChevronRight className="w-4 h-4 text-white rotate-90 group-hover:-rotate-90 transition-transform" />
+        </div>
+        <button 
+          onClick={onBack}
+          className="text-sm text-[#a8a8a8] hover:text-white transition-colors flex items-center gap-2"
+        >
+          <X className="w-4 h-4" /> Close
+        </button>
+      </header>
+
+      <main className="flex-1 relative z-10 flex items-center justify-center p-6">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="w-full max-w-md"
+        >
+          <div className="glass-card p-8 md:p-10 rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl">
+            <div className="text-center mb-10">
+              <h1 className="common-title text-3xl md:text-4xl mb-3">
+                {mode === 'login' ? 'Welcome back' : 'Create your account'}
+              </h1>
+              <p className="text-[#a8a8a8] text-sm">
+                {mode === 'login' 
+                  ? "Don't have an account? " 
+                  : "Already have an account? "}
+                <button 
+                  onClick={() => setMode(mode === 'login' ? 'signup' : 'login')}
+                  className="text-white hover:underline font-medium"
+                >
+                  {mode === 'login' ? 'Sign up' : 'Log in'}
+                </button>
+              </p>
+            </div>
+
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              {mode === 'signup' && (
+                <div className="space-y-2">
+                  <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">Full Name</label>
+                  <input 
+                    type="text" 
+                    placeholder="John Doe"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-white/30 transition-colors"
+                  />
+                </div>
+              )}
+              <div className="space-y-2">
+                <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">Email Address</label>
+                <input 
+                  type="email" 
+                  placeholder="name@company.com"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-white/30 transition-colors"
+                />
+              </div>
+              <div className="space-y-2">
+                <div className="flex justify-between items-center ml-1">
+                  <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider">Password</label>
+                  {mode === 'login' && (
+                    <button className="text-[10px] text-[#a8a8a8] hover:text-white uppercase tracking-wider">Forgot password?</button>
+                  )}
+                </div>
+                <input 
+                  type="password" 
+                  placeholder="••••••••"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-white/30 transition-colors"
+                />
+              </div>
+
+              <button className="common-button common-button-primary w-full py-4 text-sm font-bold flex items-center justify-center gap-2 group">
+                {mode === 'login' ? 'Log in' : 'Create account'}
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </form>
+
+            <div className="relative my-10">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-white/10"></div>
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-black px-4 text-[#a8a8a8] tracking-widest">Or continue with</span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <button className="flex items-center justify-center gap-2 bg-white/5 border border-white/10 rounded-xl py-3 hover:bg-white/10 transition-colors text-sm font-medium">
+                <Globe className="w-4 h-4" /> Google
+              </button>
+              <button className="flex items-center justify-center gap-2 bg-white/5 border border-white/10 rounded-xl py-3 hover:bg-white/10 transition-colors text-sm font-medium">
+                <Share2 className="w-4 h-4" /> SSO
+              </button>
+            </div>
+          </div>
+
+          <p className="text-center mt-8 text-[10px] text-[#a8a8a8] uppercase tracking-widest leading-relaxed">
+            By continuing, you agree to EmmaDesk's <br />
+            <a href="#" className="text-white hover:underline">Terms of Service</a> and <a href="#" className="text-white hover:underline">Privacy Policy</a>.
+          </p>
+        </motion.div>
+      </main>
+
+      <footer className="relative z-10 py-8 text-center text-[10px] text-[#a8a8a8] uppercase tracking-widest">
+        © 2025 EmmaDesk · All rights reserved
+      </footer>
+    </div>
+  );
+};
+
+const OnboardingFlow = ({ onComplete }: { onComplete: () => void }) => {
+  const [step, setStep] = useState(1);
+  const [formData, setFormData] = useState({
+    displayName: '',
+    username: '',
+    whatDoYouSell: '',
+    platforms: [] as string[],
+    channelLink: '',
+    audienceSize: '',
+    soldBefore: '',
+    productName: '',
+    price: '19',
+    isFree: false,
+    productLink: ''
+  });
+
+  const nextStep = () => setStep(prev => prev + 1);
+
+  const steps = [
+    { id: 1, label: 'Business' },
+    { id: 2, label: 'Audience' },
+    { id: 3, label: 'Setup' }
+  ];
+
+  const renderStepIndicator = () => (
+    <div className="flex items-center justify-center gap-8 mt-10">
+      {steps.map((s) => (
+        <div key={s.id} className="flex flex-col items-center gap-2">
+          <div className={`w-2 h-2 rounded-full transition-all duration-300 ${step === s.id ? 'bg-[#ff007f] scale-125' : 'bg-white/20'}`} />
+          <span className={`text-[10px] uppercase tracking-widest font-medium transition-colors ${step === s.id ? 'text-white' : 'text-white/30'}`}>
+            {s.label}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+
+  return (
+    <div className="min-h-screen bg-black text-white relative overflow-hidden flex flex-col">
+      {/* Background Glows */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-[#ff007f]/20 blur-[120px] rounded-full" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-[#0070f3]/10 blur-[120px] rounded-full" />
+      </div>
+
+      <header className="relative z-10 py-8 px-6 md:px-12">
+        <div className="flex items-center gap-2">
+          <span className="text-2xl font-title text-white">EmmaDesk</span>
+          <ChevronRight className="w-4 h-4 text-white rotate-90" />
+        </div>
+      </header>
+
+      <main className="flex-1 relative z-10 flex items-center justify-center p-6">
+        <AnimatePresence mode="wait">
+          {step === 1 && (
+            <motion.div 
+              key="step1"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              className="w-full max-w-md"
+            >
+              <div className="glass-card p-8 md:p-10 rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl">
+                <div className="text-center mb-10">
+                  <h1 className="common-title text-3xl md:text-4xl mb-3">Tell us about your business</h1>
+                  <p className="text-[#a8a8a8] text-sm leading-relaxed">
+                    Share your business name, service area, hours, and the types of jobs you handle. We use this to configure Emma specifically for your HVAC company.
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="space-y-2">
+                    <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">Business Name</label>
+                    <input 
+                      type="text" 
+                      placeholder="Cool Breeze HVAC"
+                      value={formData.displayName}
+                      onChange={(e) => setFormData({ ...formData, displayName: e.target.value })}
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-white/30 transition-colors"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">Service Area & Hours</label>
+                    <div className="relative">
+                      <input 
+                        type="text" 
+                        placeholder="e.g. Phoenix, AZ | Mon-Fri 8am-6pm"
+                        value={formData.username}
+                        onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-white/30 transition-colors"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-3">
+                    <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">Daily call volume estimate?</label>
+                    <div className="flex flex-wrap gap-2">
+                      {['1-5 calls', '5-15 calls', '15-50 calls', '50+ calls'].map((option) => (
+                        <button
+                          key={option}
+                          onClick={() => setFormData({ ...formData, whatDoYouSell: option })}
+                          className={`px-4 py-2 rounded-full text-xs font-medium transition-all border ${formData.whatDoYouSell === option ? 'bg-white text-black border-white' : 'bg-white/5 text-[#a8a8a8] border-white/10 hover:border-white/30'}`}
+                        >
+                          {option}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <button 
+                    onClick={nextStep}
+                    disabled={!formData.displayName || !formData.username || !formData.whatDoYouSell}
+                    className="common-button common-button-primary w-full py-4 text-sm font-bold flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    Continue <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+                {renderStepIndicator()}
+              </div>
+            </motion.div>
+          )}
+
+          {step === 2 && (
+            <motion.div 
+              key="step2"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              className="w-full max-w-md"
+            >
+              <div className="glass-card p-8 md:p-10 rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl">
+                <div className="text-center mb-10">
+                  <h1 className="common-title text-3xl md:text-4xl mb-3">How do you handle calls currently?</h1>
+                  <p className="text-[#a8a8a8] text-sm leading-relaxed">
+                    Help us personalize your EmmaDesk dashboard for how you actually operate.
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="space-y-3">
+                    <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">Current phone setup?</label>
+                    <div className="flex flex-wrap gap-2">
+                      {['I answer myself', 'Voicemail only', 'Office manager', 'Answering service', 'Direct to cell'].map((option) => (
+                        <button
+                          key={option}
+                          onClick={() => {
+                            const current = formData.platforms;
+                            if (current.includes(option)) {
+                              setFormData({ ...formData, platforms: current.filter(p => p !== option) });
+                            } else {
+                              setFormData({ ...formData, platforms: [...current, option] });
+                            }
+                          }}
+                          className={`px-4 py-2 rounded-full text-xs font-medium transition-all border ${formData.platforms.includes(option) ? 'bg-white text-black border-white' : 'bg-white/5 text-[#a8a8a8] border-white/10 hover:border-white/30'}`}
+                        >
+                          {option}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="space-y-3">
+                    <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">Service area range?</label>
+                    <div className="flex flex-wrap gap-2">
+                      {['Local (10mi)', 'Medium (25mi)', 'Wide (50mi+)', 'Statewide'].map((option) => (
+                        <button
+                          key={option}
+                          onClick={() => setFormData({ ...formData, audienceSize: option })}
+                          className={`px-4 py-2 rounded-full text-xs font-medium transition-all border ${formData.audienceSize === option ? 'bg-white text-black border-white' : 'bg-white/5 text-[#a8a8a8] border-white/10 hover:border-white/30'}`}
+                        >
+                          {option}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="space-y-3">
+                    <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">Do you use scheduling software?</label>
+                    <div className="flex flex-wrap gap-2">
+                      {['Housecall Pro', 'ServiceTitan', 'Jobber', 'Google Calendar', 'Paper/Pen'].map((option) => (
+                        <button
+                          key={option}
+                          onClick={() => setFormData({ ...formData, soldBefore: option })}
+                          className={`px-4 py-2 rounded-full text-xs font-medium transition-all border ${formData.soldBefore === option ? 'bg-white text-black border-white' : 'bg-white/5 text-[#a8a8a8] border-white/10 hover:border-white/30'}`}
+                        >
+                          {option}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-2">
+                    <button 
+                      onClick={nextStep}
+                      className="common-button common-button-primary w-full py-4 text-sm font-bold flex items-center justify-center gap-2 group"
+                    >
+                      Continue <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                    <button 
+                      onClick={nextStep}
+                      className="w-full text-center mt-4 text-xs text-[#a8a8a8] hover:text-white transition-colors"
+                    >
+                      Skip for now
+                    </button>
+                  </div>
+                </div>
+                {renderStepIndicator()}
+              </div>
+            </motion.div>
+          )}
+
+          {step === 3 && (
+            <motion.div 
+              key="step3"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              className="w-full max-w-md"
+            >
+              <div className="glass-card p-8 md:p-10 rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl">
+                <div className="text-center mb-10">
+                  <h1 className="common-title text-3xl md:text-4xl mb-3">We configure Emma for you</h1>
+                  <p className="text-[#a8a8a8] text-sm leading-relaxed">
+                    We program Emma with your business name, your services, your pricing, your calendar, and your exact greeting.
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="space-y-2">
+                    <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">Primary Greeting</label>
+                    <input 
+                      type="text" 
+                      placeholder="e.g. Thank you for calling Cool Breeze HVAC, this is Emma..."
+                      value={formData.productName}
+                      onChange={(e) => setFormData({ ...formData, productName: e.target.value })}
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-white/30 transition-colors"
+                    />
+                  </div>
+
+                  <div className="p-4 rounded-xl bg-white/5 border border-white/10 space-y-4">
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs font-medium text-[#a8a8a8]">Tone of voice</span>
+                      <span className="text-xs text-white">Warm and professional</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs font-medium text-[#a8a8a8]">Routing</span>
+                      <span className="text-xs text-white">Smart priority</span>
+                    </div>
+                  </div>
+
+                  <div className="pt-2">
+                    <button 
+                      onClick={nextStep}
+                      className="common-button common-button-primary w-full py-4 text-sm font-bold flex items-center justify-center gap-2 group"
+                    >
+                      Process configuration <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                    <button 
+                      onClick={nextStep}
+                      className="w-full text-center mt-4 text-xs text-[#a8a8a8] hover:text-white transition-colors"
+                    >
+                      Skip for now
+                    </button>
+                  </div>
+                </div>
+                {renderStepIndicator()}
+              </div>
+            </motion.div>
+          )}
+
+          {step === 4 && (
+            <motion.div 
+              key="success"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="w-full max-w-md"
+            >
+              <div className="glass-card p-8 md:p-10 rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl text-center">
+                <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-8">
+                  <Check className="w-10 h-10 text-green-500" />
+                </div>
+                <h1 className="common-title text-3xl md:text-4xl mb-4">Emma goes live on your number 🎉</h1>
+                <p className="text-[#a8a8a8] text-sm mb-10 leading-relaxed">
+                  Congratulations! Your calls are now protected. Appointments book automatically, leads get followed up, and your calendar fills.
+                </p>
+                <button 
+                  onClick={onComplete}
+                  className="common-button common-button-primary w-full py-4 text-sm font-bold flex items-center justify-center gap-2 group"
+                >
+                  Go to my results <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </main>
+
+      <footer className="relative z-10 py-8 text-center text-[10px] text-[#a8a8a8] uppercase tracking-widest">
+        © 2025 EmmaDesk · All rights reserved
+      </footer>
+    </div>
+  );
+};
+
+const Dashboard = ({ onLogout }: { onLogout: () => void }) => {
+  const [activePage, setActivePage] = useState('Overview');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const isPro = false;
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, [activePage]);
+
+  const navItems = [
+    { name: 'Overview', icon: Layout, pro: false },
+    { name: 'Calls', icon: Phone, pro: false },
+    { name: 'Bookings', icon: Calendar, pro: false },
+    { name: 'Reviews', icon: Star, pro: false },
+    { name: 'Settings', icon: Settings, pro: false },
+  ];
+
+  const renderProLock = (title: string, body: string) => (
+    <div className="absolute inset-0 z-20 backdrop-blur-md bg-black/40 flex items-center justify-center p-6 rounded-3xl">
+      <div className="glass-card p-8 max-w-sm w-full text-center border-blue-accent/20">
+        <div className="w-12 h-12 bg-blue-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+          <Zap className="w-6 h-6 text-blue-accent" />
+        </div>
+        <h3 className="common-title text-2xl mb-3">{title}</h3>
+        <p className="text-white/50 text-sm mb-8 leading-relaxed">{body}</p>
+        <button className="common-button common-button-primary w-full py-3 text-sm font-bold">
+          Upgrade to Pro
+        </button>
+      </div>
+    </div>
+  );
+
+
+
+  const renderOverview = () => (
+    <div className="space-y-8">
+      {/* Stat Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { label: 'Jobs Booked', value: '42', trend: '+$16,800 revenue', positive: true },
+          { label: 'Calls Answered', value: '94', trend: '0 missed this week', positive: true },
+          { label: 'Review Rating', value: '4.9', trend: '+12 new reviews', positive: true },
+          { label: 'Response Rate', value: '100%', trend: 'Avg 0.8s response', positive: true },
+        ].map((stat, i) => (
+          <div key={i} className="glass-card p-6 rounded-3xl relative overflow-hidden">
+            {isLoading && <div className="absolute inset-0 animate-shimmer z-10" />}
+            <div className="text-[10px] uppercase tracking-widest text-white/40 font-medium mb-2">{stat.label}</div>
+            <div className="common-title text-3xl mb-2">{stat.value}</div>
+            <div className={`text-[10px] font-medium ${stat.positive ? 'text-green-500' : 'text-white/30'}`}>
+              {stat.trend}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        {/* Recent Sales */}
+        <div className="lg:col-span-3 space-y-6">
+          <div className="flex items-center justify-between">
+            <h2 className="common-title text-2xl">Recent Calls</h2>
+          </div>
+          <div className="glass-card rounded-3xl overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <tbody>
+                  {[
+                    { caller: 'Mike J.', type: 'Emergency AC repair', status: 'Booked✓', time: '2 mins ago' },
+                    { caller: 'Sarah C.', type: 'Maintenance check-up', status: 'Booked✓', time: '14 mins ago' },
+                    { caller: 'Tom B.', type: 'New quote request', status: 'Follow-up sent', time: '1 hour ago' },
+                    { caller: 'John D.', type: 'Furnace inspection', status: 'Booked✓', time: '3 hours ago' },
+                    { caller: 'Lisa M.', type: 'Filter replacement', status: 'Booked✓', time: '5 hours ago' },
+                    { caller: 'Sam R.', type: 'HVAC tune-up', status: 'Booked✓', time: '6 hours ago' },
+                  ].map((call, i) => (
+                    <tr key={i} className="border-b border-white/5 last:border-0 hover:bg-white/[0.02] transition-colors">
+                      <td className="py-5 px-6 text-sm text-white/70">{call.caller}</td>
+                      <td className="py-5 px-6 text-sm font-medium">{call.type}</td>
+                      <td className="py-5 px-6 text-sm text-blue-accent text-right font-medium">{call.status}</td>
+                      <td className="py-5 px-6 text-xs text-white/30 text-right">{call.time}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column */}
+        <div className="lg:col-span-2 space-y-8">
+          {/* Quick Actions */}
+          <section className="space-y-4">
+            <h3 className="text-xs uppercase tracking-widest text-white/40 font-medium ml-1">Quick Actions</h3>
+            <div className="space-y-3">
+              <button 
+                className="common-button common-button-primary w-full py-4 text-sm font-bold"
+              >
+                <Plus className="w-4 h-4" /> Book New Job
+              </button>
+              <button className="common-button common-button-secondary-glass w-full py-4 text-sm font-bold">
+                <ExternalLink className="w-4 h-4" /> View Public Profile
+              </button>
+            </div>
+          </section>
+
+          {/* Service Trends */}
+          <section className="space-y-4">
+            <h3 className="text-xs uppercase tracking-widest text-white/40 font-medium ml-1">Service Trends</h3>
+            <div className="glass-card p-6 rounded-3xl space-y-6">
+              {[
+                { name: 'Emergency Repair', count: 42, percentage: 85 },
+                { name: 'Seasonal Maintenance', count: 31, percentage: 65 },
+                { name: 'System Installation', count: 12, percentage: 35 },
+              ].map((service, i) => (
+                <div key={i} className="space-y-2">
+                  <div className="flex justify-between items-center text-sm">
+                    <span className="font-medium">{service.name}</span>
+                    <span className="text-white/40">{service.count} leads</span>
+                  </div>
+                  <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+                    <div 
+                      className="h-full bg-blue-accent rounded-full" 
+                      style={{ width: `${service.percentage}%` }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="min-h-screen bg-black text-white flex overflow-hidden">
+      {/* Mobile Sidebar Overlay */}
+      <AnimatePresence>
+        {isSidebarOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsSidebarOpen(false)}
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[110] lg:hidden"
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Sidebar */}
+      <aside className={`fixed lg:static inset-y-0 left-0 w-[240px] bg-black border-r border-white/5 z-[120] flex flex-col transition-transform duration-300 lg:translate-x-0 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+        <div className="p-8">
+          <div className="text-2xl font-title text-white mb-6">EmmaDesk</div>
+          <div className="h-px w-full bg-white/5 mb-8" />
+            
+          <div className="flex items-center gap-3 mb-10">
+            <div className="w-10 h-10 rounded-full bg-blue-accent/10 flex items-center justify-center text-blue-accent font-bold text-sm">
+              KW
+            </div>
+            <div className="min-w-0">
+              <div className="text-sm font-medium truncate">Krishna W.</div>
+              <div className="text-[10px] text-white/30 truncate">Phoenix HVAC</div>
+            </div>
+          </div>
+
+          <nav className="space-y-1">
+            {navItems.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => {
+                  setActivePage(item.name);
+                  setIsSidebarOpen(false);
+                }}
+                className={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-all group ${activePage === item.name ? 'text-white border-l-2 border-blue-accent bg-blue-accent/[0.06]' : 'text-white/40 hover:text-white hover:bg-white/[0.02]'}`}
+              >
+                <div className="flex items-center gap-3">
+                  <item.icon className={`w-4 h-4 ${activePage === item.name ? 'text-blue-accent' : 'group-hover:text-white'}`} />
+                  <span className="text-sm font-medium">{item.name}</span>
+                </div>
+                {item.pro && !isPro && <span className="text-[9px] font-bold text-blue-accent tracking-widest uppercase">Pro</span>}
+              </button>
+            ))}
+          </nav>
+        </div>
+
+        <div className="mt-auto p-6 space-y-4">
+          <button className="common-button common-button-primary w-full py-3 text-xs font-bold">
+            Upgrade to Pro
+          </button>
+          <button 
+            onClick={onLogout}
+            className="w-full flex items-center gap-3 px-4 py-2 text-white/40 hover:text-red-500 transition-colors text-sm font-medium"
+          >
+            <LogOut className="w-4 h-4" /> Log out
+          </button>
+        </div>
+      </aside>
+
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col min-w-0 h-screen overflow-hidden relative">
+        {/* Mobile Top Bar */}
+        <header className="lg:hidden flex items-center justify-between p-6 border-b border-white/5 bg-black/80 backdrop-blur-md z-[100]">
+          <div className="text-xl font-title">EmmaDesk</div>
+          <button onClick={() => setIsSidebarOpen(true)} className="p-2 bg-white/5 rounded-lg">
+            <Menu className="w-5 h-5" />
+          </button>
+        </header>
+
+        {/* Page Top Bar */}
+        <header className="p-8 lg:px-12 border-b border-white/5 flex items-center justify-between shrink-0">
+          <div>
+            <h1 className="common-title text-3xl">{activePage}</h1>
+          </div>
+          <div className="hidden sm:block">
+            {activePage === 'Calls' && (
+              <button className="common-button common-button-primary px-6 py-3 text-sm font-bold">
+                <Plus className="w-4 h-4" /> Log Call
+              </button>
+            )}
+          </div>
+        </header>
+
+        {/* Scrollable Content Area */}
+        <main className="flex-1 overflow-y-auto p-8 lg:p-12">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activePage}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.15 }}
+            >
+              {activePage === 'Overview' && renderOverview()}
+              {(activePage === 'Calls' || activePage === 'Bookings' || activePage === 'Reviews' || activePage === 'Settings') && (
+                <div className="h-[60vh] flex flex-col items-center justify-center text-center space-y-4">
+                  <div className="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center">
+                    <Layout className="w-8 h-8 text-blue-accent opacity-20" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-title text-white">{activePage} Feed</h3>
+                    <p className="text-sm text-white/30 max-w-xs mx-auto">Your live {activePage.toLowerCase()} data from Emma will appear here.</p>
+                  </div>
+                </div>
+              )}
+            </motion.div>
+          </AnimatePresence>
+        </main>
+      </div>
+    </div>
+  );
+};
+
+// --- Main App ---
+
+export default function App() {
+  const [view, setView] = useState<'landing' | 'login' | 'signup' | 'onboarding' | 'dashboard' | 'call'>('landing');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [view]);
+
+  if (view === 'login' || view === 'signup') {
+    return <AuthPage initialMode={view} onBack={() => setView('landing')} onComplete={() => setView('onboarding')} />;
+  }
+
+  if (view === 'onboarding') {
+    return <OnboardingFlow onComplete={() => setView('dashboard')} />;
+  }
+
+  if (view === 'dashboard') {
+    return <Dashboard onLogout={() => setView('landing')} />;
+  }
+
+  if (view === 'call') {
+    return (
+      <div className="min-h-screen bg-black text-white selection:bg-[#e0e0e0] selection:text-black flex flex-col relative overflow-hidden">
+        <Header onNavigate={setView} simple={true} />
+        {/* Background glow to match homepage */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-accent/20 blur-[120px] rounded-full pointer-events-none opacity-50" />
+
+        <main className="flex-1 flex flex-col items-center justify-center relative z-10 px-6 mt-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center w-full max-w-2xl"
+          >
+            <div className="space-y-12">
+              <div className="space-y-4">
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-blue-accent">Talk to Emma right now</p>
+                <h1 className="common-title text-5xl lg:text-7xl tracking-tight text-white !leading-tight">
+                  +1 7743151065
+                </h1>
+              </div>
+
+              <div className="space-y-4 text-xl md:text-2xl text-[#a8a8a8] font-title">
+                <p>Call this number from your phone</p>
+                <p>Emma will answer within one ring</p>
+                <p>Experience exactly what your customers will hear</p>
+              </div>
+
+              <p className="text-sm text-white/30">This is a live demo. No sign-up required.</p>
+
+              <div className="pt-8 flex justify-center">
+                <button 
+                  onClick={() => window.location.href = 'tel:+17743151065'}
+                  className="common-button common-button-primary px-8 py-4 text-base font-bold flex items-center gap-2 shadow-[0_0_30px_rgba(43,108,255,0.4)]"
+                >
+                  Call Emma Now
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        </main>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-black selection:bg-[#e0e0e0] selection:text-black">
+      <Header onNavigate={setView} />
+        
+      <main className="relative z-10">
+        <Hero onNavigate={setView} />
+        <LiveDemoSection onNavigate={setView} />
+        <Customers />
+        <Why />
+        <Solutions />
+        <Features />
+        <Integrations />
+        <CaseStudies />
+
+        {/* Change 5: Comparison Table Section */}
+        <section className="py-24 bg-black text-white border-t border-white/5">
+          <div className="page-wrapper">
+            <div className="text-center mb-16">
+              <h2 className="common-title text-4xl md:text-6xl mb-4 leading-tight">Emma vs A Receptionist vs Voicemail</h2>
+              <p className="text-lg md:text-2xl text-white/40 font-title italic">Here is what you are actually choosing between.</p>
+            </div>
+            
+            <div className="glass-card bg-white/5 border border-white/10 rounded-[32px] overflow-hidden shadow-2xl">
+              <div className="overflow-x-auto">
+                <table className="w-full text-left">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="p-6 md:p-8"></th>
+                      <th className="p-6 md:p-8 bg-[#2b6dff]/10 text-[#2b6dff] font-bold">Emma</th>
+                      <th className="p-6 md:p-8 text-white/60">Human Receptionist</th>
+                      <th className="p-6 md:p-8 text-white/60">Just Voicemail</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-white/5">
+                    {[
+                      { label: "Answers calls 24/7", emma: "✓", human: "✗ (8hrs only)", voice: "✗" },
+                      { label: "Cost per month", emma: "$297", human: "$2,500–$3,500", voice: "$0 (but costs jobs)" },
+                      { label: "Books appointments", emma: "✓", human: "✓", voice: "✗" },
+                      { label: "Follows up on leads", emma: "✓", human: "✗", voice: "✗" },
+                      { label: "Requests Google reviews", emma: "✓", human: "✗", voice: "✗" },
+                      { label: "No-show reminders", emma: "✓", human: "✗", voice: "✗" },
+                      { label: "Works weekends", emma: "✓", human: "✗", voice: "✗" },
+                      { label: "Sick days", emma: "Never", human: "Yes", voice: "N/A" },
+                      { label: "Setup time", emma: "48 hours", human: "Weeks of hiring", voice: "Already set up" },
+                      { label: "Sends monthly reports", emma: "✓", human: "✗", voice: "✗" }
+                    ].map((row, i) => (
+                      <tr key={i} className="hover:bg-white/5 transition-colors">
+                        <td className="p-6 md:p-8 text-white font-medium">{row.label}</td>
+                        <td className="p-6 md:p-8 text-white bg-[#2b6dff]/5 font-bold">{row.emma}</td>
+                        <td className="p-6 md:p-8 text-white/40">{row.human}</td>
+                        <td className="p-6 md:p-8 text-white/40">{row.voice}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div className="mt-8 text-center text-white/40 text-sm">
+              "Emma does more than a full-time receptionist at less than 10% of the cost."
+            </div>
+          </div>
+        </section>
+
+        {/* Change 6: Pricing Section */}
+        <section id="pricing" className="py-24 bg-black text-white border-t border-white/5">
+          <div className="page-wrapper">
+            <div className="text-center mb-16">
+              <h2 className="common-title text-4xl md:text-6xl mb-4 leading-tight">No surprises, no hidden fees.</h2>
+              <p className="text-lg md:text-2xl text-white/40 font-title italic mb-4">Simple flat pricing. Emma works harder the busier you get.</p>
+              <p className="text-sm md:text-base text-white/40 italic">
+                A human receptionist costs $2,500 – $3,500 per month and works 8 hours a day.<br />
+                Emma costs a fraction of that and works 24 hours a day, 7 days a week, 365 days a year.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Card 1: Starter */}
+              <div className="glass-card bg-white/5 border border-white/10 rounded-[32px] p-8 md:p-10 flex flex-col h-full transform hover:scale-[1.02] transition-all duration-300">
+                <div className="mb-8">
+                  <div className="text-[10px] uppercase tracking-widest font-mono text-white/40 mb-2">Starter</div>
+                  <h3 className="text-white text-lg font-medium mb-4 italic">For solo HVAC operators</h3>
+                  <div className="flex items-baseline gap-1 mb-1">
+                    <span className="text-4xl md:text-5xl font-title font-bold text-white">$297</span>
+                    <span className="text-white/40 text-sm">/mo</span>
+                  </div>
+                  <div className="text-xs text-white/40">everything included</div>
+                </div>
+                <div className="flex-1 space-y-4 mb-10 text-sm">
+                  {[
+                    { text: "Emma answers all inbound calls 24/7", included: true },
+                    { text: "Appointment booking into your calendar", included: true },
+                    { text: "Missed call text back within 60 seconds", included: true },
+                    { text: "Appointment confirmation SMS and email", included: true },
+                    { text: "24hr and 2hr no-show reminder sequence", included: true },
+                    { text: "Google review request after every job", included: true },
+                    { text: "Monthly performance report", included: true },
+                    { text: "Lead follow-up sequences (Growth plan)", included: false },
+                    { text: "Unsold quote follow-up (Growth plan)", included: false },
+                    { text: "Seasonal outreach campaigns (Growth plan)", included: false }
+                  ].map((feat, i) => (
+                    <div key={i} className={`flex items-start gap-3 ${feat.included ? 'text-white' : 'text-white/20'}`}>
+                      <span className={`shrink-0 ${feat.included ? 'text-blue-accent' : 'text-white/10'}`}>{feat.included ? '✓' : '✗'}</span>
+                      <span>{feat.text}</span>
+                    </div>
+                  ))}
+                </div>
+                <a href="https://cal.com/emmadesk/emma-desk" className="common-button bg-white/5 border border-white/10 hover:border-white/30 text-white w-full py-4 text-sm font-bold mb-4 flex items-center justify-center">
+                  Get started →
+                </a>
+                <div className="text-center text-[10px] text-white/40 font-mono tracking-widest">
+                  NO CONTRACTS · CANCEL ANYTIME
+                </div>
+              </div>
+
+              {/* Card 2: Growth */}
+              <div className="glass-card bg-white/10 border-[#2b6dff]/30 rounded-[32px] p-8 md:p-10 flex flex-col h-full relative shadow-[0_0_80px_rgba(43,108,255,0.15)] ring-1 ring-white/10 scale-105 z-10">
+                <div className="absolute top-6 right-6 bg-[#2b6dff] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+                  Most Popular
+                </div>
+                <div className="mb-8">
+                  <div className="text-[10px] uppercase tracking-widest font-mono text-blue-accent mb-2">Growth</div>
+                  <h3 className="text-white text-lg font-medium mb-4 italic">Most popular for growing HVAC businesses</h3>
+                  <div className="flex items-baseline gap-1 mb-1">
+                    <span className="text-4xl md:text-5xl font-title font-bold text-white">$497</span>
+                    <span className="text-white/40 text-sm">/mo</span>
+                  </div>
+                  <div className="text-xs text-white/40">everything included</div>
+                </div>
+                <div className="flex-1 space-y-4 mb-10 text-sm">
+                  {[
+                    { text: "Everything in Starter", included: true },
+                    { text: "3-message lead follow-up sequence over 5 days", included: true },
+                    { text: "4-message unsold quote follow-up over 7 days", included: true },
+                    { text: "Job completion check-in SMS to every customer", included: true },
+                    { text: "Reputation protection — catches bad reviews early", included: true },
+                    { text: "Maintenance plan upsell after completed jobs", included: true },
+                    { text: "Seasonal outreach campaigns spring and fall", included: true },
+                    { text: "Priority setup and support", included: true }
+                  ].map((feat, i) => (
+                    <div key={i} className="flex items-start gap-3 text-white">
+                      <span className="shrink-0 text-blue-accent font-bold">✓</span>
+                      <span>{feat.text}</span>
+                    </div>
+                  ))}
+                </div>
+                <a href="https://cal.com/emmadesk/emma-desk" className="common-button common-button-primary w-full py-4 text-sm font-bold mb-4 shadow-[0_0_40px_rgba(43,108,255,0.4)] flex items-center justify-center">
+                  Get started →
+                </a>
+                <div className="text-center text-[10px] text-white/40 font-mono tracking-widest">
+                  NO CONTRACTS · CANCEL ANYTIME
+                </div>
+              </div>
+
+              {/* Card 3: Pro */}
+              <div className="glass-card bg-white/5 border border-white/10 rounded-[32px] p-8 md:p-10 flex flex-col h-full transform hover:scale-[1.02] transition-all duration-300">
+                <div className="mb-8">
+                  <div className="text-[10px] uppercase tracking-widest font-mono text-white/40 mb-2">Pro</div>
+                  <h3 className="text-white text-lg font-medium mb-4 italic">For established HVAC companies</h3>
+                  <div className="flex items-baseline gap-1 mb-1">
+                    <span className="text-4xl md:text-5xl font-title font-bold text-white">$797</span>
+                    <span className="text-white/40 text-sm">/mo</span>
+                  </div>
+                  <div className="text-xs text-white/40">everything included</div>
+                </div>
+                <div className="flex-1 space-y-4 mb-10 text-sm">
+                  {[
+                    { text: "Everything in Growth", included: true },
+                    { text: "Multi-technician scheduling support", included: true },
+                    { text: "Custom Emma voice and greeting", included: true },
+                    { text: "Advanced monthly analytics dashboard", included: true },
+                    { text: "Dedicated account manager", included: true },
+                    { text: "Priority phone support", included: true },
+                    { text: "Early access to new Emma features", included: true },
+                    { text: "Setup for multiple service areas", included: true }
+                  ].map((feat, i) => (
+                    <div key={i} className="flex items-start gap-3 text-white">
+                      <span className="shrink-0 text-blue-accent font-bold">✓</span>
+                      <span>{feat.text}</span>
+                    </div>
+                  ))}
+                </div>
+                <a href="https://cal.com/emmadesk/emma-desk" className="common-button bg-white/5 border border-white/10 hover:border-white/30 text-white w-full py-4 text-sm font-bold mb-4 flex items-center justify-center">
+                  Get started →
+                </a>
+                <div className="text-center text-[10px] text-white/40 font-mono tracking-widest">
+                  NO CONTRACTS · CANCEL ANYTIME
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <Guarantee />
+        <FAQ onNavigate={setView} />
+
+        <section className="py-32 bg-black text-white">
+          <div className="page-wrapper flex flex-col lg:flex-row items-end justify-between gap-12">
+            <h2 className="common-title text-6xl lg:text-8xl flex-1">Get started with EmmaDesk today.</h2>
+            <div className="flex-1 flex flex-col items-start gap-4">
+              <div className="flex gap-4 w-full">
+                <a 
+                  href="https://cal.com/emmadesk/emma-desk"
+                  className="common-button common-button-primary px-8 py-4 text-lg flex-1 flex items-center justify-center gap-2"
+                >
+                  Book a free 15 minutes call <ChevronRight className="w-4 h-4" />
+                </a>
+              </div>
+              <div className="text-xs text-[#a8a8a8]">
+                <span className="text-white font-medium">Live in 48 hours</span> · No contracts required
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer onNavigate={setView} />
+    </div>
+  );
+}
