@@ -33,7 +33,99 @@ import {
 
 // --- Components ---
 
-const Header = ({ onNavigate, simple = false }: { onNavigate: (view: 'landing' | 'login' | 'signup' | 'call') => void, simple?: boolean }) => {
+const PrivacyPolicy = ({ onBack }: { onBack: () => void }) => (
+  <div className="pt-32 pb-24 bg-black text-white min-h-screen">
+    <div className="page-wrapper max-w-3xl mx-auto">
+      <button onClick={onBack} className="text-blue-accent mb-12 flex items-center gap-2 hover:underline">
+        ← Back to home
+      </button>
+      <h1 className="common-title text-5xl mb-12">Privacy Policy</h1>
+      
+      <div className="space-y-12 text-[#a8a8a8] leading-relaxed">
+        <section className="space-y-6">
+          <h2 className="text-2xl text-white font-medium">What information we collect</h2>
+          <p>
+            When potential clients call a firm using EmmaDesk, we collect the information provided during the conversation. This typically includes the caller's name, phone number, accident or injury type, date of incident, insurance status, and any other case-related details they choose to share.
+          </p>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="text-2xl text-white font-medium">How we use this information</h2>
+          <p>
+            This information is collected on behalf of the law firm client to qualify leads and book consultations. We use it strictly to provide our service — enabling Emma to intelligently handle the intake process and alert the firm to new opportunities.
+          </p>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="text-2xl text-white font-medium">Data sharing and security</h2>
+          <p>
+            We do not sell your personal data or your callers' data to third parties. Access to call data is restricted to authorized firm personnel and EmmaDesk support staff when necessary for service maintenance. We implement industry-standard security measures to protect all stored information.
+          </p>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="text-2xl text-white font-medium">Data deletion and requests</h2>
+          <p>
+            Law firms or individual callers can request the deletion of their data at any time. We process these requests promptly to ensure privacy and compliance.
+          </p>
+        </section>
+
+        <section className="bg-white/5 border border-white/10 p-8 rounded-2xl">
+          <p className="text-white font-medium mb-2">Questions about privacy?</p>
+          <p className="text-sm">Contact us directly at <a href="mailto:support@emmadesk.xyz" className="text-blue-accent hover:underline">support@emmadesk.xyz</a></p>
+        </section>
+      </div>
+    </div>
+  </div>
+);
+
+const TermsConditions = ({ onBack }: { onBack: () => void }) => (
+  <div className="pt-32 pb-24 bg-black text-white min-h-screen">
+    <div className="page-wrapper max-w-3xl mx-auto">
+      <button onClick={onBack} className="text-blue-accent mb-12 flex items-center gap-2 hover:underline">
+        ← Back to home
+      </button>
+      <h1 className="common-title text-5xl mb-12">Terms & Conditions</h1>
+      
+      <div className="space-y-12 text-[#a8a8a8] leading-relaxed">
+        <section className="space-y-6">
+          <h2 className="text-2xl text-white font-medium">Description of Service</h2>
+          <p>
+            EmmaDesk provides an AI-powered lead conversion service for personal injury law firms. This includes automated call answering, lead qualification, and consultation booking.
+          </p>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="text-2xl text-white font-medium">No-Contract and Cancellation</h2>
+          <p>
+            EmmaDesk operates on a month-to-month basis with no long-term contracts. You can cancel your service at any time with 30 days' notice. Upon cancellation, your call data and lead history will be exported and sent to you.
+          </p>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="text-2xl text-white font-medium">30-Day Money-Back Guarantee</h2>
+          <p>
+            If you do not see a measurable difference in your answered leads within the first 30 days of setup, we will refund your first month's fee in full. Our goal is centered on your firm's growth and success.
+          </p>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="text-2xl text-white font-medium">Limitation of Liability</h2>
+          <p>
+            While Emma is highly accurate, EmmaDesk is not responsible for legal outcomes or case results. We provide a lead intake tool, and all final legal decisions and client representation remain the sole responsibility of the law firm.
+          </p>
+        </section>
+
+        <section className="bg-white/5 border border-white/10 p-8 rounded-2xl">
+          <p className="text-white font-medium mb-2">Questions about these terms?</p>
+          <p className="text-sm">Contact us at <a href="mailto:support@emmadesk.xyz" className="text-blue-accent hover:underline">support@emmadesk.xyz</a></p>
+        </section>
+      </div>
+    </div>
+  </div>
+);
+
+const Header = ({ onNavigate, simple = false }: { onNavigate: (view: any) => void, simple?: boolean }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -70,20 +162,12 @@ const Header = ({ onNavigate, simple = false }: { onNavigate: (view: 'landing' |
         )}
 
         <div className="flex items-center gap-2">
-          {!simple && (
-            <button 
-              onClick={() => onNavigate('login')}
-              className="common-button common-button-secondary-glass px-4 py-2 text-sm hidden sm:block"
-            >
-              Log in
-            </button>
-          )}
-          <button 
-            onClick={() => onNavigate('call')}
+          <a 
+            href="https://cal.com/emmadesk/emma-desk"
             className="common-button common-button-primary px-4 py-2 text-sm whitespace-nowrap"
           >
-            Call Emma Now
-          </button>
+            Book a call
+          </a>
         </div>
       </div>
     </header>
@@ -121,17 +205,11 @@ const Hero = ({ onNavigate }: { onNavigate: (view: 'landing' | 'login' | 'signup
             className="flex flex-col items-start gap-4"
           >
             <div className="flex flex-col sm:flex-row gap-4">
-              <button 
-                onClick={() => onNavigate('call')}
-                className="common-button common-button-primary px-6 py-3 text-base flex items-center gap-2 shadow-[0_0_30px_rgba(43,108,255,0.4)]"
-              >
-                📞 Call Emma Right Now →
-              </button>
               <a 
                 href="https://cal.com/emmadesk/emma-desk"
-                className="common-button common-button-secondary-dark px-6 py-3 text-base flex items-center gap-2 border border-white/20 hover:border-white/40"
+                className="common-button common-button-primary px-8 py-4 text-lg flex items-center gap-2 shadow-[0_0_30px_rgba(43,108,255,0.4)]"
               >
-                Book a free 15-min call
+                Book a free 15-min call <ChevronRight className="w-5 h-5" />
               </a>
             </div>
             <div className="text-xs text-[#a8a8a8] font-medium pl-1">
@@ -179,7 +257,7 @@ const Hero = ({ onNavigate }: { onNavigate: (view: 'landing' | 'login' | 'signup
             </div>
             <div className="mt-6 pt-4 border-t border-white/5 flex justify-between items-center">
               <div className="text-[10px] text-white/40 uppercase tracking-widest">LEADS CAPTURED THIS MONTH</div>
-              <div className="text-lg font-title text-white">94 <span className="text-[10px] font-sans opacity-40 font-normal">out of 94</span></div>
+              <div className="text-lg font-title text-white">91 <span className="text-[10px] font-sans opacity-40 font-normal">out of 94</span></div>
             </div>
           </div>
         </motion.div>
@@ -242,10 +320,13 @@ const Why = () => (
     <div className="page-wrapper relative z-10">
       <div className="mb-24 relative max-w-4xl">
         <h2 className="common-title text-6xl md:text-8xl tracking-tight text-white mb-6 !leading-tight">
-          $47,000.
+          $45,000.
         </h2>
         <p className="text-white text-xl md:text-2xl mt-6 max-w-3xl leading-relaxed font-light">
-          That is how much the average personal injury firm loses every month to leads that go unanswered. 12 missed leads per week. One average case worth $15,000 in attorney fees. Four weeks. Do the math.
+          Even 2-3 lost cases a month — at $15,000 to $20,000 in average attorney fees each — is $30,000 to $60,000 walking out the door. Most firms losing leads to slow response time lose more than that. Emma makes sure none of them get away.
+        </p>
+        <p className="text-base text-[#a8a8a8] mt-2 mb-6 italic text-xs">
+          *Estimate based on industry data on personal injury lead response and conversion rates.
         </p>
         <p className="text-base text-[#a8a8a8] mt-6 italic">
           Emma answers every single one.
@@ -263,13 +344,13 @@ const Why = () => (
             <div className="text-[10px] uppercase tracking-[0.2em] font-mono text-red-500/60 mb-8 font-bold">BEFORE EMMA</div>
             <div className="space-y-4">
               {[
-                "Phone rings at 8pm. You're finishing a job.",
-                "Goes to voicemail. Customer hears a beep.",
+                "Phone rings at 8pm. You're finishing a case.",
+                "Goes to voicemail. Potential client hears a beep.",
                 "They hang up and call your competitor.",
-                "$400 job goes to someone else.",
+                "$15,000 case goes to someone else.",
                 "You don't even know it happened.",
                 "Repeat this 8 times a week.",
-                "That's $12,800 gone every single month."
+                "That's $45,000 gone every single month."
               ].map((text, i) => (
                 <div key={i} className="flex items-start gap-4 text-white/80">
                   <span className="text-red-500 font-bold shrink-0 mt-1">✗</span>
@@ -284,11 +365,11 @@ const Why = () => (
             <div className="space-y-4">
               {[
                 "Phone rings at 8pm. Emma picks up immediately.",
-                "She greets them using your business name.",
-                "She collects their details and books the job.",
-                "Customer gets an instant confirmation text.",
+                "She greets them using your firm's name.",
+                "She collects their details and books the intake.",
+                "Potential client gets an instant confirmation text.",
                 "You get an SMS alert with the booking details.",
-                "$400 job is yours. While you finished the last one.",
+                "$15,000 case is yours. While you finished the last one.",
                 "Every single night. Every single weekend."
               ].map((text, i) => (
                 <div key={i} className="flex items-start gap-4 text-white">
@@ -378,7 +459,7 @@ const Features = () => (
   <section id="features" className="py-24 bg-white text-black rounded-t-[40px] md:rounded-t-[80px]">
     <div className="page-wrapper">
       <div className="text-center mb-16 md:mb-32 sticky top-[10vh] z-10 py-4 bg-white/80 backdrop-blur-sm">
-        <h2 className="common-title text-black text-3xl md:text-6xl mb-4 leading-tight">Everything your front desk should do. Handled.</h2>
+        <h2 className="common-title text-black text-3xl md:text-6xl mb-4 leading-tight">Everything your intake team should do. Handled.</h2>
         <p className="text-lg md:text-2xl text-black/40 font-title italic">Here is exactly how Emma works.</p>
       </div>
 
@@ -459,74 +540,37 @@ const Features = () => (
 const CaseStudies = () => (
   <section id="case-studies" className="py-24 bg-black text-white">
     <div className="page-wrapper">
-      <h2 className="common-title text-5xl mb-4">Real firms, real results.</h2>
-      <p className="text-2xl text-white/50 font-title mb-20">See what happens when no lead goes unanswered.</p>
+      <h2 className="common-title text-5xl mb-4">Built for firms ready to stop losing leads.</h2>
+      <p className="text-2xl text-white/50 font-title mb-20">We're currently running pilots with personal injury firms across Texas and Arizona. Here's what early results look like.</p>
 
-      <div className="flex flex-col lg:flex-row gap-6 h-auto lg:h-[560px]">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
           { 
-            name: "Mike R. — Phoenix, AZ", 
-            role: "Partner", 
-            company: "EmmaDesk Client", 
-            quote: "I was missing leads every single day while in court. Emma paid for herself in the first week. I haven't missed a potential client since she went live.",
-            img: "afs_foil"
+            title: "Zero missed leads", 
+            body: "Every pilot firm sees 100% of their inbound calls answered starting day one — no exceptions, no after-hours gaps."
           },
           { 
-            name: "James T. — Dallas, TX", 
-            role: "Trial Attorney", 
-            company: "EmmaDesk Client", 
-            quote: "The follow-up sequence alone recovered 3 cases in the first month that I would have completely lost. This thing runs itself.",
-            img: "emma"
+            title: "Live in 48 hours", 
+            body: "No technical setup on your end. We configure Emma completely and she's answering calls within two business days."
           },
           { 
-            name: "Carlos M. — Houston, TX", 
-            role: "Founding Partner", 
-            company: "EmmaDesk Client", 
-            quote: "Setup took less than 48 hours. Emma answered her first real intake the next morning. My Google reviews went from 31 to 47 in 60 days.",
-            img: "spidervo"
+            title: "Cancel anytime", 
+            body: "No contracts. If Emma doesn't perform, you walk away — we only keep clients who are seeing real results."
           }
         ].map((item, i) => (
           <div 
             key={i}
-            className="group relative flex-1 hover:flex-[2.5] transition-all duration-500 ease-out rounded-2xl overflow-hidden cursor-pointer"
+            className="glass-card p-10 flex flex-col justify-between border-white/10 hover:border-blue-accent/30 transition-all duration-500"
           >
-            <div className="absolute inset-0 z-0">
-              <img 
-                src={`https://hugo.ai/_ipx/w_2800&f_png/components/home/HomeCases/${item.img}.webp`} 
-                alt={item.name} 
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/20 transition-all duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40 opacity-0 group-hover:opacity-100 transition-all duration-500" />
+            <div>
+              <h3 className="text-2xl font-title text-white mb-6">{item.title}</h3>
+              <p className="text-white/60 leading-relaxed italic text-lg">
+                “{item.body}”
+              </p>
             </div>
-
-            <div className="relative z-10 h-full p-8 flex flex-col justify-between">
-              <div className="flex justify-between items-center">
-                <div className="text-white font-title text-2xl opacity-50 group-hover:opacity-100 transition-opacity">
-                  {item.company}
-                </div>
-                <ArrowUpRight className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
-
-              <div className="max-w-xl">
-                <p className="text-white text-lg leading-relaxed mb-6 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                  “{item.quote}”
-                </p>
-                <div className="flex items-center gap-2">
-                  <span className="font-medium text-white">{item.name}</span>
-                  <span className="text-white/60 opacity-0 group-hover:opacity-100 transition-opacity">· {item.role}</span>
-                </div>
-              </div>
-            </div>
-              
-            <div className="absolute inset-0 backdrop-blur-0 group-hover:backdrop-blur-md [mask-image:linear-gradient(0deg,black_0%,black_25%,transparent_100%)] pointer-events-none transition-all duration-500" />
+            <div className="mt-12 h-px w-12 bg-blue-accent/40" />
           </div>
         ))}
-      </div>
-
-      <div className="mt-12 text-center text-white/40 text-sm max-w-md mx-auto leading-relaxed">
-        Results may vary. Testimonials represent typical outcomes for solo and small personal injury firms.
       </div>
     </div>
   </section>
@@ -583,7 +627,7 @@ const FAQ = ({ onNavigate }: { onNavigate: (view: 'landing' | 'login' | 'signup'
           <h2 className="common-title text-5xl mb-4">Got questions?</h2>
           <p className="text-2xl text-white/50 font-title mb-8">We have the answers.</p>
           <button 
-            onClick={() => onNavigate('signup')}
+            onClick={() => window.location.href = 'mailto:rahul@emmadesk.xyz'}
             className="common-button common-button-primary px-6 py-3 text-sm flex items-center gap-2"
           >
             Ask us a question →
@@ -631,7 +675,7 @@ const FAQ = ({ onNavigate }: { onNavigate: (view: 'landing' | 'login' | 'signup'
   </section>
 );
 
-const Footer = ({ onNavigate }: { onNavigate?: (view: 'landing' | 'login' | 'signup' | 'call') => void }) => (
+const Footer = ({ onNavigate }: { onNavigate?: (view: 'landing' | 'login' | 'signup' | 'call' | 'privacy' | 'terms') => void }) => (
   <footer className="pt-24 pb-12 bg-white text-black">
     <div className="page-wrapper">
       <div className="mb-24 text-center">
@@ -639,17 +683,11 @@ const Footer = ({ onNavigate }: { onNavigate?: (view: 'landing' | 'login' | 'sig
         <p className="text-xl text-black/50 mb-10 max-w-2xl mx-auto">Personal injury firms across the USA are setting up Emma to capture every lead — day or night. Early clients get locked-in pricing and priority setup.</p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a href="https://cal.com/emmadesk/emma-desk" className="common-button common-button-primary px-8 py-4 text-lg">Book a free 15-min call →</a>
-          <button 
-            onClick={() => onNavigate?.('call')}
-            className="common-button bg-[#ebebeb] text-black px-8 py-4 text-lg"
-          >
-            Hear Emma now ▷
-          </button>
         </div>
         <p className="mt-4 text-xs text-black/40">Free setup call · No contracts · Live in 48 hours</p>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-24">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-12 mb-24">
         <div className="flex flex-col gap-4">
           <p className="font-bold text-sm uppercase tracking-widest text-black/30">Product</p>
           {['Why Emma', 'Features', 'Integrations'].map(item => (
@@ -659,13 +697,16 @@ const Footer = ({ onNavigate }: { onNavigate?: (view: 'landing' | 'login' | 'sig
         <div className="flex flex-col gap-4">
           <p className="font-bold text-sm uppercase tracking-widest text-black/30">Company</p>
           {['About', 'Results', 'Contact', 'Privacy Policy'].map(item => (
-            <a key={item} href="#" className="font-title text-2xl text-[#707070] hover:text-black transition-colors">{item}</a>
-          ))}
-        </div>
-        <div className="flex flex-col gap-4">
-          <p className="font-bold text-sm uppercase tracking-widest text-black/30">Social</p>
-          {['X (Twitter)', 'Facebook', 'Instagram', 'LinkedIn'].map(item => (
-            <a key={item} href="#" className="font-title text-2xl text-[#707070] hover:text-black transition-colors">{item}</a>
+            <button 
+              key={item} 
+              onClick={() => {
+                if (item === 'Privacy Policy') onNavigate?.('privacy');
+                else if (item === 'Contact') window.location.href = 'mailto:rahul@emmadesk.xyz';
+              }}
+              className="font-title text-2xl text-[#707070] hover:text-black transition-colors text-left"
+            >
+              {item}
+            </button>
           ))}
         </div>
         <div className="flex flex-col gap-4">
@@ -682,9 +723,9 @@ const Footer = ({ onNavigate }: { onNavigate?: (view: 'landing' | 'login' | 'sig
             <span>🇺🇸</span> English (United States) <ChevronRight className="w-3 h-3 rotate-90" />
           </div>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-black">Terms & conditions</a>
+            <button onClick={() => onNavigate?.('terms')} className="hover:text-black">Terms & conditions</button>
             <span>·</span>
-            <a href="#" className="hover:text-black">Privacy policy</a>
+            <button onClick={() => onNavigate?.('privacy')} className="hover:text-black">Privacy policy</button>
           </div>
           <div>© 2025 EmmaDesk AI. All rights reserved.</div>
         </div>
@@ -745,20 +786,12 @@ const LiveDemoSection = ({ onNavigate }: { onNavigate?: (view: 'landing' | 'logi
             Your potential clients never reach voicemail. <br />
             Your competitors never get the case.
           </p>
-          <div 
-            onClick={() => onNavigate?.('call')}
-            className="glass-card bg-white/5 border border-white/20 backdrop-blur-[80px] rounded-[32px] p-8 text-center shadow-[0_32px_64px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.4),inset_0_0_40px_rgba(255,255,255,0.05)] relative overflow-hidden cursor-pointer group hover:bg-white/10 transition-colors duration-500"
+          <a 
+            href="https://cal.com/emmadesk/emma-desk"
+            className="common-button common-button-primary px-8 py-4 text-lg flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(43,108,255,0.4)]"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
-            {/* Subtle top highlight for 3D effect */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent" />
-            
-            <div className="relative z-10 transition-transform duration-500 group-hover:scale-105">
-              <p className="text-blue-accent mb-3 text-sm font-bold uppercase tracking-widest drop-shadow-[0_0_15px_rgba(35,119,246,0.5)]">📞 Hear Emma yourself right now</p>
-              <p className="text-4xl md:text-5xl font-bold text-white mb-3 tracking-tight !leading-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70">+1 774 315 1065</p>
-              <p className="text-white/60 text-sm">She is live right now. Call her.</p>
-            </div>
-          </div>
+            Book a free 15-min call <ChevronRight className="w-5 h-5" />
+          </a>
         </div>
       </div>
     </div>
@@ -1104,7 +1137,7 @@ const OnboardingFlow = ({ onComplete }: { onComplete: () => void }) => {
                   <div className="space-y-3">
                     <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">Do you use scheduling software?</label>
                     <div className="flex flex-wrap gap-2">
-                      {['Housecall Pro', 'ServiceTitan', 'Jobber', 'Google Calendar', 'Paper/Pen'].map((option) => (
+                      {['Clio', 'Casepeer', 'MyCase', 'Google Calendar', 'Paper/Pen'].map((option) => (
                         <button
                           key={option}
                           onClick={() => setFormData({ ...formData, soldBefore: option })}
@@ -1270,7 +1303,7 @@ const Dashboard = ({ onLogout }: { onLogout: () => void }) => {
       {/* Stat Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
-          { label: 'Jobs Booked', value: '42', trend: '+$16,800 revenue', positive: true },
+          { label: 'Cases Booked', value: '42', trend: '+14 cases this month', positive: true },
           { label: 'Calls Answered', value: '94', trend: '0 missed this week', positive: true },
           { label: 'Review Rating', value: '4.9', trend: '+12 new reviews', positive: true },
           { label: 'Response Rate', value: '100%', trend: 'Avg 0.8s response', positive: true },
@@ -1299,8 +1332,8 @@ const Dashboard = ({ onLogout }: { onLogout: () => void }) => {
                   {[
                     { caller: 'Mike J.', type: 'Emergency AC repair', status: 'Booked✓', time: '2 mins ago' },
                     { caller: 'Sarah C.', type: 'Maintenance check-up', status: 'Booked✓', time: '14 mins ago' },
-                    { caller: 'Tom B.', type: 'New quote request', status: 'Follow-up sent', time: '1 hour ago' },
-                    { caller: 'John D.', type: 'Furnace inspection', status: 'Booked✓', time: '3 hours ago' },
+                    { caller: 'Tom B.', type: 'New case inquiry', status: 'Follow-up sent', time: '1 hour ago' },
+                    { caller: 'John D.', type: 'Car accident claim', status: 'Booked✓', time: '3 hours ago' },
                     { caller: 'Lisa M.', type: 'Filter replacement', status: 'Booked✓', time: '5 hours ago' },
                     { caller: 'Sam R.', type: 'Car accident', status: 'Booked✓', time: '6 hours ago' },
                   ].map((call, i) => (
@@ -1326,7 +1359,7 @@ const Dashboard = ({ onLogout }: { onLogout: () => void }) => {
               <button 
                 className="common-button common-button-primary w-full py-4 text-sm font-bold"
               >
-                <Plus className="w-4 h-4" /> Book New Job
+                <Plus className="w-4 h-4" /> Book New Case
               </button>
               <button className="common-button common-button-secondary-glass w-full py-4 text-sm font-bold">
                 <ExternalLink className="w-4 h-4" /> View Public Profile
@@ -1484,7 +1517,7 @@ const Dashboard = ({ onLogout }: { onLogout: () => void }) => {
 // --- Main App ---
 
 export default function App() {
-  const [view, setView] = useState<'landing' | 'login' | 'signup' | 'onboarding' | 'dashboard' | 'call'>('landing');
+  const [view, setView] = useState<'landing' | 'login' | 'signup' | 'onboarding' | 'dashboard' | 'call' | 'privacy' | 'terms'>('landing');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -1543,6 +1576,30 @@ export default function App() {
             </div>
           </motion.div>
         </main>
+      </div>
+    );
+  }
+
+  if (view === 'privacy') {
+    return (
+      <div className="min-h-screen bg-black selection:bg-[#e0e0e0] selection:text-black flex flex-col relative overflow-hidden text-white">
+        <Header onNavigate={setView} simple={true} />
+        <div className="flex-1 mt-20">
+          <PrivacyPolicy onBack={() => setView('landing')} />
+        </div>
+        <Footer onNavigate={setView} />
+      </div>
+    );
+  }
+
+  if (view === 'terms') {
+    return (
+      <div className="min-h-screen bg-black selection:bg-[#e0e0e0] selection:text-black flex flex-col relative overflow-hidden text-white">
+        <Header onNavigate={setView} simple={true} />
+        <div className="flex-1 mt-20">
+          <TermsConditions onBack={() => setView('landing')} />
+        </div>
+        <Footer onNavigate={setView} />
       </div>
     );
   }
