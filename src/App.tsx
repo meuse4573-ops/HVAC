@@ -125,6 +125,117 @@ const TermsConditions = ({ onBack }: { onBack: () => void }) => (
   </div>
 );
 
+const TalkToEmmaPage = ({ onBack }: { onBack: () => void }) => {
+  useEffect(() => {
+    // Inject Retell script
+    const script = document.createElement('script');
+    script.id = 'retell-widget';
+    script.src = 'https://dashboard.retellai.com/retell-widget-v2.js';
+    script.type = 'module';
+    script.setAttribute('data-voice-public-key', 'public_key_9e42a844abb528a95fbbb');
+    script.setAttribute('data-voice-agent-id', 'agent_e68e92fe8159a707e67f908c09');
+    script.setAttribute('data-title', 'Talk to Emma');
+    script.setAttribute('data-bot-name', 'Emma');
+    script.setAttribute('data-fab-text', 'Talk to Emma');
+    script.setAttribute('data-color', '#2377f6');
+    script.setAttribute('data-theme-color', '#2377f6');
+    script.setAttribute('data-popup-message', 'Want to see how I handle a real case? Click to talk to me.');
+    script.setAttribute('data-show-ai-popup', 'true');
+    script.setAttribute('data-show-ai-popup-time', '5');
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script and widget elements
+      const existingScript = document.getElementById('retell-widget');
+      if (existingScript) {
+        document.body.removeChild(existingScript);
+      }
+      
+      // Attempt to remove Retell custom elements
+      const widget = document.querySelector('retell-widget-v2');
+      if (widget) {
+        widget.remove();
+      }
+
+      // Also clean up any styles or other elements Retell might have added
+      const styleTags = document.querySelectorAll('style');
+      styleTags.forEach(tag => {
+        if (tag.textContent?.includes('retell')) {
+          tag.remove();
+        }
+      });
+    };
+  }, []);
+
+  return (
+    <div className="pt-32 pb-24 bg-black text-white min-h-screen relative overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-accent/10 blur-[120px] rounded-full pointer-events-none" />
+      
+      <div className="page-wrapper max-w-4xl mx-auto relative z-10">
+        <button onClick={onBack} className="text-blue-accent mb-12 flex items-center gap-2 hover:underline">
+          ← Back to home
+        </button>
+
+        {/* Hero Section */}
+        <section className="mb-24">
+          <h1 className="common-title text-4xl md:text-7xl mb-6 tracking-tight">
+            Talk to Emma — see how she <br className="hidden md:block" /> handles a real injury case
+          </h1>
+          <p className="text-xl md:text-2xl text-[#a8a8a8] leading-relaxed max-w-3xl">
+            This is a live AI intake call, not a recording. Describe a real scenario — a car accident, a slip and fall, anything — and see how she responds.
+          </p>
+        </section>
+
+        {/* CTA Section */}
+        <section className="mb-24 py-16 px-8 glass-card text-center border-blue-accent/20">
+          <h2 className="common-title text-3xl mb-6">Ready to start?</h2>
+          <p className="text-[#a8a8a8] mb-10 max-w-xl mx-auto text-lg">
+            Click below to talk to Emma. Uses your microphone — no download, no phone number needed.
+          </p>
+          {/* The widget will anchor itself, but we can provide visual guidance */}
+          <div className="flex flex-col items-center gap-4">
+            <div className="w-16 h-16 rounded-full bg-blue-accent flex items-center justify-center animate-pulse shadow-[0_0_30px_rgba(35,119,246,0.4)]">
+               <Phone className="w-8 h-8 text-white fill-white" />
+            </div>
+            <p className="text-sm font-bold uppercase tracking-widest text-blue-accent">Click the widget in the corner to begin</p>
+          </div>
+        </section>
+
+        {/* What to try Section */}
+        <section className="mb-24">
+          <h2 className="common-title text-3xl mb-10">What to try</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              "I got rear-ended on the highway two weeks ago.",
+              "I slipped and fell at a grocery store last month.",
+              "Ask her what happens if I already talked to the insurance company."
+            ].map((text, i) => (
+              <div key={i} className="glass-card p-8 hover:bg-white/10 transition-colors border-white/5">
+                <p className="text-[#a8a8a8] italic text-lg leading-relaxed">
+                  “{text}”
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Trust Line */}
+        <div className="text-center mb-12">
+          <p className="text-white/40 text-lg font-title italic">Built specifically for personal injury intake — not a generic chatbot.</p>
+        </div>
+
+        {/* Fallback Option */}
+        <div className="text-center">
+          <a href="#" className="text-blue-accent hover:underline text-sm flex items-center justify-center gap-2">
+            Prefer to watch instead? Watch a 90-second example call <ExternalLink className="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Header = ({ onNavigate, simple = false }: { onNavigate: (view: any) => void, simple?: boolean }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -162,6 +273,12 @@ const Header = ({ onNavigate, simple = false }: { onNavigate: (view: any) => voi
         )}
 
         <div className="flex items-center gap-2">
+          <button 
+            onClick={() => onNavigate('talk-to-emma')}
+            className="common-button common-button-secondary-glass px-4 py-2 text-sm whitespace-nowrap"
+          >
+            Talk to Emma
+          </button>
           <a 
             href="https://cal.com/emmadesk/emma-desk"
             className="common-button common-button-primary px-4 py-2 text-sm whitespace-nowrap"
@@ -1517,7 +1634,7 @@ const Dashboard = ({ onLogout }: { onLogout: () => void }) => {
 // --- Main App ---
 
 export default function App() {
-  const [view, setView] = useState<'landing' | 'login' | 'signup' | 'onboarding' | 'dashboard' | 'call' | 'privacy' | 'terms'>('landing');
+  const [view, setView] = useState<'landing' | 'login' | 'signup' | 'onboarding' | 'dashboard' | 'call' | 'privacy' | 'terms' | 'talk-to-emma'>('landing');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -1598,6 +1715,18 @@ export default function App() {
         <Header onNavigate={setView} simple={true} />
         <div className="flex-1 mt-20">
           <TermsConditions onBack={() => setView('landing')} />
+        </div>
+        <Footer onNavigate={setView} />
+      </div>
+    );
+  }
+
+  if (view === 'talk-to-emma') {
+    return (
+      <div className="min-h-screen bg-black selection:bg-[#e0e0e0] selection:text-black flex flex-col relative overflow-hidden text-white">
+        <Header onNavigate={setView} simple={true} />
+        <div className="flex-1 mt-20">
+          <TalkToEmmaPage onBack={() => setView('landing')} />
         </div>
         <Footer onNavigate={setView} />
       </div>

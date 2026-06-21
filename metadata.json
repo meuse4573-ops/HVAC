@@ -1,6 +1,6 @@
 {
   "name": "EmmaDesk",
   "description": "AI agent that answers calls, qualifies leads, and books consultations for personal injury law firms.",
-  "requestFramePermissions": [],
+  "requestFramePermissions": ["microphone"],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
