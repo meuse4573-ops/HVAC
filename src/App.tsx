@@ -42,37 +42,71 @@ const PrivacyPolicy = ({ onBack }: { onBack: () => void }) => (
       <h1 className="common-title text-5xl mb-12">Privacy Policy</h1>
       
       <div className="space-y-12 text-[#a8a8a8] leading-relaxed">
+        <p className="text-sm italic">Last Updated: June 30, 2026</p>
+
         <section className="space-y-6">
-          <h2 className="text-2xl text-white font-medium">What information we collect</h2>
+          <h2 className="text-2xl text-white font-medium">1. Introduction</h2>
           <p>
-            When potential clients call a firm using EmmaDesk, we collect the information provided during the conversation. This typically includes the caller's name, phone number, accident or injury type, date of incident, insurance status, and any other case-related details they choose to share.
+            Welcome to LexaIntake. We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our service, including our AI-powered intake system and website.
           </p>
         </section>
 
         <section className="space-y-6">
-          <h2 className="text-2xl text-white font-medium">How we use this information</h2>
+          <h2 className="text-2xl text-white font-medium">2. Information We Collect</h2>
+          <div className="space-y-4">
+            <h3 className="text-lg text-white">A. Personal Data</h3>
+            <p>
+              While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. This may include: Email address, First name and last name, Phone number, and Billing address.
+            </p>
+            <h3 className="text-lg text-white">B. Intake Data</h3>
+            <p>
+              When Lexa handles an intake call, we collect audio recordings and text transcriptions of the conversation. This data may contain sensitive legal or medical information related to potential injury claims. We process this data solely as a Service Provider on behalf of our Law Firm clients.
+            </p>
+            <h3 className="text-lg text-white">C. Usage Data</h3>
+            <p>
+              We automatically collect information about how the Service is accessed and used, such as your IP address, browser type, and the pages you visit.
+            </p>
+          </div>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="text-2xl text-white font-medium">3. How We Use Your Data</h2>
+          <p>LexaIntake uses the collected data for various purposes:</p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>To provide and maintain our Service</li>
+            <li>To notify you about changes to our Service</li>
+            <li>To provide customer support</li>
+            <li>To gather analysis or valuable information so that we can improve our Service</li>
+            <li>To monitor the usage of our Service</li>
+            <li>To detect, prevent and address technical issues</li>
+            <li>To process billing and payments</li>
+          </ul>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="text-2xl text-white font-medium">4. Data Processing and AI</h2>
           <p>
-            This information is collected on behalf of the law firm client to qualify leads and book consultations. We use it strictly to provide our service — enabling Emma to intelligently handle the intake process and alert the firm to new opportunities.
+            Our Service utilizes Artificial Intelligence and third-party processors (such as Retell AI and OpenAI) to analyze voice and text data. By using the Service, you consent to the processing of data by these technologies. We ensure that our partners adhere to strict confidentiality and security standards.
           </p>
         </section>
 
         <section className="space-y-6">
-          <h2 className="text-2xl text-white font-medium">Data sharing and security</h2>
+          <h2 className="text-2xl text-white font-medium">5. Data Retention and Security</h2>
           <p>
-            We do not sell your personal data or your callers' data to third parties. Access to call data is restricted to authorized firm personnel and EmmaDesk support staff when necessary for service maintenance. We implement industry-standard security measures to protect all stored information.
+            We will retain your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We implement a variety of security measures, including encryption and secure protocols, to maintain the safety of your personal information. However, no method of transmission over the Internet is 100% secure.
           </p>
         </section>
 
         <section className="space-y-6">
-          <h2 className="text-2xl text-white font-medium">Data deletion and requests</h2>
+          <h2 className="text-2xl text-white font-medium">6. Disclosure of Data</h2>
           <p>
-            Law firms or individual callers can request the deletion of their data at any time. We process these requests promptly to ensure privacy and compliance.
+            We may disclose your personal data in the good faith belief that such action is necessary to: comply with a legal obligation, protect and defend the rights or property of LexaIntake, or protect the personal safety of users of the Service or the public.
           </p>
         </section>
 
         <section className="bg-white/5 border border-white/10 p-8 rounded-2xl">
-          <p className="text-white font-medium mb-2">Questions about privacy?</p>
-          <p className="text-sm">Contact us directly at <a href="mailto:support@emmadesk.xyz" className="text-blue-accent hover:underline">support@emmadesk.xyz</a></p>
+          <p className="text-white font-medium mb-2">Contact Our Privacy Officer</p>
+          <p className="text-sm">For any privacy-related requests or questions, contact us at <a href="mailto:privacy@lexaintake.com" className="text-blue-accent hover:underline">privacy@lexaintake.com</a></p>
         </section>
       </div>
     </div>
@@ -88,44 +122,74 @@ const TermsConditions = ({ onBack }: { onBack: () => void }) => (
       <h1 className="common-title text-5xl mb-12">Terms & Conditions</h1>
       
       <div className="space-y-12 text-[#a8a8a8] leading-relaxed">
+        <p className="text-sm italic">Last Updated: June 30, 2026</p>
+
         <section className="space-y-6">
-          <h2 className="text-2xl text-white font-medium">Description of Service</h2>
+          <h2 className="text-2xl text-white font-medium">1. Agreement to Terms</h2>
           <p>
-            EmmaDesk provides an AI-powered lead conversion service for personal injury law firms. This includes automated call answering, lead qualification, and consultation booking.
+            By accessing or using LexaIntake, you agree to be bound by these Terms and Conditions. If you disagree with any part of the terms, you may not access the Service. These terms constitute a legally binding agreement between you and LexaIntake.
           </p>
         </section>
 
         <section className="space-y-6">
-          <h2 className="text-2xl text-white font-medium">No-Contract and Cancellation</h2>
+          <h2 className="text-2xl text-white font-medium">2. Description of Service</h2>
           <p>
-            EmmaDesk operates on a month-to-month basis with no long-term contracts. You can cancel your service at any time with 30 days' notice. Upon cancellation, your call data and lead history will be exported and sent to you.
+            LexaIntake provides an AI-powered voice agent for personal injury law firm intake. Our service includes automated answering, lead qualification, and appointment scheduling. The "Lexa" agent is an artificial intelligence and is not a licensed attorney, paralegal, or human receptionist.
           </p>
         </section>
 
         <section className="space-y-6">
-          <h2 className="text-2xl text-white font-medium">30-Day Money-Back Guarantee</h2>
-          <p>
-            If you do not see a measurable difference in your answered leads within the first 30 days of setup, we will refund your first month's fee in full. Our goal is centered on your firm's growth and success.
+          <h2 className="text-2xl text-white font-medium">3. No Legal Advice Disclaimer</h2>
+          <p className="bg-white/5 p-4 rounded border border-white/10 text-white">
+            LexaIntake is not a law firm and does not provide legal advice. The AI agent facilitates information gathering for the law firm. Any interaction between a potential client and Lexa does not create an attorney-client relationship. All legal representation decisions must be made by human attorneys at your firm.
           </p>
         </section>
 
         <section className="space-y-6">
-          <h2 className="text-2xl text-white font-medium">Limitation of Liability</h2>
+          <h2 className="text-2xl text-white font-medium">4. User Responsibilities</h2>
           <p>
-            While Emma is highly accurate, EmmaDesk is not responsible for legal outcomes or case results. We provide a lead intake tool, and all final legal decisions and client representation remain the sole responsibility of the law firm.
+            As a user of LexaIntake, you are responsible for: (a) Ensuring all intake questions configured for Lexa comply with your local bar association rules and legal ethics; (b) Monitoring the accuracy of transcriptions and bookings; (c) Maintaining the confidentiality of your account credentials.
+          </p>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="text-2xl text-white font-medium">5. Fees and Payments</h2>
+          <p>
+            Services are billed on a subscription basis. You agree to pay all fees associated with your selected plan. Failure to pay may result in immediate suspension of the Service. All fees are non-refundable except as provided by our 30-day money-back guarantee policy.
+          </p>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="text-2xl text-white font-medium">6. Limitation of Liability</h2>
+          <p>
+            In no event shall LexaIntake, nor its directors, employees, or partners, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.
+          </p>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="text-2xl text-white font-medium">7. Intellectual Property</h2>
+          <p>
+            The Service and its original content, features, and functionality are and will remain the exclusive property of LexaIntake and its licensors. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of LexaIntake.
+          </p>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="text-2xl text-white font-medium">8. Governing Law</h2>
+          <p>
+            These Terms shall be governed and construed in accordance with the laws of the United States, without regard to its conflict of law provisions.
           </p>
         </section>
 
         <section className="bg-white/5 border border-white/10 p-8 rounded-2xl">
           <p className="text-white font-medium mb-2">Questions about these terms?</p>
-          <p className="text-sm">Contact us at <a href="mailto:support@emmadesk.xyz" className="text-blue-accent hover:underline">support@emmadesk.xyz</a></p>
+          <p className="text-sm">Contact us at <a href="mailto:legal@lexaintake.com" className="text-blue-accent hover:underline">legal@lexaintake.com</a></p>
         </section>
       </div>
     </div>
   </div>
 );
 
-const TalkToEmmaPage = ({ onBack }: { onBack: () => void }) => {
+const TalkToLexaPage = ({ onBack }: { onBack: () => void }) => {
   useEffect(() => {
     // Inject Retell script
     const script = document.createElement('script');
@@ -134,9 +198,9 @@ const TalkToEmmaPage = ({ onBack }: { onBack: () => void }) => {
     script.type = 'module';
     script.setAttribute('data-voice-public-key', 'public_key_9e42a844abb528a95fbbb');
     script.setAttribute('data-voice-agent-id', 'agent_e68e92fe8159a707e67f908c09');
-    script.setAttribute('data-title', 'Talk to Emma');
-    script.setAttribute('data-bot-name', 'Emma');
-    script.setAttribute('data-fab-text', 'Talk to Emma');
+    script.setAttribute('data-title', 'Talk to Lexa');
+    script.setAttribute('data-bot-name', 'Lexa');
+    script.setAttribute('data-fab-text', 'Talk to Lexa');
     script.setAttribute('data-color', '#2377f6');
     script.setAttribute('data-theme-color', '#2377f6');
     script.setAttribute('data-popup-message', 'Want to see how I handle a real case? Click to talk to me.');
@@ -180,7 +244,7 @@ const TalkToEmmaPage = ({ onBack }: { onBack: () => void }) => {
         {/* Hero Section */}
         <section className="mb-24">
           <h1 className="common-title text-4xl md:text-7xl mb-6 tracking-tight">
-            Talk to Emma — see how she <br className="hidden md:block" /> handles a real injury case
+            Talk to Lexa — see how she <br className="hidden md:block" /> handles a real injury case
           </h1>
           <p className="text-xl md:text-2xl text-[#a8a8a8] leading-relaxed max-w-3xl">
             This is a live AI intake call, not a recording. Describe a real scenario — a car accident, a slip and fall, anything — and see how she responds.
@@ -191,7 +255,7 @@ const TalkToEmmaPage = ({ onBack }: { onBack: () => void }) => {
         <section className="mb-24 py-16 px-8 glass-card text-center border-blue-accent/20">
           <h2 className="common-title text-3xl mb-6">Ready to start?</h2>
           <p className="text-[#a8a8a8] mb-10 max-w-xl mx-auto text-lg">
-            Click below to talk to Emma. Uses your microphone — no download, no phone number needed.
+            Click below to talk to Lexa. Uses your microphone — no download, no phone number needed.
           </p>
           {/* The widget will anchor itself, but we can provide visual guidance */}
           <div className="flex flex-col items-center gap-4">
@@ -253,14 +317,14 @@ const Header = ({ onNavigate, simple = false }: { onNavigate: (view: any) => voi
       <div className="page-wrapper flex items-center justify-between relative">
         <div className="flex items-center gap-2">
           <div className="flex items-center gap-2 cursor-pointer group" onClick={() => onNavigate('landing')}>
-            <span className="text-xl sm:text-2xl font-title text-white">EmmaDesk</span>
+            <span className="text-xl sm:text-2xl font-title text-white">LexaIntake</span>
             {!simple && <ChevronRight className="w-4 h-4 text-white rotate-90 group-hover:-rotate-90 transition-transform hidden sm:block" />}
           </div>
         </div>
 
         {!simple && (
           <nav className="hidden lg:flex items-center gap-1">
-            {['Why Emma', 'Features', 'Integrations', 'Results', 'Pricing'].map((item) => (
+            {['Why Lexa', 'Features', 'Integrations', 'Results', 'Pricing'].map((item) => (
               <a 
                 key={item} 
                 href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
@@ -274,13 +338,13 @@ const Header = ({ onNavigate, simple = false }: { onNavigate: (view: any) => voi
 
         <div className="flex items-center gap-2">
           <button 
-            onClick={() => onNavigate('talk-to-emma')}
+            onClick={() => onNavigate('talk-to-lexa')}
             className="common-button common-button-secondary-glass px-4 py-2 text-sm whitespace-nowrap"
           >
-            Talk to Emma
+            Talk to Lexa
           </button>
           <a 
-            href="https://cal.com/emmadesk/emma-desk"
+            href="https://cal.com/lexaintake/lexa-desk"
             className="common-button common-button-primary px-4 py-2 text-sm whitespace-nowrap"
           >
             Book a call
@@ -305,7 +369,7 @@ const Hero = ({ onNavigate }: { onNavigate: (view: 'landing' | 'login' | 'signup
             transition={{ duration: 0.6 }}
             className="common-title text-5xl lg:text-7xl mb-6"
           >
-            Meet Emma, the simplest way to never miss an injury lead again.
+            Meet Lexa, the simplest way to never miss an injury lead again.
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -323,7 +387,7 @@ const Hero = ({ onNavigate }: { onNavigate: (view: 'landing' | 'login' | 'signup
           >
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
-                href="https://cal.com/emmadesk/emma-desk"
+                href="https://cal.com/lexaintake/lexa-desk"
                 className="common-button common-button-primary px-8 py-4 text-lg flex items-center gap-2 shadow-[0_0_30px_rgba(43,108,255,0.4)]"
               >
                 Book a free 15-min call <ChevronRight className="w-5 h-5" />
@@ -342,7 +406,7 @@ const Hero = ({ onNavigate }: { onNavigate: (view: 'landing' | 'login' | 'signup
         >
           <div className="relative glass-card p-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl max-w-md w-full transform lg:translate-x-12">
             <div className="flex items-center justify-between mb-4 pb-2 border-bottom border-white/5">
-              <div className="text-[10px] text-white/40 font-mono">EmmaDesk · Calls · Bookings · Reviews</div>
+              <div className="text-[10px] text-white/40 font-mono">LexaIntake · Calls · Bookings · Reviews</div>
               <div className="flex gap-1">
                 <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
                 <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
@@ -440,31 +504,31 @@ const Why = () => (
           $45,000.
         </h2>
         <p className="text-white text-xl md:text-2xl mt-6 max-w-3xl leading-relaxed font-light">
-          Even 2-3 lost cases a month — at $15,000 to $20,000 in average attorney fees each — is $30,000 to $60,000 walking out the door. Most firms losing leads to slow response time lose more than that. Emma makes sure none of them get away.
+          Even 2-3 lost cases a month — at $15,000 to $20,000 in average attorney fees each — is $30,000 to $60,000 walking out the door. Most firms losing leads to slow response time lose more than that. Lexa makes sure none of them get away.
         </p>
         <p className="text-base text-[#a8a8a8] mt-2 mb-6 italic text-xs">
           *Estimate based on industry data on personal injury lead response and conversion rates.
         </p>
         <p className="text-base text-[#a8a8a8] mt-6 italic">
-          Emma answers every single one.
+          Lexa answers every single one.
         </p>
       </div>
 
       {/* Change 4: Before vs After Section */}
       <div className="mb-32">
         <div className="text-center mb-16">
-          <h2 className="common-title text-4xl md:text-6xl mb-4">Your day before Emma. Your day after Emma.</h2>
+          <h2 className="common-title text-4xl md:text-6xl mb-4">Your day before Lexa. Your day after Lexa.</h2>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Before Card */}
           <div className="glass-card bg-[#2a0a0a] border border-red-900/30 p-8 md:p-12 rounded-[32px]">
-            <div className="text-[10px] uppercase tracking-[0.2em] font-mono text-red-500/60 mb-8 font-bold">BEFORE EMMA</div>
+            <div className="text-[10px] uppercase tracking-[0.2em] font-mono text-red-500/60 mb-8 font-bold">BEFORE Lexa</div>
             <div className="space-y-4">
               {[
                 "Phone rings at 8pm. You're finishing a case.",
                 "Goes to voicemail. Potential client hears a beep.",
                 "They hang up and call your competitor.",
-                "$15,000 case goes to someone else.",
+                "A potential case goes to someone else.",
                 "You don't even know it happened.",
                 "Repeat this 8 times a week.",
                 "That's $45,000 gone every single month."
@@ -478,15 +542,15 @@ const Why = () => (
           </div>
           {/* After Card */}
           <div className="glass-card bg-[#032b35] border border-blue- accent/20 p-8 md:p-12 rounded-[32px]">
-            <div className="text-[10px] uppercase tracking-[0.2em] font-mono text-blue-accent/60 mb-8 font-bold">AFTER EMMA</div>
+            <div className="text-[10px] uppercase tracking-[0.2em] font-mono text-blue-accent/60 mb-8 font-bold">AFTER Lexa</div>
             <div className="space-y-4">
               {[
-                "Phone rings at 8pm. Emma picks up immediately.",
+                "Phone rings at 8pm. Lexa picks up immediately.",
                 "She greets them using your firm's name.",
                 "She collects their details and books the intake.",
                 "Potential client gets an instant confirmation text.",
                 "You get an SMS alert with the booking details.",
-                "$15,000 case is yours. While you finished the last one.",
+                "The case is yours. While you finished the last one.",
                 "Every single night. Every single weekend."
               ].map((text, i) => (
                 <div key={i} className="flex items-start gap-4 text-white">
@@ -501,10 +565,10 @@ const Why = () => (
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
-          { title: "Built for the solo and small PI firm.", desc: "Emma was designed for one type of practice. The attorney who is also the rainmaker — in depositions, in court, driving between client meetings. We handle the intake so you handle the cases." },
+          { title: "Built for the solo and small PI firm.", desc: "Lexa was designed for one type of practice. The attorney who is also the rainmaker — in depositions, in court, driving between client meetings. We handle the intake so you handle the cases." },
           { title: "Grounded in your signed retainers.", desc: "Every feature exists to get you more signed cases. Your leads, your consultations, your follow-ups — all handled while you are in the courtroom." },
-          { title: "Engineered to protect your case pipeline.", desc: "Every missed call is a case going to a competitor firm. Emma stops that permanently. No hiring. No training. No missed leads — ever again." },
-          { title: "Transparent by design.", desc: "See exactly how many leads Emma answered, how many consultations were booked, and how many reviews were collected — every single month in a clean report sent directly to you." }
+          { title: "Engineered to protect your case pipeline.", desc: "Every missed call is a case going to a competitor firm. Lexa stops that permanently. No hiring. No training. No missed leads — ever again." },
+          { title: "Transparent by design.", desc: "See exactly how many leads Lexa answered, how many consultations were booked, and how many reviews were collected — every single month in a clean report sent directly to you." }
         ].map((card, i) => (
           <motion.div 
             key={i}
@@ -534,8 +598,8 @@ const Solutions = () => (
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
         {[
-          { icon: <Monitor className="w-8 h-8 text-[#a8a8a8]" />, title: "One number. Every lead captured.", desc: "Emma answers from a single dedicated line. Every call your firm receives, answered within one ring, 24 hours a day." },
-          { icon: <Layout className="w-8 h-8 text-[#a8a8a8]" />, title: "Instant consultation booking. Every time.", desc: "The second a potential client calls, Emma qualifies their case and books a consultation directly into your calendar. No manual steps. No missed opportunities." },
+          { icon: <Monitor className="w-8 h-8 text-[#a8a8a8]" />, title: "One number. Every lead captured.", desc: "Lexa answers from a single dedicated line. Every call your firm receives, answered within one ring, 24 hours a day." },
+          { icon: <Layout className="w-8 h-8 text-[#a8a8a8]" />, title: "Instant consultation booking. Every time.", desc: "The second a potential client calls, Lexa qualifies their case and books a consultation directly into your calendar. No manual steps. No missed opportunities." },
           { icon: <Share2 className="w-8 h-8 text-[#a8a8a8]" />, title: "Your reputation, growing automatically.", desc: "Every closed case triggers a one-click Google review request. Build your firm's reputation automatically without asking a single client yourself." }
         ].map((item, i) => (
           <div key={i} className="flex flex-col gap-6">
@@ -552,7 +616,7 @@ const Solutions = () => (
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
-          { label: "CALLING LAYER", title: "Twilio as your call layer.", desc: "Every call runs through a dedicated Twilio number configured for your firm. Reliable, professional, and live within 48 hours of setup.", img: "badge_security" },
+          { label: "CALLING LAYER", title: "Twilio as your call layer.", desc: "Every call runs through a dedicated Twilio number configured for your firm. Reliable, professional, and ready to answer your calls.", img: "badge_security" },
           { label: "FOLLOW UP", title: "Every lead followed up automatically.", desc: "Callers who don't book enter a 3-message follow-up sequence over 5 days. Unsigned retainers get a 4-message sequence over 7 days. No case ever falls through the cracks.", img: "badge_compliance" },
           { label: "REPUTATION", title: "Reputation protected automatically.", desc: "Every closed case triggers a check-in. Unhappy clients are caught before they post publicly. You are alerted immediately and given 30 minutes to respond.", img: "badge_hosting" }
         ].map((item, i) => (
@@ -577,14 +641,14 @@ const Features = () => (
     <div className="page-wrapper">
       <div className="text-center mb-16 md:mb-32 sticky top-[10vh] z-10 py-4 bg-white/80 backdrop-blur-sm">
         <h2 className="common-title text-black text-3xl md:text-6xl mb-4 leading-tight">Everything your intake team should do. Handled.</h2>
-        <p className="text-lg md:text-2xl text-black/40 font-title italic">Here is exactly how Emma works.</p>
+        <p className="text-lg md:text-2xl text-black/40 font-title italic">Here is exactly how Lexa works.</p>
       </div>
 
       <div className="relative flex flex-col gap-[60px] md:gap-[120px] pb-32">
         {[
-          { color: "bg-[#2c150c]", title: "Answer every lead on every shift at once.", desc: "Emma covers mornings, evenings, weekends, and holidays — without overtime, without sick days, without training. Every potential client always reaches a live, professional voice no matter when they call." },
-          { color: "bg-[#032b35]", title: "Turn every closed case into a five-star review.", desc: "The moment a case is closed, Emma sends the client a one-click Google review request. Two hours later she checks in to make sure everything went smoothly. Happy clients become your best referral source." },
-          { color: "bg-[#1d2c0c]", title: "Emma is live in under 48 hours. No tech needed.", desc: "You give us your firm's details. We configure Emma completely. You touch zero technology. Within 48 hours your calls are being answered, leads are being qualified, and consultations are being booked." },
+          { color: "bg-[#2c150c]", title: "Answer every lead on every shift at once.", desc: "Lexa covers mornings, evenings, weekends, and holidays — without overtime, without sick days, without training. Every potential client always reaches a live, professional voice no matter when they call." },
+          { color: "bg-[#032b35]", title: "Turn every closed case into a five-star review.", desc: "The moment a case is closed, Lexa sends the client a one-click Google review request. Two hours later she checks in to make sure everything went smoothly. Happy clients become your best referral source." },
+          { color: "bg-[#1d2c0c]", title: "Lexa is live in under 48 hours. No tech needed.", desc: "You give us your firm's details. We configure Lexa completely. You touch zero technology. Your calls are being answered, leads are being qualified, and consultations are being booked instantly." },
         ].map((card, i) => (
           <div 
             key={i} 
@@ -611,8 +675,8 @@ const Features = () => (
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {[
-            { num: "01", title: "Your phone rings.", desc: "A potential client calls your existing number. It rings once at your firm and simultaneously routes to Emma as backup." },
-            { num: "02", title: "Emma answers in your firm's name.", desc: "\"Thank you for calling Anderson Injury Law, this is Emma — are you calling about a recent accident or injury?\"" },
+            { num: "01", title: "Your phone rings.", desc: "A potential client calls your existing number. It rings once at your firm and simultaneously routes to Lexa as backup." },
+            { num: "02", title: "Lexa answers in your firm's name.", desc: "\"Thank you for calling Anderson Injury Law, this is Lexa — are you calling about a recent accident or injury?\"" },
             { num: "03", title: "She qualifies the case and books the consultation.", desc: "Name, phone number, accident type, date of incident, injury details, insurance status — all collected in real time and booked directly into your calendar without you touching anything." },
             { num: "04", title: "You get an instant SMS alert.", desc: "You receive a text with the lead's full case details and consultation confirmation within 60 seconds. The case is yours. You never missed a thing." }
           ].map((step, i) => (
@@ -629,10 +693,10 @@ const Features = () => (
 
       <div className="relative flex flex-col gap-[60px] md:gap-[120px] pb-32">
         {[
-          { color: "bg-[#361e02]", title: "Accidents don't wait for business hours. Neither should your intake.", desc: "Car accidents happen at midnight. Slip and falls happen on Sundays. Workplace injuries happen on holidays. Emma makes sure you never miss a single lead. Not at 9pm. Not on Saturday. Not while you are in the middle of a deposition." },
-          { color: "bg-[#2c150c]", title: "Reengage past clients on autopilot.", desc: "Every past client is automatically enrolled in a reengagement sequence. Emma periodically reaches out to ask if they have friends or family who need legal help. Referrals come in without you lifting a finger." },
-          { color: "bg-[#032b35]", title: "See exactly how your intake is performing.", desc: "Track every lead answered, every consultation booked, every retainer signed, and every review collected. Your monthly report tells the full story so you always know what Emma is winning for you." },
-          { color: "bg-[#1d2c0c]", title: "Your intake updates the moment you do.", desc: "Add a new practice area, change your consultation hours, update your intake questions — everything is adjusted in Emma instantly. No downtime, no re-training, no waiting. Changes go live immediately." }
+          { color: "bg-[#361e02]", title: "Accidents don't wait for business hours. Neither should your intake.", desc: "Car accidents happen at midnight. Slip and falls happen on Sundays. Workplace injuries happen on holidays. Lexa makes sure you never miss a single lead. Not at 9pm. Not on Saturday. Not while you are in the middle of a deposition." },
+          { color: "bg-[#2c150c]", title: "Reengage past clients on autopilot.", desc: "Every past client is automatically enrolled in a reengagement sequence. Lexa periodically reaches out to ask if they have friends or family who need legal help. Referrals come in without you lifting a finger." },
+          { color: "bg-[#032b35]", title: "See exactly how your intake is performing.", desc: "Track every lead answered, every consultation booked, every retainer signed, and every review collected. Your monthly report tells the full story so you always know what Lexa is winning for you." },
+          { color: "bg-[#1d2c0c]", title: "Your intake updates the moment you do.", desc: "Add a new practice area, change your consultation hours, update your intake questions — everything is adjusted in Lexa instantly. No downtime, no re-training, no waiting. Changes go live immediately." }
         ].map((card, i) => (
           <div 
             key={i} 
@@ -667,12 +731,12 @@ const CaseStudies = () => (
             body: "Every pilot firm sees 100% of their inbound calls answered starting day one — no exceptions, no after-hours gaps."
           },
           { 
-            title: "Live in 48 hours", 
-            body: "No technical setup on your end. We configure Emma completely and she's answering calls within two business days."
+            title: "Quick Setup", 
+            body: "No technical setup on your end. We configure Lexa completely and she's answering calls within two business days."
           },
           { 
             title: "Cancel anytime", 
-            body: "No contracts. If Emma doesn't perform, you walk away — we only keep clients who are seeing real results."
+            body: "No contracts. If Lexa doesn't perform, you walk away — we only keep clients who are seeing real results."
           }
         ].map((item, i) => (
           <div 
@@ -701,15 +765,15 @@ const Guarantee = () => (
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-accent/5 blur-[120px] rounded-full pointer-events-none" />
         
         <div className="relative z-10 w-full max-w-4xl mx-auto">
-          <h2 className="common-title text-4xl md:text-6xl text-white mb-8">We stand behind every lead Emma answers.</h2>
+          <h2 className="common-title text-4xl md:text-6xl text-white mb-8">We stand behind every lead Lexa answers.</h2>
           <p className="text-lg md:text-2xl text-white/80 leading-relaxed mb-12">
-            If you set up Emma and do not see a measurable difference<br className="hidden md:block" />
+            If you set up Lexa and do not see a measurable difference<br className="hidden md:block" />
             in your answered leads within the first 30 days —<br className="hidden md:block" />
             we will refund your first month. No paperwork. No argument.<br className="hidden md:block" />
             Just tell us and we will process it the same day.
           </p>
           <p className="text-lg md:text-2xl text-white/80 leading-relaxed mb-16">
-            And if Emma ever misses a call due to a technical failure<br className="hidden md:block" />
+            And if Lexa ever misses a call due to a technical failure<br className="hidden md:block" />
             on our end — we credit that month's fee automatically.<br className="hidden md:block" />
             No questions asked.
           </p>
@@ -744,7 +808,7 @@ const FAQ = ({ onNavigate }: { onNavigate: (view: 'landing' | 'login' | 'signup'
           <h2 className="common-title text-5xl mb-4">Got questions?</h2>
           <p className="text-2xl text-white/50 font-title mb-8">We have the answers.</p>
           <button 
-            onClick={() => window.location.href = 'mailto:rahul@emmadesk.xyz'}
+            onClick={() => window.location.href = 'mailto:rahul@lexaintake.com'}
             className="common-button common-button-primary px-6 py-3 text-sm flex items-center gap-2"
           >
             Ask us a question →
@@ -754,11 +818,11 @@ const FAQ = ({ onNavigate }: { onNavigate: (view: 'landing' | 'login' | 'signup'
         <div className="lg:w-2/3 flex flex-col gap-12">
           {[
             { q: "How long does setup take?", a: "Most law firms are fully live within 48 hours. You provide your firm's details, we configure everything. You touch zero technology." },
-            { q: "Will Emma sound robotic to potential clients?", a: "No. Call the demo number right now and hear for yourself. Emma sounds like a warm, professional intake specialist who has worked at your firm for years. Your potential clients will not know the difference." },
-            { q: "Do I need any special equipment or phone system?", a: "No. Emma works with your existing phone number through a simple call forwarding setup. No new hardware. No apps to install. No technical knowledge needed." },
-            { q: "What happens if Emma cannot answer a question?", a: "Emma collects the caller's name, number, and case details, then immediately sends you an SMS alert so you can call back when you are free. No lead is ever lost." },
-            { q: "What happens if I want to cancel?", a: "No long-term contracts. Cancel anytime with 30 days notice. Your call data, client records, and booking history are exported and sent to you immediately. And if Emma ever misses a call due to a technical failure on our end — we credit that month's fee. No questions asked. We stand behind every call she answers." },
-            { q: "What if potential clients don't want to talk to a machine?", a: "Call the demo line right now. Emma sounds human. Our clients regularly tell us their callers had no idea they were speaking to an AI. The only thing your leads care about is that someone answered — and Emma always does." }
+            { q: "Will Lexa sound robotic to potential clients?", a: "No. Call the demo number right now and hear for yourself. Lexa sounds like a warm, professional intake specialist who has worked at your firm for years. Your potential clients will not know the difference." },
+            { q: "Do I need any special equipment or phone system?", a: "No. Lexa works with your existing phone number through a simple call forwarding setup. No new hardware. No apps to install. No technical knowledge needed." },
+            { q: "What happens if Lexa cannot answer a question?", a: "Lexa collects the caller's name, number, and case details, then immediately sends you an SMS alert so you can call back when you are free. No lead is ever lost." },
+            { q: "What happens if I want to cancel?", a: "No long-term contracts. Cancel anytime with 30 days notice. Your call data, client records, and booking history are exported and sent to you immediately. And if Lexa ever misses a call due to a technical failure on our end — we credit that month's fee. No questions asked. We stand behind every call she answers." },
+            { q: "What if potential clients don't want to talk to a machine?", a: "Call the demo line right now. Lexa sounds human. Our clients regularly tell us their callers had no idea they were speaking to an AI. The only thing your leads care about is that someone answered — and Lexa always does." }
           ].map((item, i) => (
             <div key={i} className="flex flex-col gap-4 overflow-hidden">
               <motion.div 
@@ -797,28 +861,29 @@ const Footer = ({ onNavigate }: { onNavigate?: (view: 'landing' | 'login' | 'sig
     <div className="page-wrapper">
       <div className="mb-24 text-center">
         <h2 className="common-title text-black text-4xl md:text-6xl mb-6">Stop missing leads. Start signing more cases.</h2>
-        <p className="text-xl text-black/50 mb-10 max-w-2xl mx-auto">Personal injury firms across the USA are setting up Emma to capture every lead — day or night. Early clients get locked-in pricing and priority setup.</p>
+        <p className="text-xl text-black/50 mb-10 max-w-2xl mx-auto">Personal injury firms across the USA are setting up Lexa to capture every lead — day or night. Early clients get locked-in pricing and priority setup.</p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="https://cal.com/emmadesk/emma-desk" className="common-button common-button-primary px-8 py-4 text-lg">Book a free 15-min call →</a>
+          <a href="https://cal.com/lexaintake/lexa-desk" className="common-button common-button-primary px-8 py-4 text-lg">Book a free 15-min call →</a>
         </div>
-        <p className="mt-4 text-xs text-black/40">Free setup call · No contracts · Live in 48 hours</p>
+        <p className="mt-4 text-xs text-black/40">Free setup call · No contracts · Transparent pricing</p>
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-12 mb-24">
         <div className="flex flex-col gap-4">
           <p className="font-bold text-sm uppercase tracking-widest text-black/30">Product</p>
-          {['Why Emma', 'Features', 'Integrations'].map(item => (
+          {['Why Lexa', 'Features', 'Integrations'].map(item => (
             <a key={item} href="#" className="font-title text-2xl text-[#707070] hover:text-black transition-colors">{item}</a>
           ))}
         </div>
         <div className="flex flex-col gap-4">
           <p className="font-bold text-sm uppercase tracking-widest text-black/30">Company</p>
-          {['About', 'Results', 'Contact', 'Privacy Policy'].map(item => (
+          {['About', 'Results', 'LinkedIn', 'Contact', 'Privacy Policy'].map(item => (
             <button 
               key={item} 
               onClick={() => {
                 if (item === 'Privacy Policy') onNavigate?.('privacy');
-                else if (item === 'Contact') window.location.href = 'mailto:rahul@emmadesk.xyz';
+                else if (item === 'Contact') window.location.href = 'mailto:rahul@lexaintake.com';
+                else if (item === 'LinkedIn') window.open('https://www.linkedin.com/in/krishna-wararkar-5697783a2', '_blank');
               }}
               className="font-title text-2xl text-[#707070] hover:text-black transition-colors text-left"
             >
@@ -828,7 +893,7 @@ const Footer = ({ onNavigate }: { onNavigate?: (view: 'landing' | 'login' | 'sig
         </div>
         <div className="flex flex-col gap-4">
           <p className="text-[#707070] text-sm">Have questions?</p>
-          <a href="mailto:rahul@emmadesk.xyz" className="common-button bg-[#ebebeb] text-black px-6 py-3 text-sm flex items-center justify-between w-full">
+          <a href="mailto:rahul@lexaintake.com" className="common-button bg-[#ebebeb] text-black px-6 py-3 text-sm flex items-center justify-between w-full">
             Contact us <ChevronRight className="w-4 h-4 text-[#8c8c8c]" />
           </a>
         </div>
@@ -844,9 +909,9 @@ const Footer = ({ onNavigate }: { onNavigate?: (view: 'landing' | 'login' | 'sig
             <span>·</span>
             <button onClick={() => onNavigate?.('privacy')} className="hover:text-black">Privacy policy</button>
           </div>
-          <div>© 2025 EmmaDesk AI. All rights reserved.</div>
+          <div>© 2026 LexaIntake AI. All rights reserved.</div>
         </div>
-        <div className="text-[15vw] font-title text-black/5 leading-none text-center select-none">EmmaDesk</div>
+        <div className="text-[15vw] font-title text-black/5 leading-none text-center select-none">LexaIntake</div>
       </div>
     </div>
   </footer>
@@ -871,7 +936,7 @@ const LiveDemoSection = ({ onNavigate }: { onNavigate?: (view: 'landing' | 'logi
                  what to do and I'm in a lot of pain"
               </div>
               <div className="bg-[#2b6dff] text-white rounded-2xl rounded-tr-sm p-4 text-sm w-[85%] self-end">
-                Emma: "I'm so sorry you're going through <br/>
+                Lexa: "I'm so sorry you're going through <br/>
                 this — let's get you the help you need. <br/>
                 Can I get your name and the best <br/>
                 number for an attorney to call you?"
@@ -881,14 +946,14 @@ const LiveDemoSection = ({ onNavigate }: { onNavigate?: (view: 'landing' | 'logi
                 my number is 602-555-0184"
               </div>
               <div className="bg-[#2b6dff] text-white rounded-2xl rounded-tr-sm p-4 text-sm w-[85%] self-end">
-                Emma: "Thank you Sarah. I've got a consultation <br/>
+                Lexa: "Thank you Sarah. I've got a consultation <br/>
                 scheduled for you tomorrow at 10 AM. <br/>
                 You'll get a confirmation text right now."
               </div>
             </div>
             <div className="mt-6 pt-4 border-t border-white/10 text-center">
               <p className="text-[10px] text-[#a8a8a8] leading-relaxed">
-                This is Emma. This is what your <br/>
+                This is Lexa. This is what your <br/>
                 potential clients hear. Every call. Every night.
               </p>
             </div>
@@ -897,14 +962,14 @@ const LiveDemoSection = ({ onNavigate }: { onNavigate?: (view: 'landing' | 'logi
         <div className="flex-1">
           <h2 className="common-title text-4xl mb-4">This is what your potential clients hear.</h2>
           <p className="text-lg text-[#a8a8a8] leading-relaxed mb-8">
-            Emma answers exactly like this — warm, <br />
+            Lexa answers exactly like this — warm, <br />
             professional, and calm — whether it is <br />
             9 in the morning or 11 at night. <br />
             Your potential clients never reach voicemail. <br />
             Your competitors never get the case.
           </p>
           <a 
-            href="https://cal.com/emmadesk/emma-desk"
+            href="https://cal.com/lexaintake/lexa-desk"
             className="common-button common-button-primary px-8 py-4 text-lg flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(43,108,255,0.4)]"
           >
             Book a free 15-min call <ChevronRight className="w-5 h-5" />
@@ -967,7 +1032,7 @@ const AuthPage = ({ initialMode, onBack, onComplete }: { initialMode: 'login' | 
 
       <header className="relative z-10 py-8 px-6 md:px-12 flex items-center justify-between">
         <div className="flex items-center gap-2 cursor-pointer group" onClick={onBack}>
-          <span className="text-2xl font-title text-white">EmmaDesk</span>
+          <span className="text-2xl font-title text-white">LexaIntake</span>
           <ChevronRight className="w-4 h-4 text-white rotate-90 group-hover:-rotate-90 transition-transform" />
         </div>
         <button 
@@ -1061,14 +1126,14 @@ const AuthPage = ({ initialMode, onBack, onComplete }: { initialMode: 'login' | 
           </div>
 
           <p className="text-center mt-8 text-[10px] text-[#a8a8a8] uppercase tracking-widest leading-relaxed">
-            By continuing, you agree to EmmaDesk's <br />
+            By continuing, you agree to LexaIntake's <br />
             <a href="#" className="text-white hover:underline">Terms of Service</a> and <a href="#" className="text-white hover:underline">Privacy Policy</a>.
           </p>
         </motion.div>
       </main>
 
       <footer className="relative z-10 py-8 text-center text-[10px] text-[#a8a8a8] uppercase tracking-widest">
-        © 2025 EmmaDesk · All rights reserved
+        © 2026 LexaIntake · All rights reserved
       </footer>
     </div>
   );
@@ -1121,7 +1186,7 @@ const OnboardingFlow = ({ onComplete }: { onComplete: () => void }) => {
 
       <header className="relative z-10 py-8 px-6 md:px-12">
         <div className="flex items-center gap-2">
-          <span className="text-2xl font-title text-white">EmmaDesk</span>
+          <span className="text-2xl font-title text-white">LexaIntake</span>
           <ChevronRight className="w-4 h-4 text-white rotate-90" />
         </div>
       </header>
@@ -1140,7 +1205,7 @@ const OnboardingFlow = ({ onComplete }: { onComplete: () => void }) => {
                 <div className="text-center mb-10">
                   <h1 className="common-title text-3xl md:text-4xl mb-3">Tell us about your business</h1>
                   <p className="text-[#a8a8a8] text-sm leading-relaxed">
-                    Share your firm's name, practice areas, hours, and jurisdictions you handle. We use this to configure Emma specifically for your law firm.
+                    Share your firm's name, practice areas, hours, and jurisdictions you handle. We use this to configure Lexa specifically for your law firm.
                   </p>
                 </div>
 
@@ -1209,7 +1274,7 @@ const OnboardingFlow = ({ onComplete }: { onComplete: () => void }) => {
                 <div className="text-center mb-10">
                   <h1 className="common-title text-3xl md:text-4xl mb-3">How do you handle calls currently?</h1>
                   <p className="text-[#a8a8a8] text-sm leading-relaxed">
-                    Help us personalize your EmmaDesk dashboard for how you actually operate.
+                    Help us personalize your LexaIntake dashboard for how you actually operate.
                   </p>
                 </div>
 
@@ -1296,9 +1361,9 @@ const OnboardingFlow = ({ onComplete }: { onComplete: () => void }) => {
             >
               <div className="glass-card p-8 md:p-10 rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl">
                 <div className="text-center mb-10">
-                  <h1 className="common-title text-3xl md:text-4xl mb-3">We configure Emma for you</h1>
+                  <h1 className="common-title text-3xl md:text-4xl mb-3">We configure Lexa for you</h1>
                   <p className="text-[#a8a8a8] text-sm leading-relaxed">
-                    We program Emma with your business name, your services, your pricing, your calendar, and your exact greeting.
+                    We program Lexa with your business name, your services, your pricing, your calendar, and your exact greeting.
                   </p>
                 </div>
 
@@ -1307,7 +1372,7 @@ const OnboardingFlow = ({ onComplete }: { onComplete: () => void }) => {
                     <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">Primary Greeting</label>
                     <input 
                       type="text" 
-                      placeholder="e.g. Thank you for calling Anderson Injury Law, this is Emma..."
+                      placeholder="e.g. Thank you for calling Anderson Injury Law, this is Lexa..."
                       value={formData.productName}
                       onChange={(e) => setFormData({ ...formData, productName: e.target.value })}
                       className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-white/30 transition-colors"
@@ -1356,7 +1421,7 @@ const OnboardingFlow = ({ onComplete }: { onComplete: () => void }) => {
                 <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-8">
                   <Check className="w-10 h-10 text-green-500" />
                 </div>
-                <h1 className="common-title text-3xl md:text-4xl mb-4">Emma goes live on your number 🎉</h1>
+                <h1 className="common-title text-3xl md:text-4xl mb-4">Lexa goes live on your number 🎉</h1>
                 <p className="text-[#a8a8a8] text-sm mb-10 leading-relaxed">
                   Congratulations! Your calls are now protected. Appointments book automatically, leads get followed up, and your calendar fills.
                 </p>
@@ -1373,7 +1438,7 @@ const OnboardingFlow = ({ onComplete }: { onComplete: () => void }) => {
       </main>
 
       <footer className="relative z-10 py-8 text-center text-[10px] text-[#a8a8a8] uppercase tracking-widest">
-        © 2025 EmmaDesk · All rights reserved
+        © 2026 LexaIntake · All rights reserved
       </footer>
     </div>
   );
@@ -1531,7 +1596,7 @@ const Dashboard = ({ onLogout }: { onLogout: () => void }) => {
       {/* Sidebar */}
       <aside className={`fixed lg:static inset-y-0 left-0 w-[240px] bg-black border-r border-white/5 z-[120] flex flex-col transition-transform duration-300 lg:translate-x-0 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="p-8">
-          <div className="text-2xl font-title text-white mb-6">EmmaDesk</div>
+          <div className="text-2xl font-title text-white mb-6">LexaIntake</div>
           <div className="h-px w-full bg-white/5 mb-8" />
             
           <div className="flex items-center gap-3 mb-10">
@@ -1581,7 +1646,7 @@ const Dashboard = ({ onLogout }: { onLogout: () => void }) => {
       <div className="flex-1 flex flex-col min-w-0 h-screen overflow-hidden relative">
         {/* Mobile Top Bar */}
         <header className="lg:hidden flex items-center justify-between p-6 border-b border-white/5 bg-black/80 backdrop-blur-md z-[100]">
-          <div className="text-xl font-title">EmmaDesk</div>
+          <div className="text-xl font-title">LexaIntake</div>
           <button onClick={() => setIsSidebarOpen(true)} className="p-2 bg-white/5 rounded-lg">
             <Menu className="w-5 h-5" />
           </button>
@@ -1619,7 +1684,7 @@ const Dashboard = ({ onLogout }: { onLogout: () => void }) => {
                   </div>
                   <div>
                     <h3 className="text-xl font-title text-white">{activePage} Feed</h3>
-                    <p className="text-sm text-white/30 max-w-xs mx-auto">Your live {activePage.toLowerCase()} data from Emma will appear here.</p>
+                    <p className="text-sm text-white/30 max-w-xs mx-auto">Your live {activePage.toLowerCase()} data from Lexa will appear here.</p>
                   </div>
                 </div>
               )}
@@ -1634,7 +1699,7 @@ const Dashboard = ({ onLogout }: { onLogout: () => void }) => {
 // --- Main App ---
 
 export default function App() {
-  const [view, setView] = useState<'landing' | 'login' | 'signup' | 'onboarding' | 'dashboard' | 'call' | 'privacy' | 'terms' | 'talk-to-emma'>('landing');
+  const [view, setView] = useState<'landing' | 'login' | 'signup' | 'onboarding' | 'dashboard' | 'call' | 'privacy' | 'terms' | 'talk-to-lexa'>('landing');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -1668,7 +1733,7 @@ export default function App() {
           >
             <div className="space-y-12">
               <div className="space-y-4">
-                <p className="text-sm font-bold uppercase tracking-[0.2em] text-blue-accent">Talk to Emma right now</p>
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-blue-accent">Talk to Lexa right now</p>
                 <h1 className="common-title text-5xl lg:text-7xl tracking-tight text-white !leading-tight">
                   +1 7743151065
                 </h1>
@@ -1676,7 +1741,7 @@ export default function App() {
 
               <div className="space-y-4 text-xl md:text-2xl text-[#a8a8a8] font-title">
                 <p>Call this number from your phone</p>
-                <p>Emma will answer within one ring</p>
+                <p>Lexa will answer within one ring</p>
                 <p>Experience exactly what potential clients will hear</p>
               </div>
 
@@ -1687,7 +1752,7 @@ export default function App() {
                   onClick={() => window.location.href = 'tel:+17743151065'}
                   className="common-button common-button-primary px-8 py-4 text-base font-bold flex items-center gap-2 shadow-[0_0_30px_rgba(43,108,255,0.4)]"
                 >
-                  Call Emma Now
+                  Call Lexa Now
                 </button>
               </div>
             </div>
@@ -1721,12 +1786,12 @@ export default function App() {
     );
   }
 
-  if (view === 'talk-to-emma') {
+  if (view === 'talk-to-lexa') {
     return (
       <div className="min-h-screen bg-black selection:bg-[#e0e0e0] selection:text-black flex flex-col relative overflow-hidden text-white">
         <Header onNavigate={setView} simple={true} />
         <div className="flex-1 mt-20">
-          <TalkToEmmaPage onBack={() => setView('landing')} />
+          <TalkToLexaPage onBack={() => setView('landing')} />
         </div>
         <Footer onNavigate={setView} />
       </div>
@@ -1751,7 +1816,7 @@ export default function App() {
         <section className="py-24 bg-black text-white border-t border-white/5">
           <div className="page-wrapper">
             <div className="text-center mb-16">
-              <h2 className="common-title text-4xl md:text-6xl mb-4 leading-tight">Emma vs An Intake Specialist vs Voicemail</h2>
+              <h2 className="common-title text-4xl md:text-6xl mb-4 leading-tight">Lexa vs An Intake Specialist vs Voicemail</h2>
               <p className="text-lg md:text-2xl text-white/40 font-title italic">Here is what you are actually choosing between.</p>
             </div>
             
@@ -1761,27 +1826,27 @@ export default function App() {
                   <thead>
                     <tr className="border-b border-white/10">
                       <th className="p-6 md:p-8"></th>
-                      <th className="p-6 md:p-8 bg-[#2b6dff]/10 text-[#2b6dff] font-bold">Emma</th>
+                      <th className="p-6 md:p-8 bg-[#2b6dff]/10 text-[#2b6dff] font-bold">Lexa</th>
                       <th className="p-6 md:p-8 text-white/60">Human Intake Specialist</th>
                       <th className="p-6 md:p-8 text-white/60">Just Voicemail</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-white/5">
                     {[
-                      { label: "Answers calls 24/7", emma: "✓", human: "✗ (8hrs only)", voice: "✗" },
-                      { label: "Cost per month", emma: "$297", human: "$2,500–$3,500", voice: "$0 (but costs cases)" },
-                      { label: "Qualifies leads & books consultations", emma: "✓", human: "✓", voice: "✗" },
-                      { label: "Follows up on potential clients", emma: "✓", human: "✗", voice: "✗" },
-                      { label: "Requests Google reviews", emma: "✓", human: "✗", voice: "✗" },
-                      { label: "Consultation reminders", emma: "✓", human: "✗", voice: "✗" },
-                      { label: "Works weekends & holidays", emma: "✓", human: "✗", voice: "✗" },
-                      { label: "Sick days", emma: "Never", human: "Yes", voice: "N/A" },
-                      { label: "Setup time", emma: "48 hours", human: "Weeks of hiring", voice: "Already set up" },
-                      { label: "Sends monthly reports", emma: "✓", human: "✗", voice: "✗" }
+                      { label: "Answers calls 24/7", Lexa: "✓", human: "✗ (8hrs only)", voice: "✗" },
+                      { label: "Cost per month", Lexa: "$297", human: "$2,500–$3,500", voice: "$0 (but costs cases)" },
+                      { label: "Qualifies leads & books consultations", Lexa: "✓", human: "✓", voice: "✗" },
+                      { label: "Follows up on potential clients", Lexa: "✓", human: "✗", voice: "✗" },
+                      { label: "Requests Google reviews", Lexa: "✓", human: "✗", voice: "✗" },
+                      { label: "Consultation reminders", Lexa: "✓", human: "✗", voice: "✗" },
+                      { label: "Works weekends & holidays", Lexa: "✓", human: "✗", voice: "✗" },
+                      { label: "Sick days", Lexa: "Never", human: "Yes", voice: "N/A" },
+                      { label: "Setup time", Lexa: "1-2 days", human: "Weeks of hiring", voice: "Already set up" },
+                      { label: "Sends monthly reports", Lexa: "✓", human: "✗", voice: "✗" }
                     ].map((row, i) => (
                       <tr key={i} className="hover:bg-white/5 transition-colors">
                         <td className="p-6 md:p-8 text-white font-medium">{row.label}</td>
-                        <td className="p-6 md:p-8 text-white bg-[#2b6dff]/5 font-bold">{row.emma}</td>
+                        <td className="p-6 md:p-8 text-white bg-[#2b6dff]/5 font-bold">{row.Lexa}</td>
                         <td className="p-6 md:p-8 text-white/40">{row.human}</td>
                         <td className="p-6 md:p-8 text-white/40">{row.voice}</td>
                       </tr>
@@ -1791,7 +1856,7 @@ export default function App() {
               </div>
             </div>
             <div className="mt-8 text-center text-white/40 text-sm">
-              "Emma does more than a full-time intake specialist at less than 10% of the cost."
+              "Lexa does more than a full-time intake specialist at less than 10% of the cost."
             </div>
           </div>
         </section>
@@ -1801,10 +1866,10 @@ export default function App() {
           <div className="page-wrapper">
             <div className="text-center mb-16">
               <h2 className="common-title text-4xl md:text-6xl mb-4 leading-tight">No surprises, no hidden fees.</h2>
-              <p className="text-lg md:text-2xl text-white/40 font-title italic mb-4">Simple flat pricing. Emma works harder the busier you get.</p>
+              <p className="text-lg md:text-2xl text-white/40 font-title italic mb-4">Simple flat pricing. Lexa works harder the busier you get.</p>
               <p className="text-sm md:text-base text-white/40 italic">
                 A human intake specialist costs $2,500 – $3,500 per month and works 8 hours a day.<br />
-                Emma costs a fraction of that and works 24 hours a day, 7 days a week, 365 days a year.
+                Lexa costs a fraction of that and works 24 hours a day, 7 days a week, 365 days a year.
               </p>
             </div>
 
@@ -1822,7 +1887,7 @@ export default function App() {
                 </div>
                 <div className="flex-1 space-y-4 mb-10 text-sm">
                   {[
-                    { text: "Emma answers all inbound calls 24/7", included: true },
+                    { text: "Lexa answers all inbound calls 24/7", included: true },
                     { text: "Consultation booking into your calendar", included: true },
                     { text: "Missed call text back within 60 seconds", included: true },
                     { text: "Consultation confirmation SMS and email", included: true },
@@ -1839,7 +1904,7 @@ export default function App() {
                     </div>
                   ))}
                 </div>
-                <a href="https://cal.com/emmadesk/emma-desk" className="common-button bg-white/5 border border-white/10 hover:border-white/30 text-white w-full py-4 text-sm font-bold mb-4 flex items-center justify-center">
+                <a href="https://cal.com/lexaintake/lexa-desk" className="common-button bg-white/5 border border-white/10 hover:border-white/30 text-white w-full py-4 text-sm font-bold mb-4 flex items-center justify-center">
                   Get started →
                 </a>
                 <div className="text-center text-[10px] text-white/40 font-mono tracking-widest">
@@ -1878,7 +1943,7 @@ export default function App() {
                     </div>
                   ))}
                 </div>
-                <a href="https://cal.com/emmadesk/emma-desk" className="common-button common-button-primary w-full py-4 text-sm font-bold mb-4 shadow-[0_0_40px_rgba(43,108,255,0.4)] flex items-center justify-center">
+                <a href="https://cal.com/lexaintake/lexa-desk" className="common-button common-button-primary w-full py-4 text-sm font-bold mb-4 shadow-[0_0_40px_rgba(43,108,255,0.4)] flex items-center justify-center">
                   Get started →
                 </a>
                 <div className="text-center text-[10px] text-white/40 font-mono tracking-widest">
@@ -1901,11 +1966,11 @@ export default function App() {
                   {[
                     { text: "Everything in Growth", included: true },
                     { text: "Multi-attorney scheduling support", included: true },
-                    { text: "Custom Emma voice and greeting", included: true },
+                    { text: "Custom Lexa voice and greeting", included: true },
                     { text: "Advanced monthly analytics dashboard", included: true },
                     { text: "Dedicated account manager", included: true },
                     { text: "Priority phone support", included: true },
-                    { text: "Early access to new Emma features", included: true },
+                    { text: "Early access to new Lexa features", included: true },
                     { text: "Setup for multiple jurisdictions", included: true }
                   ].map((feat, i) => (
                     <div key={i} className="flex items-start gap-3 text-white">
@@ -1914,7 +1979,7 @@ export default function App() {
                     </div>
                   ))}
                 </div>
-                <a href="https://cal.com/emmadesk/emma-desk" className="common-button bg-white/5 border border-white/10 hover:border-white/30 text-white w-full py-4 text-sm font-bold mb-4 flex items-center justify-center">
+                <a href="https://cal.com/lexaintake/lexa-desk" className="common-button bg-white/5 border border-white/10 hover:border-white/30 text-white w-full py-4 text-sm font-bold mb-4 flex items-center justify-center">
                   Get started →
                 </a>
                 <div className="text-center text-[10px] text-white/40 font-mono tracking-widest">
@@ -1930,18 +1995,18 @@ export default function App() {
 
         <section className="py-32 bg-black text-white">
           <div className="page-wrapper flex flex-col lg:flex-row items-end justify-between gap-12">
-            <h2 className="common-title text-6xl lg:text-8xl flex-1">Get started with EmmaDesk today.</h2>
+            <h2 className="common-title text-6xl lg:text-8xl flex-1">Get started with LexaIntake today.</h2>
             <div className="flex-1 flex flex-col items-start gap-4">
               <div className="flex gap-4 w-full">
                 <a 
-                  href="https://cal.com/emmadesk/emma-desk"
+                  href="https://cal.com/lexaintake/lexa-desk"
                   className="common-button common-button-primary px-8 py-4 text-lg flex-1 flex items-center justify-center gap-2"
                 >
                   Book a free 15 minutes call <ChevronRight className="w-4 h-4" />
                 </a>
               </div>
               <div className="text-xs text-[#a8a8a8]">
-                <span className="text-white font-medium">Live in 48 hours</span> · No contracts required
+                <span className="text-white font-medium">Quick setup process</span> · No contracts required
               </div>
             </div>
           </div>
