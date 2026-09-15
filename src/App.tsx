@@ -343,9 +343,15 @@ const Header = ({ onNavigate, simple = false }: { onNavigate: (view: any) => voi
           </button>
           <button 
             onClick={() => onNavigate('signup')}
-            className="common-button common-button-primary px-4 py-2 text-sm whitespace-nowrap"
+            className="text-sm font-medium text-[#a8a8a8] hover:text-white px-4 py-2 transition-all hidden sm:block"
           >
             Get Started
+          </button>
+          <button 
+            onClick={() => onNavigate('signup')}
+            className="common-button common-button-primary px-4 py-2 text-sm whitespace-nowrap"
+          >
+            Get Started for Free
           </button>
         </div>
       </div>
@@ -1052,8 +1058,9 @@ const AuthPage = ({ initialMode, onBack, onComplete }: { initialMode: 'login' | 
     <div className="min-h-screen bg-black text-white relative overflow-hidden flex flex-col">
       {/* Intense Background Glows */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
-        <div className="absolute top-[-20%] left-[-20%] w-[80%] h-[80%] bg-[#2b6cff]/30 blur-[160px] rounded-full animate-pulse" />
-        <div className="absolute bottom-[-20%] right-[-20%] w-[80%] h-[80%] bg-[#ff007f]/10 blur-[160px] rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-[-20%] left-[-20%] w-[80%] h-[80%] bg-[#2b6cff]/20 blur-[200px] rounded-full animate-pulse" />
+        <div className="absolute bottom-[-20%] right-[-20%] w-[80%] h-[80%] bg-[#2b6cff]/10 blur-[200px] rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-accent/5 blur-[120px] rounded-full pointer-events-none" />
       </div>
 
       <header className="relative z-10 py-8 px-6 md:px-12 flex items-center justify-between">
@@ -1071,20 +1078,34 @@ const AuthPage = ({ initialMode, onBack, onComplete }: { initialMode: 'login' | 
 
       <main className="flex-1 relative z-10 flex items-center justify-center p-6">
         <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="w-full max-w-md"
         >
           {/* Intense Glassmorphism Box */}
-          <div className="backdrop-blur-[40px] bg-white/[0.03] p-8 md:p-12 rounded-[40px] border border-white/20 shadow-[0_0_80px_rgba(43,108,255,0.15)] relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none opacity-50" />
+          <div className="backdrop-blur-[120px] bg-white/[0.01] p-8 md:p-12 rounded-[48px] border border-white/[0.15] shadow-[0_40px_100px_rgba(0,0,0,0.6),0_0_0_1px_rgba(255,255,255,0.05)_inset,0_20px_40px_rgba(0,0,0,0.3)] relative overflow-hidden group">
+            {/* Glossy Overlay & Highlights */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(255,255,255,0.1),transparent_50%)] pointer-events-none" />
+            <div className="absolute -top-[50%] -left-[50%] w-[200%] h-[200%] bg-[radial-gradient(circle_at_center,rgba(43,108,255,0.05),transparent_40%)] pointer-events-none animate-pulse" />
             
             <div className="relative z-10">
               <div className="text-center mb-10">
-                <h1 className="common-title text-3xl md:text-5xl mb-4 tracking-tight leading-tight">
-                  {mode === 'login' ? 'Welcome Back' : 'Get Started'}
-                </h1>
-                <p className="text-[#a8a8a8] text-sm font-medium">
+                <motion.h1 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="common-title text-4xl md:text-5xl mb-4 tracking-tight leading-tight"
+                >
+                  {mode === 'login' ? 'Welcome Back' : 'Create Account'}
+                </motion.h1>
+                <motion.p 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                  className="text-[#a8a8a8] text-sm font-medium"
+                >
                   {mode === 'login' 
                     ? "Don't have an account? " 
                     : "Already have an account? "}
@@ -1097,7 +1118,7 @@ const AuthPage = ({ initialMode, onBack, onComplete }: { initialMode: 'login' | 
                   >
                     {mode === 'login' ? 'Create one' : 'Log in'}
                   </button>
-                </p>
+                </motion.p>
               </div>
 
               {error && (
@@ -1108,7 +1129,11 @@ const AuthPage = ({ initialMode, onBack, onComplete }: { initialMode: 'login' | 
 
               <form className="space-y-6" onSubmit={handleSubmit}>
                 {mode === 'signup' && (
-                  <div className="space-y-2">
+                  <motion.div 
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    className="space-y-2 overflow-hidden"
+                  >
                     <label className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] ml-1">Full Name</label>
                     <input 
                       required
@@ -1116,9 +1141,9 @@ const AuthPage = ({ initialMode, onBack, onComplete }: { initialMode: 'login' | 
                       placeholder="Enter your name"
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-blue-accent/50 focus:bg-white/[0.08] transition-all"
+                      className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-5 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-blue-accent/50 focus:bg-white/[0.06] transition-all"
                     />
-                  </div>
+                  </motion.div>
                 )}
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] ml-1">Email Address</label>
@@ -1128,7 +1153,7 @@ const AuthPage = ({ initialMode, onBack, onComplete }: { initialMode: 'login' | 
                     placeholder="name@company.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-blue-accent/50 focus:bg-white/[0.08] transition-all"
+                    className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-5 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-blue-accent/50 focus:bg-white/[0.06] transition-all"
                   />
                 </div>
                 <div className="space-y-2">
@@ -1144,16 +1169,17 @@ const AuthPage = ({ initialMode, onBack, onComplete }: { initialMode: 'login' | 
                     placeholder="••••••••"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-blue-accent/50 focus:bg-white/[0.08] transition-all"
+                    className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-5 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-blue-accent/50 focus:bg-white/[0.06] transition-all"
                   />
                 </div>
 
                 <button 
                   disabled={isLoading}
-                  className="common-button common-button-primary w-full py-5 text-base font-bold flex items-center justify-center gap-3 group shadow-[0_20px_40px_rgba(43,108,255,0.2)] hover:shadow-[0_20px_50px_rgba(43,108,255,0.4)] transition-all disabled:opacity-50"
+                  className="common-button common-button-primary w-full py-5 text-base font-bold flex items-center justify-center gap-3 group shadow-[0_20px_40px_rgba(43,108,255,0.2)] hover:shadow-[0_20px_50px_rgba(43,108,255,0.4)] transition-all disabled:opacity-50 relative overflow-hidden"
                 >
-                  {isLoading ? 'Processing...' : (mode === 'login' ? 'Log in' : 'Create Account')}
-                  {!isLoading && <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-shimmer" />
+                  <span className="relative z-10">{isLoading ? 'Processing...' : (mode === 'login' ? 'Log in' : 'Create Account')}</span>
+                  {!isLoading && <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />}
                 </button>
               </form>
 
@@ -1167,10 +1193,10 @@ const AuthPage = ({ initialMode, onBack, onComplete }: { initialMode: 'login' | 
               </div>
 
               <div className="grid grid-cols-2 gap-4">
-                <button className="flex items-center justify-center gap-3 bg-white/5 border border-white/10 rounded-2xl py-4 hover:bg-white/10 transition-all text-xs font-bold uppercase tracking-widest">
+                <button className="flex items-center justify-center gap-3 bg-white/[0.02] border border-white/10 rounded-2xl py-4 hover:bg-white/[0.05] transition-all text-[10px] font-bold uppercase tracking-widest">
                   <Globe className="w-4 h-4 text-blue-accent" /> Google
                 </button>
-                <button className="flex items-center justify-center gap-3 bg-white/5 border border-white/10 rounded-2xl py-4 hover:bg-white/10 transition-all text-xs font-bold uppercase tracking-widest">
+                <button className="flex items-center justify-center gap-3 bg-white/[0.02] border border-white/10 rounded-2xl py-4 hover:bg-white/[0.05] transition-all text-[10px] font-bold uppercase tracking-widest">
                   <Share2 className="w-4 h-4 text-blue-accent" /> SSO
                 </button>
               </div>
