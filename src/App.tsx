@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
+  ShieldCheck,
+  FileText,
+  AlertCircle,
+  Linkedin,
+  Twitter,
   ChevronRight,
   Play, 
   Check, 
@@ -42,29 +47,29 @@ const PrivacyPolicy = ({ onBack }: { onBack: () => void }) => (
       <h1 className="common-title text-5xl mb-12">Privacy Policy</h1>
       
       <div className="space-y-12 text-[#a8a8a8] leading-relaxed">
-        <p className="text-sm italic">Last Updated: June 30, 2026</p>
+        <p className="text-sm italic">Last Updated: September 7, 2026</p>
 
         <section className="space-y-6">
           <h2 className="text-2xl text-white font-medium">1. Introduction</h2>
           <p>
-            Welcome to LexaIntake. We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our service, including our AI-powered intake system and website.
+            Welcome to LexaIntake. We are committed to protecting your logistics data and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our AI-native logistics operations platform.
           </p>
         </section>
 
         <section className="space-y-6">
           <h2 className="text-2xl text-white font-medium">2. Information We Collect</h2>
           <div className="space-y-4">
-            <h3 className="text-lg text-white">A. Personal Data</h3>
+            <h3 className="text-lg text-white">A. Logistics Data</h3>
             <p>
-              While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. This may include: Email address, First name and last name, Phone number, and Billing address.
+              While using our Service, we may ask you to provide us with certain commercial information that can be used to manage logistics operations. This may include: Bill of Lading (BOL) details, carrier rate sheets, customer contact information, and Transportation Management System (TMS) credentials.
             </p>
-            <h3 className="text-lg text-white">B. Intake Data</h3>
+            <h3 className="text-lg text-white">B. AI Agent Processing</h3>
             <p>
-              When Lexa handles an intake call, we collect audio recordings and text transcriptions of the conversation. This data may contain sensitive legal or medical information related to potential injury claims. We process this data solely as a Service Provider on behalf of our Law Firm clients.
+              When Lexa processes your inbox or audits bills, we collect metadata and transcriptions of the analysis. This data may contain sensitive commercial information. We process this data solely as a Service Provider on behalf of our Freight Broker and 3PL clients.
             </p>
             <h3 className="text-lg text-white">C. Usage Data</h3>
             <p>
-              We automatically collect information about how the Service is accessed and used, such as your IP address, browser type, and the pages you visit.
+              We automatically collect information about how the Service is accessed and used, such as your IP address, browser type, and the pages you visit within the platform.
             </p>
           </div>
         </section>
@@ -73,12 +78,12 @@ const PrivacyPolicy = ({ onBack }: { onBack: () => void }) => (
           <h2 className="text-2xl text-white font-medium">3. How We Use Your Data</h2>
           <p>LexaIntake uses the collected data for various purposes:</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li>To provide and maintain our Service</li>
-            <li>To notify you about changes to our Service</li>
-            <li>To provide customer support</li>
-            <li>To gather analysis or valuable information so that we can improve our Service</li>
-            <li>To monitor the usage of our Service</li>
-            <li>To detect, prevent and address technical issues</li>
+            <li>To provide and maintain our AI-native logistics operations Service</li>
+            <li>To automate billing audits and dispute resolution</li>
+            <li>To synchronize data with your TMS and ERP systems</li>
+            <li>To provide technical and operational support</li>
+            <li>To monitor the performance and accuracy of our AI agents</li>
+            <li>To detect, prevent and address operational issues</li>
             <li>To process billing and payments</li>
           </ul>
         </section>
@@ -86,21 +91,14 @@ const PrivacyPolicy = ({ onBack }: { onBack: () => void }) => (
         <section className="space-y-6">
           <h2 className="text-2xl text-white font-medium">4. Data Processing and AI</h2>
           <p>
-            Our Service utilizes Artificial Intelligence and third-party processors (such as Retell AI and OpenAI) to analyze voice and text data. By using the Service, you consent to the processing of data by these technologies. We ensure that our partners adhere to strict confidentiality and security standards.
+            Our Service utilizes Artificial Intelligence to analyze logistics documents and communications. We ensure that our infrastructure adheres to strict confidentiality and security standards. Your operational data is never used to train global AI models accessible by other LexaIntake customers.
           </p>
         </section>
 
         <section className="space-y-6">
           <h2 className="text-2xl text-white font-medium">5. Data Retention and Security</h2>
           <p>
-            We will retain your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We implement a variety of security measures, including encryption and secure protocols, to maintain the safety of your personal information. However, no method of transmission over the Internet is 100% secure.
-          </p>
-        </section>
-
-        <section className="space-y-6">
-          <h2 className="text-2xl text-white font-medium">6. Disclosure of Data</h2>
-          <p>
-            We may disclose your personal data in the good faith belief that such action is necessary to: comply with a legal obligation, protect and defend the rights or property of LexaIntake, or protect the personal safety of users of the Service or the public.
+            We will retain your data only for as long as is necessary for the purposes set out in this Privacy Policy. We implement advanced encryption (AES-256) and secure protocols to maintain the safety of your logistics information.
           </p>
         </section>
 
@@ -122,33 +120,33 @@ const TermsConditions = ({ onBack }: { onBack: () => void }) => (
       <h1 className="common-title text-5xl mb-12">Terms & Conditions</h1>
       
       <div className="space-y-12 text-[#a8a8a8] leading-relaxed">
-        <p className="text-sm italic">Last Updated: June 30, 2026</p>
+        <p className="text-sm italic">Last Updated: September 7, 2026</p>
 
         <section className="space-y-6">
           <h2 className="text-2xl text-white font-medium">1. Agreement to Terms</h2>
           <p>
-            By accessing or using LexaIntake, you agree to be bound by these Terms and Conditions. If you disagree with any part of the terms, you may not access the Service. These terms constitute a legally binding agreement between you and LexaIntake.
+            By accessing or using LexaIntake, you agree to be bound by these Terms and Conditions. Our service is designed for U.S. LTL freight brokers and 3PLs. These terms constitute a legally binding agreement between you and LexaIntake.
           </p>
         </section>
 
         <section className="space-y-6">
           <h2 className="text-2xl text-white font-medium">2. Description of Service</h2>
           <p>
-            LexaIntake provides an AI-powered voice agent for personal injury law firm intake. Our service includes automated answering, lead qualification, and appointment scheduling. The "Lexa" agent is an artificial intelligence and is not a licensed attorney, paralegal, or human receptionist.
+            LexaIntake provides an AI-native logistics operations platform. Our service includes automated billing audits, inbox action agents, dispute resolution, and TMS synchronization.
           </p>
         </section>
 
         <section className="space-y-6">
-          <h2 className="text-2xl text-white font-medium">3. No Legal Advice Disclaimer</h2>
+          <h2 className="text-2xl text-white font-medium">3. Professional Disclaimer</h2>
           <p className="bg-white/5 p-4 rounded border border-white/10 text-white">
-            LexaIntake is not a law firm and does not provide legal advice. The AI agent facilitates information gathering for the law firm. Any interaction between a potential client and Lexa does not create an attorney-client relationship. All legal representation decisions must be made by human attorneys at your firm.
+            LexaIntake is an AI automation tool and does not provide legal or professional logistics consultation. While our agents are designed for high precision, users are responsible for final verification of critical financial transactions and contractual carrier agreements.
           </p>
         </section>
 
         <section className="space-y-6">
           <h2 className="text-2xl text-white font-medium">4. User Responsibilities</h2>
           <p>
-            As a user of LexaIntake, you are responsible for: (a) Ensuring all intake questions configured for Lexa comply with your local bar association rules and legal ethics; (b) Monitoring the accuracy of transcriptions and bookings; (c) Maintaining the confidentiality of your account credentials.
+            As a user of LexaIntake, you are responsible for: (a) Providing accurate logistics data and TMS credentials; (b) Monitoring the accuracy of AI-generated audits and disputes; (c) Ensuring your use of the platform complies with all relevant freight and commercial regulations.
           </p>
         </section>
 
@@ -162,21 +160,21 @@ const TermsConditions = ({ onBack }: { onBack: () => void }) => (
         <section className="space-y-6">
           <h2 className="text-2xl text-white font-medium">6. Limitation of Liability</h2>
           <p>
-            In no event shall LexaIntake, nor its directors, employees, or partners, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.
+            In no event shall LexaIntake be liable for indirect or consequential damages, including loss of freight revenue or operational delays. Our maximum liability is limited to the fees paid in the previous month.
           </p>
         </section>
 
         <section className="space-y-6">
           <h2 className="text-2xl text-white font-medium">7. Intellectual Property</h2>
           <p>
-            The Service and its original content, features, and functionality are and will remain the exclusive property of LexaIntake and its licensors. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of LexaIntake.
+            The Service and its original content, features, and functionality remain the exclusive property of LexaIntake. Your logistics data remains your property, and you grant us a limited license to process it solely for providing the Service.
           </p>
         </section>
 
         <section className="space-y-6">
           <h2 className="text-2xl text-white font-medium">8. Governing Law</h2>
           <p>
-            These Terms shall be governed and construed in accordance with the laws of the United States, without regard to its conflict of law provisions.
+            These Terms shall be governed and construed in accordance with the laws of the State of Delaware, United States.
           </p>
         </section>
 
@@ -203,7 +201,7 @@ const TalkToLexaPage = ({ onBack }: { onBack: () => void }) => {
     script.setAttribute('data-fab-text', 'Talk to Lexa');
     script.setAttribute('data-color', '#2377f6');
     script.setAttribute('data-theme-color', '#2377f6');
-    script.setAttribute('data-popup-message', 'Want to see how I handle a real case? Click to talk to me.');
+    script.setAttribute('data-popup-message', 'Want to see how I handle a real exception? Click to talk to me.');
     script.setAttribute('data-show-ai-popup', 'true');
     script.setAttribute('data-show-ai-popup-time', '5');
     document.body.appendChild(script);
@@ -244,16 +242,16 @@ const TalkToLexaPage = ({ onBack }: { onBack: () => void }) => {
         {/* Hero Section */}
         <section className="mb-24">
           <h1 className="common-title text-4xl md:text-7xl mb-6 tracking-tight">
-            Talk to Lexa — see how she <br className="hidden md:block" /> handles a real injury case
+            Talk to Lexa — see how she <br className="hidden md:block" /> handles a real logistics exception
           </h1>
           <p className="text-xl md:text-2xl text-[#a8a8a8] leading-relaxed max-w-3xl">
-            This is a live AI intake call, not a recording. Describe a real scenario — a car accident, a slip and fall, anything — and see how she responds.
+            This is a live AI logistics agent, not a recording. Describe a real scenario — a misbilled LTL shipment, a missing BOL, a carrier dispute — and see how she responds.
           </p>
         </section>
 
         {/* CTA Section */}
         <section className="mb-24 py-16 px-8 glass-card text-center border-blue-accent/20">
-          <h2 className="common-title text-3xl mb-6">Ready to start?</h2>
+          <h2 className="common-title text-3xl mb-6">Ready to see the future of freight ops?</h2>
           <p className="text-[#a8a8a8] mb-10 max-w-xl mx-auto text-lg">
             Click below to talk to Lexa. Uses your microphone — no download, no phone number needed.
           </p>
@@ -271,9 +269,9 @@ const TalkToLexaPage = ({ onBack }: { onBack: () => void }) => {
           <h2 className="common-title text-3xl mb-10">What to try</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              "I got rear-ended on the highway two weeks ago.",
-              "I slipped and fell at a grocery store last month.",
-              "Ask her what happens if I already talked to the insurance company."
+              "I have a shipment from Chicago to LA that was overcharged $200 for a liftgate.",
+              "I'm missing a signed BOL for a load picked up in Dallas yesterday.",
+              "Ask her to check if carrier rate sheet #492 matches the current invoice."
             ].map((text, i) => (
               <div key={i} className="glass-card p-8 hover:bg-white/10 transition-colors border-white/5">
                 <p className="text-[#a8a8a8] italic text-lg leading-relaxed">
@@ -286,13 +284,13 @@ const TalkToLexaPage = ({ onBack }: { onBack: () => void }) => {
 
         {/* Trust Line */}
         <div className="text-center mb-12">
-          <p className="text-white/40 text-lg font-title italic">Built specifically for personal injury intake — not a generic chatbot.</p>
+          <p className="text-white/40 text-lg font-title italic">Built specifically for LTL freight brokers — not a generic chatbot.</p>
         </div>
 
         {/* Fallback Option */}
         <div className="text-center">
           <a href="#" className="text-blue-accent hover:underline text-sm flex items-center justify-center gap-2">
-            Prefer to watch instead? Watch a 90-second example call <ExternalLink className="w-4 h-4" />
+            Prefer to watch instead? Watch a 90-second example of billing audit <ExternalLink className="w-4 h-4" />
           </a>
         </div>
       </div>
@@ -324,7 +322,7 @@ const Header = ({ onNavigate, simple = false }: { onNavigate: (view: any) => voi
 
         {!simple && (
           <nav className="hidden lg:flex items-center gap-1">
-            {['Why Lexa', 'Features', 'Integrations', 'Results', 'Pricing'].map((item) => (
+            {['Why Lexa', 'Agents', 'Platform', 'Results', 'Pricing'].map((item) => (
               <a 
                 key={item} 
                 href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
@@ -367,17 +365,17 @@ const Hero = ({ onNavigate }: { onNavigate: (view: 'landing' | 'login' | 'signup
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="common-title text-5xl lg:text-7xl mb-6"
+            className="common-title text-5xl lg:text-7xl mb-6 !leading-[1.1] tracking-tight"
           >
-            Meet Lexa, the simplest way to never miss an injury lead again.
+            Stop Carrier Overcharges and Automate the Admin That Kills Your Margins.
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-lg text-[#a8a8a8] mb-8 max-w-lg leading-relaxed"
+            className="text-xl text-[#a8a8a8] mb-10 max-w-xl leading-relaxed"
           >
-            She answers your phone. Qualifies the case. Books the consultation. Runs your intake desk — automatically, professionally, every time.
+            LexaIntake is the AI-native operations layer for LTL brokers. It audits every invoice, disputes billing errors, and syncs your TMS 24/7—freeing your team to focus on moving freight.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -394,7 +392,7 @@ const Hero = ({ onNavigate }: { onNavigate: (view: 'landing' | 'login' | 'signup
               </a>
             </div>
             <div className="text-xs text-[#a8a8a8] font-medium pl-1">
-              She qualifies leads 24/7. Call her right now — she is live.
+              Automate your billing audit today. Talk to Lexa — she is live.
             </div>
           </motion.div>
         </div>
@@ -406,7 +404,7 @@ const Hero = ({ onNavigate }: { onNavigate: (view: 'landing' | 'login' | 'signup
         >
           <div className="relative glass-card p-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl max-w-md w-full transform lg:translate-x-12">
             <div className="flex items-center justify-between mb-4 pb-2 border-bottom border-white/5">
-              <div className="text-[10px] text-white/40 font-mono">LexaIntake · Calls · Bookings · Reviews</div>
+              <div className="text-[10px] text-white/40 font-mono">LexaIntake · Inbox · Billing Audit · Disputes</div>
               <div className="flex gap-1">
                 <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
                 <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
@@ -414,31 +412,31 @@ const Hero = ({ onNavigate }: { onNavigate: (view: 'landing' | 'login' | 'signup
               </div>
             </div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-blue-500" />
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500" />
               <div>
-                <div className="text-sm font-medium text-white">Anderson Injury Law</div>
-                <div className="text-[10px] text-white/40">Calls · Bookings · Reviews</div>
+                <div className="text-sm font-medium text-white">LTL Freight Broker Ops</div>
+                <div className="text-[10px] text-white/40">Audit · Inbox · Disputes</div>
               </div>
             </div>
             <div className="space-y-3">
               <div className="p-3 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between">
                 <div>
-                  <div className="text-xs font-medium text-white">Car accident lead — Phoenix, AZ</div>
-                  <div className="text-[10px] text-white/40">Booked ✓</div>
+                  <div className="text-xs font-medium text-white">LTL Shipment #49201 — Chicago → LA</div>
+                  <div className="text-[10px] text-red-400">$250 Overcharge Detected</div>
                 </div>
-                <button className="px-3 py-1 rounded-lg bg-white text-black text-[10px] font-bold">Details</button>
+                <button className="px-3 py-1 rounded-lg bg-white text-black text-[10px] font-bold">Dispute</button>
               </div>
               <div className="p-3 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between">
                 <div>
-                  <div className="text-xs font-medium text-white">Slip & fall lead — Dallas, TX</div>
-                  <div className="text-[10px] text-white/40">Booked ✓</div>
+                  <div className="text-xs font-medium text-white">Quote Request — Houston → Miami</div>
+                  <div className="text-[10px] text-blue-accent font-medium uppercase tracking-widest">Drafting...</div>
                 </div>
-                <button className="px-3 py-1 rounded-lg bg-white text-black text-[10px] font-bold">Details</button>
+                <button className="px-3 py-1 rounded-lg bg-white text-black text-[10px] font-bold">View</button>
               </div>
             </div>
             <div className="mt-6 pt-4 border-t border-white/5 flex justify-between items-center">
-              <div className="text-[10px] text-white/40 uppercase tracking-widest">LEADS CAPTURED THIS MONTH</div>
-              <div className="text-lg font-title text-white">91 <span className="text-[10px] font-sans opacity-40 font-normal">out of 94</span></div>
+              <div className="text-[10px] text-white/40 uppercase tracking-widest">AUDIT ACCURACY THIS MONTH</div>
+              <div className="text-lg font-title text-white">100% <span className="text-[10px] font-sans opacity-40 font-normal">verified</span></div>
             </div>
           </div>
         </motion.div>
@@ -452,35 +450,35 @@ const Customers = () => (
     <section className="py-16 border-t border-white/5">
       <div className="page-wrapper">
         <p className="text-center text-sm mb-10 flex items-center justify-center gap-2 flex-wrap">
-          <span className="font-medium text-[#d9f5fd]">Built to connect with the tools your firm already runs on</span>
+          <span className="font-medium text-[#d9f5fd]">Built to connect with the tools your operations already run on</span>
         </p>
         <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-10 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-          {['Clio', 'MyCase', 'Filevine', 'Google Local', 'Yelp', 'QuickBooks'].map((logo) => (
+          {['McLeod', 'MercuryGate', 'Rose Rocket', 'NetSuite', 'SAP', 'QuickBooks'].map((logo) => (
             <span key={logo} className="text-xl font-title text-white font-bold">{logo}</span>
           ))}
         </div>
       </div>
     </section>
 
-    {/* Change 3: Results Number Bar */}
+    {/* Results Number Bar */}
     <section className="py-12 bg-black border-y border-white/5">
       <div className="page-wrapper">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="text-center md:text-left">
-            <div className="text-4xl md:text-5xl font-title font-bold text-white mb-2">94%</div>
-            <div className="text-xs uppercase tracking-widest text-[#a8a8a8] font-medium">Lead capture rate</div>
+            <div className="text-4xl md:text-5xl font-title font-bold text-white mb-2">100%</div>
+            <div className="text-xs uppercase tracking-widest text-[#a8a8a8] font-medium">Billing audit coverage</div>
           </div>
           <div className="text-center md:text-left">
-            <div className="text-4xl md:text-5xl font-title font-bold text-white mb-2">48hrs</div>
-            <div className="text-xs uppercase tracking-widest text-[#a8a8a8] font-medium">Average setup time</div>
+            <div className="text-4xl md:text-5xl font-title font-bold text-white mb-2">&lt; 2min</div>
+            <div className="text-xs uppercase tracking-widest text-[#a8a8a8] font-medium">Email response time</div>
           </div>
           <div className="text-center md:text-left">
             <div className="text-4xl md:text-5xl font-title font-bold text-white mb-2">0</div>
-            <div className="text-xs uppercase tracking-widest text-[#a8a8a8] font-medium">Leads sent to voicemail</div>
+            <div className="text-xs uppercase tracking-widest text-[#a8a8a8] font-medium">Unresolved disputes</div>
           </div>
           <div className="text-center md:text-left">
-            <div className="text-4xl md:text-5xl font-title font-bold text-white mb-2">60 days</div>
-            <div className="text-xs uppercase tracking-widest text-[#a8a8a8] font-medium">Avg time to double reviews</div>
+            <div className="text-4xl md:text-5xl font-title font-bold text-white mb-2">24/7</div>
+            <div className="text-xs uppercase tracking-widest text-[#a8a8a8] font-medium">Inbox monitoring</div>
           </div>
         </div>
       </div>
@@ -501,37 +499,37 @@ const Why = () => (
     <div className="page-wrapper relative z-10">
       <div className="mb-24 relative max-w-4xl">
         <h2 className="common-title text-6xl md:text-8xl tracking-tight text-white mb-6 !leading-tight">
-          $45,000.
+          $120,000.
         </h2>
         <p className="text-white text-xl md:text-2xl mt-6 max-w-3xl leading-relaxed font-light">
-          Even 2-3 lost cases a month — at $15,000 to $20,000 in average attorney fees each — is $30,000 to $60,000 walking out the door. Most firms losing leads to slow response time lose more than that. Lexa makes sure none of them get away.
+          For a mid-sized broker, billing errors and missed accessory charges leak an average of $10,000 per month. That's $120,000 in pure profit walking out the door every year because your ops team is too busy to audit every single carrier invoice. LexaIntake audits 100% of them.
         </p>
         <p className="text-base text-[#a8a8a8] mt-2 mb-6 italic text-xs">
-          *Estimate based on industry data on personal injury lead response and conversion rates.
+          *Estimate based on industry data for LTL freight billing inaccuracies and uncollected accessorials.
         </p>
         <p className="text-base text-[#a8a8a8] mt-6 italic">
-          Lexa answers every single one.
+          Lexa catches every error.
         </p>
       </div>
 
-      {/* Change 4: Before vs After Section */}
+      {/* Before vs After Section */}
       <div className="mb-32">
         <div className="text-center mb-16">
-          <h2 className="common-title text-4xl md:text-6xl mb-4">Your day before Lexa. Your day after Lexa.</h2>
+          <h2 className="common-title text-4xl md:text-6xl mb-4">The Cost of Manual Ops vs. The Power of Lexa.</h2>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Before Card */}
           <div className="glass-card bg-[#2a0a0a] border border-red-900/30 p-8 md:p-12 rounded-[32px]">
-            <div className="text-[10px] uppercase tracking-[0.2em] font-mono text-red-500/60 mb-8 font-bold">BEFORE Lexa</div>
+            <div className="text-[10px] uppercase tracking-[0.2em] font-mono text-red-500/60 mb-8 font-bold">MANUAL OPERATIONS</div>
             <div className="space-y-4">
               {[
-                "Phone rings at 8pm. You're finishing a case.",
-                "Goes to voicemail. Potential client hears a beep.",
-                "They hang up and call your competitor.",
-                "A potential case goes to someone else.",
-                "You don't even know it happened.",
-                "Repeat this 8 times a week.",
-                "That's $45,000 gone every single month."
+                "Carrier invoices buried in 400+ unread emails.",
+                "Bills auto-paid without cross-referencing BOLs.",
+                "Incorrect liftgate and reweigh fees ignored.",
+                "Customer refuses to pay post-delivery charges.",
+                "You eat the loss on the margin.",
+                "Repeat this 30 times a month.",
+                "$120,000+ in annual profit lost to paperwork."
               ].map((text, i) => (
                 <div key={i} className="flex items-start gap-4 text-white/80">
                   <span className="text-red-500 font-bold shrink-0 mt-1">✗</span>
@@ -541,17 +539,17 @@ const Why = () => (
             </div>
           </div>
           {/* After Card */}
-          <div className="glass-card bg-[#032b35] border border-blue- accent/20 p-8 md:p-12 rounded-[32px]">
-            <div className="text-[10px] uppercase tracking-[0.2em] font-mono text-blue-accent/60 mb-8 font-bold">AFTER Lexa</div>
+          <div className="glass-card bg-[#032b35] border border-blue-accent/20 p-8 md:p-12 rounded-[32px]">
+            <div className="text-[10px] uppercase tracking-[0.2em] font-mono text-blue-accent/60 mb-8 font-bold">LEXAINTAKE AUTOMATION</div>
             <div className="space-y-4">
               {[
-                "Phone rings at 8pm. Lexa picks up immediately.",
-                "She greets them using your firm's name.",
-                "She collects their details and books the intake.",
-                "Potential client gets an instant confirmation text.",
-                "You get an SMS alert with the booking details.",
-                "The case is yours. While you finished the last one.",
-                "Every single night. Every single weekend."
+                "Lexa identifies invoices in your inbox instantly.",
+                "Automatic cross-reference with TMS load data.",
+                "Discrepancies flagged and disputed on arrival.",
+                "Corrected invoices processed automatically.",
+                "Every dollar of margin is protected.",
+                "Your team focuses on booking more loads.",
+                "100% audit coverage. Zero margin leakage."
               ].map((text, i) => (
                 <div key={i} className="flex items-start gap-4 text-white">
                   <span className="text-blue-accent font-bold shrink-0 mt-1">✓</span>
@@ -565,10 +563,10 @@ const Why = () => (
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
-          { title: "Built for the solo and small PI firm.", desc: "Lexa was designed for one type of practice. The attorney who is also the rainmaker — in depositions, in court, driving between client meetings. We handle the intake so you handle the cases." },
-          { title: "Grounded in your signed retainers.", desc: "Every feature exists to get you more signed cases. Your leads, your consultations, your follow-ups — all handled while you are in the courtroom." },
-          { title: "Engineered to protect your case pipeline.", desc: "Every missed call is a case going to a competitor firm. Lexa stops that permanently. No hiring. No training. No missed leads — ever again." },
-          { title: "Transparent by design.", desc: "See exactly how many leads Lexa answered, how many consultations were booked, and how many reviews were collected — every single month in a clean report sent directly to you." }
+          { title: "Designed for the 5–50 Person Ops Team.", desc: "Small brokers are too big to audit everything manually, but too small to hire a dedicated audit department. Lexa fills that gap permanently." },
+          { title: "Native TMS Integration.", desc: "Lexa doesn't just read emails. She cross-references your rates, loads, and carrier agreements inside your TMS to ensure every action is grounded in truth." },
+          { title: "Zero Training Required.", desc: "Lexa learns your specific business rules in hours, not weeks. She handles the repetitive paperwork while your team handles high-value customer relationships." },
+          { title: "Measurable Margin Recovery.", desc: "See exactly how many disputes were won and how many thousands of dollars Lexa recovered for your brokerage in a real-time dashboard." }
         ].map((card, i) => (
           <motion.div 
             key={i}
@@ -591,16 +589,16 @@ const Solutions = () => (
   <section id="solutions" className="py-24">
     <div className="page-wrapper">
       <h2 className="common-title text-6xl lg:text-8xl mb-20">
-        <span className="block">1 phone number.</span>
-        <span className="block opacity-70">Every lead answered.</span>
-        <span className="block opacity-40">Zero missed cases.</span>
+        <span className="block">6 AI Agents.</span>
+        <span className="block opacity-70">1 Operations Platform.</span>
+        <span className="block opacity-40">Infinite Efficiency.</span>
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
         {[
-          { icon: <Monitor className="w-8 h-8 text-[#a8a8a8]" />, title: "One number. Every lead captured.", desc: "Lexa answers from a single dedicated line. Every call your firm receives, answered within one ring, 24 hours a day." },
-          { icon: <Layout className="w-8 h-8 text-[#a8a8a8]" />, title: "Instant consultation booking. Every time.", desc: "The second a potential client calls, Lexa qualifies their case and books a consultation directly into your calendar. No manual steps. No missed opportunities." },
-          { icon: <Share2 className="w-8 h-8 text-[#a8a8a8]" />, title: "Your reputation, growing automatically.", desc: "Every closed case triggers a one-click Google review request. Build your firm's reputation automatically without asking a single client yourself." }
+          { icon: <Mail className="w-8 h-8 text-[#a8a8a8]" />, title: "Inbox Action Agent", desc: "Lexa monitors your shared ops inbox 24/7. She drafts quotes, updates shipment status, and tags priority issues before your team even logs in." },
+          { icon: <Check className="w-8 h-8 text-[#a8a8a8]" />, title: "Billing Audit Agent", desc: "Every carrier invoice is audited against your TMS quote and signed BOL. She automatically detects overcharges for liftgates, residential deliveries, and reweighs." },
+          { icon: <ShieldCheck className="w-8 h-8 text-[#a8a8a8]" />, title: "Risk & Verification Agent", desc: "Before every load, Lexa verifies carrier insurance, safety ratings, and authority status in real-time. She flags expired policies instantly." }
         ].map((item, i) => (
           <div key={i} className="flex flex-col gap-6">
             {item.icon}
@@ -616,9 +614,9 @@ const Solutions = () => (
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
-          { label: "CALLING LAYER", title: "Twilio as your call layer.", desc: "Every call runs through a dedicated Twilio number configured for your firm. Reliable, professional, and ready to answer your calls.", img: "badge_security" },
-          { label: "FOLLOW UP", title: "Every lead followed up automatically.", desc: "Callers who don't book enter a 3-message follow-up sequence over 5 days. Unsigned retainers get a 4-message sequence over 7 days. No case ever falls through the cracks.", img: "badge_compliance" },
-          { label: "REPUTATION", title: "Reputation protected automatically.", desc: "Every closed case triggers a check-in. Unhappy clients are caught before they post publicly. You are alerted immediately and given 30 minutes to respond.", img: "badge_hosting" }
+          { label: "SOURCE OF TRUTH", title: "TMS Integration Engine.", desc: "Lexa syncs perfectly with McLeod, MercuryGate, and Rose Rocket. She keeps your TMS updated so your data is always correct.", img: "badge_security" },
+          { label: "DISPUTE MANAGEMENT", title: "Automated Dispute Resolution.", desc: "When an audit fails, Lexa drafts and files the dispute with the carrier including all necessary documentation (BOL, Proof of Delivery).", img: "badge_compliance" },
+          { label: "EXCEPTIONS", title: "Exception Handling Agent.", desc: "Misrouted freight? Late pickups? Lexa identifies exceptions before they become customer complaints and alerts your team with a plan.", img: "badge_hosting" }
         ].map((item, i) => (
           <div key={i} className="glass-card p-8 h-[260px] flex flex-col justify-between">
             <div className="flex justify-between items-start">
@@ -640,15 +638,15 @@ const Features = () => (
   <section id="features" className="py-24 bg-white text-black rounded-t-[40px] md:rounded-t-[80px]">
     <div className="page-wrapper">
       <div className="text-center mb-16 md:mb-32 sticky top-[10vh] z-10 py-4 bg-white/80 backdrop-blur-sm">
-        <h2 className="common-title text-black text-3xl md:text-6xl mb-4 leading-tight">Everything your intake team should do. Handled.</h2>
-        <p className="text-lg md:text-2xl text-black/40 font-title italic">Here is exactly how Lexa works.</p>
+        <h2 className="common-title text-black text-3xl md:text-6xl mb-4 leading-tight">Eliminate the Manual Grind. Automate Every Load.</h2>
+        <p className="text-lg md:text-2xl text-black/40 font-title italic">How LexaIntake transforms your brokerage operations.</p>
       </div>
 
       <div className="relative flex flex-col gap-[60px] md:gap-[120px] pb-32">
         {[
-          { color: "bg-[#2c150c]", title: "Answer every lead on every shift at once.", desc: "Lexa covers mornings, evenings, weekends, and holidays — without overtime, without sick days, without training. Every potential client always reaches a live, professional voice no matter when they call." },
-          { color: "bg-[#032b35]", title: "Turn every closed case into a five-star review.", desc: "The moment a case is closed, Lexa sends the client a one-click Google review request. Two hours later she checks in to make sure everything went smoothly. Happy clients become your best referral source." },
-          { color: "bg-[#1d2c0c]", title: "Lexa is live in under 48 hours. No tech needed.", desc: "You give us your firm's details. We configure Lexa completely. You touch zero technology. Your calls are being answered, leads are being qualified, and consultations are being booked instantly." },
+          { color: "bg-[#2c150c]", title: "Stop Carrier Margin Leakage with 100% Automated Audits.", desc: "LexaIntake compares every invoice against your TMS load data. If a carrier bills a $150 reweigh without a scale ticket, she automatically initiates a dispute. You never pay for unverified extras again." },
+          { color: "bg-[#032b35]", title: "Clear Your Inbox with AI-Native Quote Drafting.", desc: "When a customer emails asking for a rate or a status update, LexaIntake drafts the response based on your current contracts and real-time tracking data. Your team just hits 'Send'." },
+          { color: "bg-[#1d2c0c]", title: "Operational Efficiency in 48 Hours, Not Months.", desc: "Connect LexaIntake to your TMS (McLeod, MercuryGate, Rose Rocket) and carrier rate sheets. Within 48 hours, your billing audit is 100% automated and your inbox is clear." },
         ].map((card, i) => (
           <div 
             key={i} 
@@ -667,18 +665,18 @@ const Features = () => (
         ))}
       </div>
 
-      {/* Change 9: How a call works visual step section */}
+      {/* How a billing audit works visual step section */}
       <div className="py-24 border-t border-black/5">
         <div className="mb-20">
-          <div className="text-[10px] uppercase tracking-[0.2em] font-mono text-[#a8a8a8] mb-4 font-bold">WHAT HAPPENS ON EVERY SINGLE CALL.</div>
-          <p className="text-xl text-black/40 font-title italic">From first ring to booked consultation in under 3 minutes.</p>
+          <div className="text-[10px] uppercase tracking-[0.2em] font-mono text-[#a8a8a8] mb-4 font-bold">WHAT HAPPENS ON EVERY AUDIT.</div>
+          <p className="text-xl text-black/40 font-title italic">From invoice arrival to corrected bill in under 5 minutes.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {[
-            { num: "01", title: "Your phone rings.", desc: "A potential client calls your existing number. It rings once at your firm and simultaneously routes to Lexa as backup." },
-            { num: "02", title: "Lexa answers in your firm's name.", desc: "\"Thank you for calling Anderson Injury Law, this is Lexa — are you calling about a recent accident or injury?\"" },
-            { num: "03", title: "She qualifies the case and books the consultation.", desc: "Name, phone number, accident type, date of incident, injury details, insurance status — all collected in real time and booked directly into your calendar without you touching anything." },
-            { num: "04", title: "You get an instant SMS alert.", desc: "You receive a text with the lead's full case details and consultation confirmation within 60 seconds. The case is yours. You never missed a thing." }
+            { num: "01", title: "Carrier invoice arrives.", desc: "Carrier sends an invoice via EDI or email. LexaIntake captures it immediately and extracts all line items." },
+            { num: "02", title: "Lexa cross-references the BOL.", desc: "Lexa pulls the signed Bill of Lading from your TMS and compares weight, class, and accessorials (liftgate, residential, etc.) to the invoice." },
+            { num: "03", title: "Discrepancies are flagged.", desc: "If the carrier billed for a liftgate that wasn't on the BOL, Lexa flags the discrepancy and calculates the exact overcharge amount." },
+            { num: "04", title: "Dispute filed automatically.", desc: "Lexa drafts a professional dispute email with the attached BOL as proof. Once you approve, it's sent to the carrier's billing department. Margin saved." }
           ].map((step, i) => (
             <div key={i} className="flex flex-col gap-6">
               <div className="text-3xl font-title font-bold text-black/20">{step.num}</div>
@@ -693,10 +691,10 @@ const Features = () => (
 
       <div className="relative flex flex-col gap-[60px] md:gap-[120px] pb-32">
         {[
-          { color: "bg-[#361e02]", title: "Accidents don't wait for business hours. Neither should your intake.", desc: "Car accidents happen at midnight. Slip and falls happen on Sundays. Workplace injuries happen on holidays. Lexa makes sure you never miss a single lead. Not at 9pm. Not on Saturday. Not while you are in the middle of a deposition." },
-          { color: "bg-[#2c150c]", title: "Reengage past clients on autopilot.", desc: "Every past client is automatically enrolled in a reengagement sequence. Lexa periodically reaches out to ask if they have friends or family who need legal help. Referrals come in without you lifting a finger." },
-          { color: "bg-[#032b35]", title: "See exactly how your intake is performing.", desc: "Track every lead answered, every consultation booked, every retainer signed, and every review collected. Your monthly report tells the full story so you always know what Lexa is winning for you." },
-          { color: "bg-[#1d2c0c]", title: "Your intake updates the moment you do.", desc: "Add a new practice area, change your consultation hours, update your intake questions — everything is adjusted in Lexa instantly. No downtime, no re-training, no waiting. Changes go live immediately." }
+          { color: "bg-[#361e02]", title: "LTL freight is messy. Lexa cleans it up.", desc: "Carriers misbill. Scale tickets go missing. Customers demand credits. LexaIntake manages the chaos so your ops team can focus on moving freight. We handle the paperwork, you handle the relationships." },
+          { color: "bg-[#2c150c]", title: "Protect every dollar of your margin.", desc: "A $200 overcharge on a $1,200 load is nearly 20% of your total margin gone. LexaIntake stops this leakage by auditing 100% of your bills, not just a random sample. Profit saved automatically." },
+          { color: "bg-[#032b35]", title: "See exactly how your operations are performing.", desc: "Track every dispute filed, every dollar recovered, and every quote drafted. Your monthly dashboard tells the full story of your operational efficiency and recovered revenue." },
+          { color: "bg-[#1d2c0c]", title: "Your automation updates the moment you do.", desc: "Update your carrier contracts, change your margin rules, add new customers — everything is adjusted in LexaIntake instantly. No downtime, no re-training, no waiting. Changes go live immediately." }
         ].map((card, i) => (
           <div 
             key={i} 
@@ -721,22 +719,22 @@ const Features = () => (
 const CaseStudies = () => (
   <section id="case-studies" className="py-24 bg-black text-white">
     <div className="page-wrapper">
-      <h2 className="common-title text-5xl mb-4">Built for firms ready to stop losing leads.</h2>
-      <p className="text-2xl text-white/50 font-title mb-20">We're currently running pilots with personal injury firms across Texas and Arizona. Here's what early results look like.</p>
+      <h2 className="common-title text-5xl mb-4">Built for brokers ready to stop leaking profit.</h2>
+      <p className="text-2xl text-white/50 font-title mb-20">We're currently running pilots with LTL freight brokers and 3PLs across the U.S. Here's what early results look like.</p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {[
           { 
-            title: "Zero missed leads", 
-            body: "Every pilot firm sees 100% of their inbound calls answered starting day one — no exceptions, no after-hours gaps."
+            title: "Zero margin leakage", 
+            body: "Every pilot broker sees 100% of their carrier invoices audited starting day one — no exceptions, no random sampling."
           },
           { 
-            title: "Quick Setup", 
-            body: "No technical setup on your end. We configure Lexa completely and she's answering calls within two business days."
+            title: "Quick TMS Setup", 
+            body: "No technical overhead on your end. We connect Lexa to your TMS and she's auditing bills within two business days."
           },
           { 
-            title: "Cancel anytime", 
-            body: "No contracts. If Lexa doesn't perform, you walk away — we only keep clients who are seeing real results."
+            title: "Performance-based", 
+            body: "No long-term contracts. LexaIntake pays for itself in recovered overcharges. If she doesn't perform, you walk away."
           }
         ].map((item, i) => (
           <div 
@@ -765,19 +763,19 @@ const Guarantee = () => (
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-accent/5 blur-[120px] rounded-full pointer-events-none" />
         
         <div className="relative z-10 w-full max-w-4xl mx-auto">
-          <h2 className="common-title text-4xl md:text-6xl text-white mb-8">We stand behind every lead Lexa answers.</h2>
+          <h2 className="common-title text-4xl md:text-6xl text-white mb-8">We stand behind every dollar Lexa recovers.</h2>
           <p className="text-lg md:text-2xl text-white/80 leading-relaxed mb-12">
-            If you set up Lexa and do not see a measurable difference<br className="hidden md:block" />
-            in your answered leads within the first 30 days —<br className="hidden md:block" />
+            If you set up LexaIntake and do not see a measurable reduction<br className="hidden md:block" />
+            in unverified carrier charges within the first 30 days —<br className="hidden md:block" />
             we will refund your first month. No paperwork. No argument.<br className="hidden md:block" />
             Just tell us and we will process it the same day.
           </p>
           <p className="text-lg md:text-2xl text-white/80 leading-relaxed mb-16">
-            And if Lexa ever misses a call due to a technical failure<br className="hidden md:block" />
-            on our end — we credit that month's fee automatically.<br className="hidden md:block" />
+            And if LexaIntake ever fails to detect a misbilled invoice<br className="hidden md:block" />
+            that you manually catch — we credit that month's fee automatically.<br className="hidden md:block" />
             No questions asked.
           </p>
-          <div className="text-xl md:text-3xl font-title text-white mb-16 italic opacity-80">We only win when you win.</div>
+          <div className="text-xl md:text-3xl font-title text-white mb-16 italic opacity-80">We only win when your margins grow.</div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pt-12 border-t border-white/10">
             <div>
@@ -786,7 +784,7 @@ const Guarantee = () => (
             </div>
             <div>
               <div className="text-3xl md:text-5xl font-title font-bold text-white mb-2">100%</div>
-              <div className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Call credit if we fail</div>
+              <div className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Audit credit if we fail</div>
             </div>
             <div>
               <div className="text-3xl md:text-5xl font-title font-bold text-white mb-2">0</div>
@@ -817,12 +815,12 @@ const FAQ = ({ onNavigate }: { onNavigate: (view: 'landing' | 'login' | 'signup'
 
         <div className="lg:w-2/3 flex flex-col gap-12">
           {[
-            { q: "How long does setup take?", a: "Most law firms are fully live within 48 hours. You provide your firm's details, we configure everything. You touch zero technology." },
-            { q: "Will Lexa sound robotic to potential clients?", a: "No. Call the demo number right now and hear for yourself. Lexa sounds like a warm, professional intake specialist who has worked at your firm for years. Your potential clients will not know the difference." },
-            { q: "Do I need any special equipment or phone system?", a: "No. Lexa works with your existing phone number through a simple call forwarding setup. No new hardware. No apps to install. No technical knowledge needed." },
-            { q: "What happens if Lexa cannot answer a question?", a: "Lexa collects the caller's name, number, and case details, then immediately sends you an SMS alert so you can call back when you are free. No lead is ever lost." },
-            { q: "What happens if I want to cancel?", a: "No long-term contracts. Cancel anytime with 30 days notice. Your call data, client records, and booking history are exported and sent to you immediately. And if Lexa ever misses a call due to a technical failure on our end — we credit that month's fee. No questions asked. We stand behind every call she answers." },
-            { q: "What if potential clients don't want to talk to a machine?", a: "Call the demo line right now. Lexa sounds human. Our clients regularly tell us their callers had no idea they were speaking to an AI. The only thing your leads care about is that someone answered — and Lexa always does." }
+            { q: "How long does setup take?", a: "Most freight brokers are fully live within 48 hours. You provide your TMS credentials and carrier rate sheets, we configure everything. You touch zero technology." },
+            { q: "Is LexaIntake a TMS?", a: "No. LexaIntake is an AI operations layer that sits on top of your TMS. We connect with McLeod, MercuryGate, Rose Rocket, and more to automate the manual work your team does in those systems." },
+            { q: "Do I need any special software installed?", a: "No. LexaIntake is a cloud-native platform. It works through your email inbox and your existing TMS. No new hardware or local software installation is required." },
+            { q: "How does the billing audit work?", a: "Lexa captures carrier invoices via email or EDI, then cross-references them against your original quote and signed BOL in your TMS. If discrepancies are found, she flags them or automatically files a dispute." },
+            { q: "What happens if Lexa misidentifies a charge?", a: "Every dispute and quote drafted by Lexa can be configured for human review. Your team stays in control, but Lexa handles 95% of the heavy lifting. We only win when your data is correct." },
+            { q: "Can she handle residential and liftgate disputes?", a: "Yes. Lexa is specifically trained on LTL accessorial charges. She knows how to verify reweighs, reclassifications, and residential delivery fees against your proof of delivery documents." }
           ].map((item, i) => (
             <div key={i} className="flex flex-col gap-4 overflow-hidden">
               <motion.div 
@@ -860,8 +858,8 @@ const Footer = ({ onNavigate }: { onNavigate?: (view: 'landing' | 'login' | 'sig
   <footer className="pt-24 pb-12 bg-white text-black">
     <div className="page-wrapper">
       <div className="mb-24 text-center">
-        <h2 className="common-title text-black text-4xl md:text-6xl mb-6">Stop missing leads. Start signing more cases.</h2>
-        <p className="text-xl text-black/50 mb-10 max-w-2xl mx-auto">Personal injury firms across the USA are setting up Lexa to capture every lead — day or night. Early clients get locked-in pricing and priority setup.</p>
+        <h2 className="common-title text-black text-4xl md:text-6xl mb-6">Stop losing margin. Start auditing 100%.</h2>
+        <p className="text-xl text-black/50 mb-10 max-w-2xl mx-auto">LTL freight brokers across the USA are using LexaIntake to audit every invoice and monitor every ops inbox — 24/7/365. Early clients get locked-in pricing and priority setup.</p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a href="https://cal.com/lexaintake/lexa-desk" className="common-button common-button-primary px-8 py-4 text-lg">Book a free 15-min call →</a>
         </div>
@@ -871,18 +869,18 @@ const Footer = ({ onNavigate }: { onNavigate?: (view: 'landing' | 'login' | 'sig
       <div className="grid grid-cols-2 md:grid-cols-3 gap-12 mb-24">
         <div className="flex flex-col gap-4">
           <p className="font-bold text-sm uppercase tracking-widest text-black/30">Product</p>
-          {['Why Lexa', 'Features', 'Integrations'].map(item => (
+          {['Why LexaIntake', 'Agents', 'Inbox', 'Audit'].map(item => (
             <a key={item} href="#" className="font-title text-2xl text-[#707070] hover:text-black transition-colors">{item}</a>
           ))}
         </div>
         <div className="flex flex-col gap-4">
           <p className="font-bold text-sm uppercase tracking-widest text-black/30">Company</p>
-          {['About', 'Results', 'LinkedIn', 'Contact', 'Privacy Policy'].map(item => (
+          {['Results', 'LinkedIn', 'Contact', 'Privacy Policy'].map(item => (
             <button 
               key={item} 
               onClick={() => {
                 if (item === 'Privacy Policy') onNavigate?.('privacy');
-                else if (item === 'Contact') window.location.href = 'mailto:rahul@lexaintake.com';
+                else if (item === 'Contact') window.location.href = 'mailto:hello@lexaintake.com';
                 else if (item === 'LinkedIn') window.open('https://www.linkedin.com/in/krishna-wararkar-5697783a2', '_blank');
               }}
               className="font-title text-2xl text-[#707070] hover:text-black transition-colors text-left"
@@ -893,7 +891,7 @@ const Footer = ({ onNavigate }: { onNavigate?: (view: 'landing' | 'login' | 'sig
         </div>
         <div className="flex flex-col gap-4">
           <p className="text-[#707070] text-sm">Have questions?</p>
-          <a href="mailto:rahul@lexaintake.com" className="common-button bg-[#ebebeb] text-black px-6 py-3 text-sm flex items-center justify-between w-full">
+          <a href="mailto:hello@lexaintake.com" className="common-button bg-[#ebebeb] text-black px-6 py-3 text-sm flex items-center justify-between w-full">
             Contact us <ChevronRight className="w-4 h-4 text-[#8c8c8c]" />
           </a>
         </div>
@@ -909,7 +907,7 @@ const Footer = ({ onNavigate }: { onNavigate?: (view: 'landing' | 'login' | 'sig
             <span>·</span>
             <button onClick={() => onNavigate?.('privacy')} className="hover:text-black">Privacy policy</button>
           </div>
-          <div>© 2026 LexaIntake AI. All rights reserved.</div>
+          <div>© 2026 LexaIntake Inc. All rights reserved.</div>
         </div>
         <div className="text-[15vw] font-title text-black/5 leading-none text-center select-none">LexaIntake</div>
       </div>
@@ -927,46 +925,44 @@ const LiveDemoSection = ({ onNavigate }: { onNavigate?: (view: 'landing' | 'logi
         <div className="flex-1 w-full max-w-md mx-auto">
           <div className="glass-card bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-6 shadow-2xl relative overflow-hidden">
             <div className="text-center pb-4 border-b border-white/10 mb-6 font-mono text-xs text-white">
-              📞 Live Call — Anderson Injury Law — 9:47 PM
+              📩 Ops Inbox — Global Freight — 10:42 AM
             </div>
             <div className="space-y-4 flex flex-col">
               <div className="bg-white/10 text-white rounded-2xl rounded-tl-sm p-4 text-sm w-[85%] self-start">
-                Caller: "Hi yeah I was just in a car <br/>
-                accident on the 101, I don't know <br/>
-                 what to do and I'm in a lot of pain"
+                Customer: "Need a quote for 6 pallets, <br/>
+                class 70 from Chicago to Phoenix. <br/>
+                Pickup tomorrow morning."
               </div>
               <div className="bg-[#2b6dff] text-white rounded-2xl rounded-tr-sm p-4 text-sm w-[85%] self-end">
-                Lexa: "I'm so sorry you're going through <br/>
-                this — let's get you the help you need. <br/>
-                Can I get your name and the best <br/>
-                number for an attorney to call you?"
+                Lexa (Draft): "Based on your contract with <br/>
+                Old Dominion, the rate is $1,140. <br/>
+                Should I book this for you?"
               </div>
               <div className="bg-white/10 text-white rounded-2xl rounded-tl-sm p-4 text-sm w-[85%] self-start">
-                Caller: "Yeah it's Sarah Miller, <br/>
-                my number is 602-555-0184"
+                Carrier Invoice: "$1,340 (Includes liftgate)"
               </div>
               <div className="bg-[#2b6dff] text-white rounded-2xl rounded-tr-sm p-4 text-sm w-[85%] self-end">
-                Lexa: "Thank you Sarah. I've got a consultation <br/>
-                scheduled for you tomorrow at 10 AM. <br/>
-                You'll get a confirmation text right now."
+                Lexa (Dispute): "The signed BOL for Load <br/>
+                #4920 shows no liftgate requested. <br/>
+                Please correct this bill immediately."
               </div>
             </div>
             <div className="mt-6 pt-4 border-t border-white/10 text-center">
               <p className="text-[10px] text-[#a8a8a8] leading-relaxed">
-                This is Lexa. This is what your <br/>
-                potential clients hear. Every call. Every night.
+                This is LexaIntake. This is how your <br/>
+                operations run. Every audit. Every email.
               </p>
             </div>
           </div>
         </div>
         <div className="flex-1">
-          <h2 className="common-title text-4xl mb-4">This is what your potential clients hear.</h2>
+          <h2 className="common-title text-4xl mb-4">AI that doesn't just talk — it acts.</h2>
           <p className="text-lg text-[#a8a8a8] leading-relaxed mb-8">
-            Lexa answers exactly like this — warm, <br />
-            professional, and calm — whether it is <br />
-            9 in the morning or 11 at night. <br />
-            Your potential clients never reach voicemail. <br />
-            Your competitors never get the case.
+            LexaIntake is the only AI built for the <br />
+            chaos of LTL freight. She audits every bill, <br />
+            drafts every quote, and resolves disputes <br />
+            before your team even knows there's a <br />
+            problem. Stop leaking margins today.
           </p>
           <a 
             href="https://cal.com/lexaintake/lexa-desk"
@@ -984,20 +980,20 @@ const Integrations = () => (
   <section id="integrations" className="py-24 bg-black text-white border-t border-white/5">
     <div className="page-wrapper">
       <div className="text-center mb-20">
-        <h2 className="common-title text-5xl mb-4">Works with the tools your firm already runs on.</h2>
-        <p className="text-xl text-white/60">Connect your existing calendar and case management system. Everything is configured for you.</p>
+        <h2 className="common-title text-5xl mb-4">Works with the tools your ops team already runs on.</h2>
+        <p className="text-xl text-white/60">Connect your existing TMS and email inbox. Lexa works where your team works.</p>
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         {[
-          { name: "Google", desc: "Reviews collected automatically" },
-          { name: "iPhone", desc: "Works with your existing number" },
-          { name: "Google Calendar", desc: "Appointments booked in real time" },
-          { name: "Clio", desc: "Syncs with your case management" },
-          { name: "MyCase", desc: "Connects to your existing workflow" },
-          { name: "Filevine", desc: "Review requests sent after every case" },
-          { name: "Android", desc: "Works with your existing number" },
-          { name: "Zapier", desc: "Automate anything" }
+          { name: "McLeod", desc: "Sync loads and rates automatically" },
+          { name: "MercuryGate", desc: "Real-time audit integration" },
+          { name: "Rose Rocket", desc: "Automate your billing workflow" },
+          { name: "Outlook/Gmail", desc: "Inbox management 24/7" },
+          { name: "SMC3", desc: "Access carrier rate data" },
+          { name: "EDI 210", desc: "Process invoices instantly" },
+          { name: "QuickBooks", desc: "Sync financials automatically" },
+          { name: "Zapier", desc: "Connect to 5,000+ other apps" }
         ].map((item, i) => (
           <div key={i} className="glass-card p-6 text-center">
             <div className="text-lg font-bold mb-1">{item.name}</div>
@@ -1205,7 +1201,7 @@ const OnboardingFlow = ({ onComplete }: { onComplete: () => void }) => {
                 <div className="text-center mb-10">
                   <h1 className="common-title text-3xl md:text-4xl mb-3">Tell us about your business</h1>
                   <p className="text-[#a8a8a8] text-sm leading-relaxed">
-                    Share your firm's name, practice areas, hours, and jurisdictions you handle. We use this to configure Lexa specifically for your law firm.
+                    Share your brokerage name, TMS, and primary service areas. We use this to configure LexaIntake specifically for your operations.
                   </p>
                 </div>
 
@@ -1214,7 +1210,7 @@ const OnboardingFlow = ({ onComplete }: { onComplete: () => void }) => {
                     <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">Business Name</label>
                     <input 
                       type="text" 
-                      placeholder="Anderson Injury Law"
+                      placeholder="Atlas Logistics"
                       value={formData.displayName}
                       onChange={(e) => setFormData({ ...formData, displayName: e.target.value })}
                       className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-white/30 transition-colors"
@@ -1235,9 +1231,9 @@ const OnboardingFlow = ({ onComplete }: { onComplete: () => void }) => {
                   </div>
 
                   <div className="space-y-3">
-                    <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">Daily call volume estimate?</label>
+                    <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">Average monthly volume?</label>
                     <div className="flex flex-wrap gap-2">
-                      {['1-5 calls', '5-15 calls', '15-50 calls', '50+ calls'].map((option) => (
+                      {['0-200 shipments', '200-1,000', '1,000-5,000', '5,000+'].map((option) => (
                         <button
                           key={option}
                           onClick={() => setFormData({ ...formData, whatDoYouSell: option })}
@@ -1272,7 +1268,7 @@ const OnboardingFlow = ({ onComplete }: { onComplete: () => void }) => {
             >
               <div className="glass-card p-8 md:p-10 rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl">
                 <div className="text-center mb-10">
-                  <h1 className="common-title text-3xl md:text-4xl mb-3">How do you handle calls currently?</h1>
+                  <h1 className="common-title text-3xl md:text-4xl mb-3">How do you handle audits currently?</h1>
                   <p className="text-[#a8a8a8] text-sm leading-relaxed">
                     Help us personalize your LexaIntake dashboard for how you actually operate.
                   </p>
@@ -1280,9 +1276,9 @@ const OnboardingFlow = ({ onComplete }: { onComplete: () => void }) => {
 
                 <div className="space-y-6">
                   <div className="space-y-3">
-                    <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">Current phone setup?</label>
+                    <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">Current audit process?</label>
                     <div className="flex flex-wrap gap-2">
-                      {['I answer myself', 'Voicemail only', 'Office manager', 'Answering service', 'Direct to cell'].map((option) => (
+                      {['Manual audit', 'Spot checks only', 'Outsourced', 'Random sampling', 'No audit'].map((option) => (
                         <button
                           key={option}
                           onClick={() => {
@@ -1302,9 +1298,9 @@ const OnboardingFlow = ({ onComplete }: { onComplete: () => void }) => {
                   </div>
 
                   <div className="space-y-3">
-                    <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">Service area range?</label>
+                    <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">Monthly shipment volume?</label>
                     <div className="flex flex-wrap gap-2">
-                      {['Local (10mi)', 'Medium (25mi)', 'Wide (50mi+)', 'Statewide'].map((option) => (
+                      {['0-100', '100-500', '500-2,000', '2,000+'].map((option) => (
                         <button
                           key={option}
                           onClick={() => setFormData({ ...formData, audienceSize: option })}
@@ -1317,9 +1313,9 @@ const OnboardingFlow = ({ onComplete }: { onComplete: () => void }) => {
                   </div>
 
                   <div className="space-y-3">
-                    <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">Do you use scheduling software?</label>
+                    <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">What TMS do you use?</label>
                     <div className="flex flex-wrap gap-2">
-                      {['Clio', 'Casepeer', 'MyCase', 'Google Calendar', 'Paper/Pen'].map((option) => (
+                      {['McLeod', 'TMW', 'Aljex', 'Revenova', 'Other'].map((option) => (
                         <button
                           key={option}
                           onClick={() => setFormData({ ...formData, soldBefore: option })}
@@ -1361,18 +1357,18 @@ const OnboardingFlow = ({ onComplete }: { onComplete: () => void }) => {
             >
               <div className="glass-card p-8 md:p-10 rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl">
                 <div className="text-center mb-10">
-                  <h1 className="common-title text-3xl md:text-4xl mb-3">We configure Lexa for you</h1>
+                  <h1 className="common-title text-3xl md:text-4xl mb-3">We configure LexaIntake for you</h1>
                   <p className="text-[#a8a8a8] text-sm leading-relaxed">
-                    We program Lexa with your business name, your services, your pricing, your calendar, and your exact greeting.
+                    We program LexaIntake with your business name, your TMS rules, your carrier preferences, and your exact email signature.
                   </p>
                 </div>
 
                 <div className="space-y-6">
                   <div className="space-y-2">
-                    <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">Primary Greeting</label>
+                    <label className="text-xs font-medium text-[#a8a8a8] uppercase tracking-wider ml-1">Primary Email Signature</label>
                     <input 
                       type="text" 
-                      placeholder="e.g. Thank you for calling Anderson Injury Law, this is Lexa..."
+                      placeholder="e.g. Thank you for your inquiry, this is LexaIntake..."
                       value={formData.productName}
                       onChange={(e) => setFormData({ ...formData, productName: e.target.value })}
                       className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-white/30 transition-colors"
@@ -1457,9 +1453,9 @@ const Dashboard = ({ onLogout }: { onLogout: () => void }) => {
 
   const navItems = [
     { name: 'Overview', icon: Layout, pro: false },
-    { name: 'Calls', icon: Phone, pro: false },
-    { name: 'Bookings', icon: Calendar, pro: false },
-    { name: 'Reviews', icon: Star, pro: false },
+    { name: 'Inboxes', icon: Mail, pro: false },
+    { name: 'Audits', icon: FileText, pro: false },
+    { name: 'Disputes', icon: AlertCircle, pro: false },
     { name: 'Settings', icon: Settings, pro: false },
   ];
 
@@ -1485,10 +1481,10 @@ const Dashboard = ({ onLogout }: { onLogout: () => void }) => {
       {/* Stat Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
-          { label: 'Cases Booked', value: '42', trend: '+14 cases this month', positive: true },
-          { label: 'Calls Answered', value: '94', trend: '0 missed this week', positive: true },
-          { label: 'Review Rating', value: '4.9', trend: '+12 new reviews', positive: true },
-          { label: 'Response Rate', value: '100%', trend: 'Avg 0.8s response', positive: true },
+          { label: 'Invoices Audited', value: '1,242', trend: '+14% this month', positive: true },
+          { label: 'Overcharges Found', value: '$12,450', trend: '$2,100 this week', positive: true },
+          { label: 'Carrier Disputes', value: '84', trend: '92% success rate', positive: true },
+          { label: 'Margin Recovery', value: '$8,240', trend: '+8% vs last month', positive: true },
         ].map((stat, i) => (
           <div key={i} className="glass-card p-6 rounded-3xl relative overflow-hidden">
             {isLoading && <div className="absolute inset-0 animate-shimmer z-10" />}
@@ -1505,19 +1501,18 @@ const Dashboard = ({ onLogout }: { onLogout: () => void }) => {
         {/* Recent Sales */}
         <div className="lg:col-span-3 space-y-6">
           <div className="flex items-center justify-between">
-            <h2 className="common-title text-2xl">Recent Calls</h2>
+            <h2 className="common-title text-2xl">Recent Activity</h2>
           </div>
           <div className="glass-card rounded-3xl overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <tbody>
                   {[
-                    { caller: 'Mike J.', type: 'Emergency AC repair', status: 'Booked✓', time: '2 mins ago' },
-                    { caller: 'Sarah C.', type: 'Maintenance check-up', status: 'Booked✓', time: '14 mins ago' },
-                    { caller: 'Tom B.', type: 'New case inquiry', status: 'Follow-up sent', time: '1 hour ago' },
-                    { caller: 'John D.', type: 'Car accident claim', status: 'Booked✓', time: '3 hours ago' },
-                    { caller: 'Lisa M.', type: 'Filter replacement', status: 'Booked✓', time: '5 hours ago' },
-                    { caller: 'Sam R.', type: 'Car accident', status: 'Booked✓', time: '6 hours ago' },
+                    { caller: 'Roadrunner Trans', type: 'Invoice audit', status: 'Dispute filed', time: '1 hour ago' },
+                    { caller: 'Global Logistics', type: 'Inbox inquiry', status: 'Quote drafted', time: '2 hours ago' },
+                    { caller: 'Estes Express', type: 'Billing error', status: 'Resolved', time: '4 hours ago' },
+                    { caller: 'Old Dominion', type: 'Carrier risk check', status: 'Verified✓', time: '5 hours ago' },
+                    { caller: 'XPO Logistics', type: 'Billing audit', status: 'Approved✓', time: '6 hours ago' },
                   ].map((call, i) => (
                     <tr key={i} className="border-b border-white/5 last:border-0 hover:bg-white/[0.02] transition-colors">
                       <td className="py-5 px-6 text-sm text-white/70">{call.caller}</td>
@@ -1541,22 +1536,22 @@ const Dashboard = ({ onLogout }: { onLogout: () => void }) => {
               <button 
                 className="common-button common-button-primary w-full py-4 text-sm font-bold"
               >
-                <Plus className="w-4 h-4" /> Book New Case
+                <Plus className="w-4 h-4" /> Audit Invoice
               </button>
               <button className="common-button common-button-secondary-glass w-full py-4 text-sm font-bold">
-                <ExternalLink className="w-4 h-4" /> View Public Profile
+                <FileText className="w-4 h-4" /> File Dispute
               </button>
             </div>
           </section>
 
-          {/* Service Trends */}
+          {/* Audit Trends */}
           <section className="space-y-4">
-            <h3 className="text-xs uppercase tracking-widest text-white/40 font-medium ml-1">Service Trends</h3>
+            <h3 className="text-xs uppercase tracking-widest text-white/40 font-medium ml-1">Audit Trends</h3>
             <div className="glass-card p-6 rounded-3xl space-y-6">
               {[
-                { name: 'Emergency Repair', count: 42, percentage: 85 },
-                { name: 'Seasonal Maintenance', count: 31, percentage: 65 },
-                { name: 'System Installation', count: 12, percentage: 35 },
+                { name: 'Billing Overcharges', count: 42, percentage: 85 },
+                { name: 'TMS Discrepancies', count: 31, percentage: 65 },
+                { name: 'Accessorial Verification', count: 12, percentage: 35 },
               ].map((service, i) => (
                 <div key={i} className="space-y-2">
                   <div className="flex justify-between items-center text-sm">
@@ -1605,7 +1600,7 @@ const Dashboard = ({ onLogout }: { onLogout: () => void }) => {
             </div>
             <div className="min-w-0">
               <div className="text-sm font-medium truncate">Krishna W.</div>
-              <div className="text-[10px] text-white/30 truncate">Anderson Injury Law</div>
+              <div className="text-[10px] text-white/30 truncate">Atlas Logistics</div>
             </div>
           </div>
 
@@ -1812,11 +1807,11 @@ export default function App() {
         <Integrations />
         <CaseStudies />
 
-        {/* Change 5: Comparison Table Section */}
+        {/* Comparison Table Section */}
         <section className="py-24 bg-black text-white border-t border-white/5">
           <div className="page-wrapper">
             <div className="text-center mb-16">
-              <h2 className="common-title text-4xl md:text-6xl mb-4 leading-tight">Lexa vs An Intake Specialist vs Voicemail</h2>
+              <h2 className="common-title text-4xl md:text-6xl mb-4 leading-tight">LexaIntake vs A Human Auditor vs Sample Auditing</h2>
               <p className="text-lg md:text-2xl text-white/40 font-title italic">Here is what you are actually choosing between.</p>
             </div>
             
@@ -1826,19 +1821,19 @@ export default function App() {
                   <thead>
                     <tr className="border-b border-white/10">
                       <th className="p-6 md:p-8"></th>
-                      <th className="p-6 md:p-8 bg-[#2b6dff]/10 text-[#2b6dff] font-bold">Lexa</th>
-                      <th className="p-6 md:p-8 text-white/60">Human Intake Specialist</th>
-                      <th className="p-6 md:p-8 text-white/60">Just Voicemail</th>
+                      <th className="p-6 md:p-8 bg-[#2b6dff]/10 text-[#2b6dff] font-bold">LexaIntake</th>
+                      <th className="p-6 md:p-8 text-white/60">Human Auditor</th>
+                      <th className="p-6 md:p-8 text-white/60">Random Sampling</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-white/5">
                     {[
-                      { label: "Answers calls 24/7", Lexa: "✓", human: "✗ (8hrs only)", voice: "✗" },
-                      { label: "Cost per month", Lexa: "$297", human: "$2,500–$3,500", voice: "$0 (but costs cases)" },
-                      { label: "Qualifies leads & books consultations", Lexa: "✓", human: "✓", voice: "✗" },
-                      { label: "Follows up on potential clients", Lexa: "✓", human: "✗", voice: "✗" },
-                      { label: "Requests Google reviews", Lexa: "✓", human: "✗", voice: "✗" },
-                      { label: "Consultation reminders", Lexa: "✓", human: "✗", voice: "✗" },
+                      { label: "Audits 100% of invoices", Lexa: "✓", human: "✗ (10-20%)", voice: "✗ (Random only)" },
+                      { label: "Cost per month", Lexa: "$497", human: "$4,000–$6,000", voice: "Lost margin" },
+                      { label: "Detects overcharges instantly", Lexa: "✓", human: "✓", voice: "✗" },
+                      { label: "Drafts carrier disputes", Lexa: "✓", human: "✓", voice: "✗" },
+                      { label: "Monitors inbox 24/7", Lexa: "✓", human: "✗", voice: "✗" },
+                      { label: "Carrier risk verification", Lexa: "✓", human: "✓", voice: "✗" },
                       { label: "Works weekends & holidays", Lexa: "✓", human: "✗", voice: "✗" },
                       { label: "Sick days", Lexa: "Never", human: "Yes", voice: "N/A" },
                       { label: "Setup time", Lexa: "1-2 days", human: "Weeks of hiring", voice: "Already set up" },
@@ -1856,20 +1851,20 @@ export default function App() {
               </div>
             </div>
             <div className="mt-8 text-center text-white/40 text-sm">
-              "Lexa does more than a full-time intake specialist at less than 10% of the cost."
+              "LexaIntake does more than a full-time auditor at less than 15% of the cost."
             </div>
           </div>
         </section>
 
-        {/* Change 6: Pricing Section */}
+        {/* Pricing Section */}
         <section id="pricing" className="py-24 bg-black text-white border-t border-white/5">
           <div className="page-wrapper">
             <div className="text-center mb-16">
               <h2 className="common-title text-4xl md:text-6xl mb-4 leading-tight">No surprises, no hidden fees.</h2>
-              <p className="text-lg md:text-2xl text-white/40 font-title italic mb-4">Simple flat pricing. Lexa works harder the busier you get.</p>
+              <p className="text-lg md:text-2xl text-white/40 font-title italic mb-4">Simple flat pricing. LexaIntake works harder the busier you get.</p>
               <p className="text-sm md:text-base text-white/40 italic">
-                A human intake specialist costs $2,500 – $3,500 per month and works 8 hours a day.<br />
-                Lexa costs a fraction of that and works 24 hours a day, 7 days a week, 365 days a year.
+                A human auditor costs $4,000 – $6,000 per month and works 8 hours a day.<br />
+                LexaIntake costs a fraction of that and audits 100% of your invoices, 24/7/365.
               </p>
             </div>
 
@@ -1878,25 +1873,25 @@ export default function App() {
               <div className="glass-card bg-white/5 border border-white/10 rounded-[32px] p-8 md:p-10 flex flex-col h-full transform hover:scale-[1.02] transition-all duration-300">
                 <div className="mb-8">
                   <div className="text-[10px] uppercase tracking-widest font-mono text-white/40 mb-2">Starter</div>
-                  <h3 className="text-white text-lg font-medium mb-4 italic">For solo practitioners</h3>
+                  <h3 className="text-white text-lg font-medium mb-4 italic">For small brokers</h3>
                   <div className="flex items-baseline gap-1 mb-1">
-                    <span className="text-4xl md:text-5xl font-title font-bold text-white">$297</span>
+                    <span className="text-4xl md:text-5xl font-title font-bold text-white">$497</span>
                     <span className="text-white/40 text-sm">/mo</span>
                   </div>
-                  <div className="text-xs text-white/40">everything included</div>
+                  <div className="text-xs text-white/40">up to 200 shipments/mo</div>
                 </div>
                 <div className="flex-1 space-y-4 mb-10 text-sm">
                   {[
-                    { text: "Lexa answers all inbound calls 24/7", included: true },
-                    { text: "Consultation booking into your calendar", included: true },
-                    { text: "Missed call text back within 60 seconds", included: true },
-                    { text: "Consultation confirmation SMS and email", included: true },
-                    { text: "24hr and 2hr no-show reminder sequence", included: true },
-                    { text: "Google review request after every closed case", included: true },
-                    { text: "Monthly performance report", included: true },
-                    { text: "Lead follow-up sequences (Growth plan)", included: false },
-                    { text: "Unsigned retainer follow-up (Growth plan)", included: false },
-                    { text: "Referral outreach campaigns (Growth plan)", included: false }
+                    { text: "100% Billing Audit Coverage", included: true },
+                    { text: "TMS Integration (McLeod, etc.)", included: true },
+                    { text: "Automated Dispute Drafting", included: true },
+                    { text: "Inbox Monitoring 24/7", included: true },
+                    { text: "Carrier Risk Verification", included: true },
+                    { text: "Monthly Margin Report", included: true },
+                    { text: "Email Support (24hr response)", included: true },
+                    { text: "Dispute Agent (Growth plan)", included: false },
+                    { text: "Exception Handling (Growth plan)", included: false },
+                    { text: "Custom Agent Workflows (Enterprise)", included: false }
                   ].map((feat, i) => (
                     <div key={i} className={`flex items-start gap-3 ${feat.included ? 'text-white' : 'text-white/20'}`}>
                       <span className={`shrink-0 ${feat.included ? 'text-blue-accent' : 'text-white/10'}`}>{feat.included ? '✓' : '✗'}</span>
@@ -1919,23 +1914,23 @@ export default function App() {
                 </div>
                 <div className="mb-8">
                   <div className="text-[10px] uppercase tracking-widest font-mono text-blue-accent mb-2">Growth</div>
-                  <h3 className="text-white text-lg font-medium mb-4 italic">Most popular for growing PI firms</h3>
+                  <h3 className="text-white text-lg font-medium mb-4 italic">Most popular for growing brokers</h3>
                   <div className="flex items-baseline gap-1 mb-1">
-                    <span className="text-4xl md:text-5xl font-title font-bold text-white">$497</span>
+                    <span className="text-4xl md:text-5xl font-title font-bold text-white">$997</span>
                     <span className="text-white/40 text-sm">/mo</span>
                   </div>
-                  <div className="text-xs text-white/40">everything included</div>
+                  <div className="text-xs text-white/40">up to 1,000 shipments/mo</div>
                 </div>
                 <div className="flex-1 space-y-4 mb-10 text-sm">
                   {[
                     { text: "Everything in Starter", included: true },
-                    { text: "3-message lead follow-up sequence over 5 days", included: true },
-                    { text: "4-message unsigned retainer follow-up over 7 days", included: true },
-                    { text: "Case status check-in SMS to every client", included: true },
-                    { text: "Reputation protection — catches bad reviews early", included: true },
-                    { text: "Legal service upsell after closed cases", included: true },
-                    { text: "Referral outreach campaigns spring and fall", included: true },
-                    { text: "Priority setup and support", included: true }
+                    { text: "Full Dispute Agent (Auto-filing)", included: true },
+                    { text: "Exception Handling Agent", included: true },
+                    { text: "Source-of-Truth Validation Engine", included: true },
+                    { text: "Quote Drafting Assistant", included: true },
+                    { text: "Shipment Status Inbox Agent", included: true },
+                    { text: "Priority Support (2hr response)", included: true },
+                    { text: "Dedicated Audit Manager", included: true }
                   ].map((feat, i) => (
                     <div key={i} className="flex items-start gap-3 text-white">
                       <span className="shrink-0 text-blue-accent font-bold">✓</span>
@@ -1954,24 +1949,23 @@ export default function App() {
               {/* Card 3: Pro */}
               <div className="glass-card bg-white/5 border border-white/10 rounded-[32px] p-8 md:p-10 flex flex-col h-full transform hover:scale-[1.02] transition-all duration-300">
                 <div className="mb-8">
-                  <div className="text-[10px] uppercase tracking-widest font-mono text-white/40 mb-2">Pro</div>
-                  <h3 className="text-white text-lg font-medium mb-4 italic">For established personal injury firms</h3>
+                  <div className="text-[10px] uppercase tracking-widest font-mono text-white/40 mb-2">Enterprise</div>
+                  <h3 className="text-white text-lg font-medium mb-4 italic">For large brokerage operations</h3>
                   <div className="flex items-baseline gap-1 mb-1">
-                    <span className="text-4xl md:text-5xl font-title font-bold text-white">$797</span>
-                    <span className="text-white/40 text-sm">/mo</span>
+                    <span className="text-4xl md:text-5xl font-title font-bold text-white">Custom</span>
                   </div>
-                  <div className="text-xs text-white/40">everything included</div>
+                  <div className="text-xs text-white/40">unlimited shipments</div>
                 </div>
                 <div className="flex-1 space-y-4 mb-10 text-sm">
                   {[
                     { text: "Everything in Growth", included: true },
-                    { text: "Multi-attorney scheduling support", included: true },
-                    { text: "Custom Lexa voice and greeting", included: true },
-                    { text: "Advanced monthly analytics dashboard", included: true },
-                    { text: "Dedicated account manager", included: true },
-                    { text: "Priority phone support", included: true },
-                    { text: "Early access to new Lexa features", included: true },
-                    { text: "Setup for multiple jurisdictions", included: true }
+                    { text: "Multi-TMS & Branch Support", included: true },
+                    { text: "Custom AI Agent Workflows", included: true },
+                    { text: "White-labeled Audit Dashboard", included: true },
+                    { text: "Advanced Compliance Reporting", included: true },
+                    { text: "Dedicated Success Engineer", included: true },
+                    { text: "SLA-backed Uptime & Accuracy", included: true },
+                    { text: "Custom API Integrations", included: true }
                   ].map((feat, i) => (
                     <div key={i} className="flex items-start gap-3 text-white">
                       <span className="shrink-0 text-blue-accent font-bold">✓</span>
@@ -1979,11 +1973,11 @@ export default function App() {
                     </div>
                   ))}
                 </div>
-                <a href="https://cal.com/lexaintake/lexa-desk" className="common-button bg-white/5 border border-white/10 hover:border-white/30 text-white w-full py-4 text-sm font-bold mb-4 flex items-center justify-center">
-                  Get started →
+                <a href="mailto:sales@lexaintake.com" className="common-button bg-white/5 border border-white/10 hover:border-white/30 text-white w-full py-4 text-sm font-bold mb-4 flex items-center justify-center">
+                  Contact Sales →
                 </a>
                 <div className="text-center text-[10px] text-white/40 font-mono tracking-widest">
-                  NO CONTRACTS · CANCEL ANYTIME
+                  ENTERPRISE SLA · CUSTOM TERMS
                 </div>
               </div>
             </div>

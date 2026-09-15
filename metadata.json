@@ -1,6 +1,6 @@
 {
   "name": "LexaIntake",
-  "description": "AI agent that answers calls, qualifies leads, and books consultations for personal injury law firms.",
+  "description": "AI-native freight operations platform for LTL brokers and 3PLs. LexaIntake's AI agents monitor freight emails, reconcile shipment information, audit carrier invoices, and handle operational exceptions.",
   "requestFramePermissions": ["microphone"],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
