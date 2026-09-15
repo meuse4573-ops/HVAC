@@ -196,9 +196,9 @@ const TalkToLexaPage = ({ onBack }: { onBack: () => void }) => {
     script.type = 'module';
     script.setAttribute('data-voice-public-key', 'public_key_9e42a844abb528a95fbbb');
     script.setAttribute('data-voice-agent-id', 'agent_e68e92fe8159a707e67f908c09');
-    script.setAttribute('data-title', 'Talk to Lexa');
+    script.setAttribute('data-title', 'Experience Lexa');
     script.setAttribute('data-bot-name', 'Lexa');
-    script.setAttribute('data-fab-text', 'Talk to Lexa');
+    script.setAttribute('data-fab-text', 'Get Started');
     script.setAttribute('data-color', '#2377f6');
     script.setAttribute('data-theme-color', '#2377f6');
     script.setAttribute('data-popup-message', 'Want to see how I handle a real exception? Click to talk to me.');
@@ -242,7 +242,7 @@ const TalkToLexaPage = ({ onBack }: { onBack: () => void }) => {
         {/* Hero Section */}
         <section className="mb-24">
           <h1 className="common-title text-4xl md:text-7xl mb-6 tracking-tight">
-            Talk to Lexa — see how she <br className="hidden md:block" /> handles a real logistics exception
+            Experience Lexa — see how she <br className="hidden md:block" /> handles a real logistics exception
           </h1>
           <p className="text-xl md:text-2xl text-[#a8a8a8] leading-relaxed max-w-3xl">
             This is a live AI logistics agent, not a recording. Describe a real scenario — a misbilled LTL shipment, a missing BOL, a carrier dispute — and see how she responds.
