@@ -349,7 +349,7 @@ const Header = ({ onNavigate, simple = false }: { onNavigate: (view: any) => voi
           </button>
           <button 
             onClick={() => onNavigate('signup')}
-            className="common-button common-button-primary px-4 py-2 text-sm whitespace-nowrap"
+            className="common-button common-button-primary px-4 py-2 text-sm whitespace-nowrap shadow-[0_0_20px_rgba(43,108,255,0.3)]"
           >
             Get Started for Free
           </button>
@@ -392,13 +392,13 @@ const Hero = ({ onNavigate }: { onNavigate: (view: 'landing' | 'login' | 'signup
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
                 onClick={() => onNavigate('signup')}
-                className="common-button common-button-primary px-8 py-4 text-lg flex items-center gap-2 shadow-[0_0_30px_rgba(43,108,255,0.4)]"
+                className="common-button common-button-primary px-8 py-4 text-lg flex items-center gap-2 shadow-[0_0_30px_rgba(43,108,255,0.4)] group"
               >
-                Get Started for Free <ChevronRight className="w-5 h-5" />
+                Free: Book a 15-minute call <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
             <div className="text-xs text-[#a8a8a8] font-medium pl-1">
-              Automate your billing audit today. 
+              Automate your billing audit today. Talk to Lexa — she is live.
             </div>
           </motion.div>
         </div>
