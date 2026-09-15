@@ -8,11 +8,15 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // Supabase configuration
-const SUPABASE_URL = process.env.SUPABASE_URL || "https://ojolpdbveutbaxqmaffv.supabase.co";
-// Using Service Role Key for admin operations (like creating users without email verification if needed)
-const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9qb2xwZGJ2ZXV0YmF4cW1hZmZ2Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcyNjM4NTM4OSwiZXhwIjoyMDQxOTYxMzg5fQ.3mIQrpX4cxH7tu06xZyynMuq8xCw-bm84pbxTpm790Y";
+const SUPABASE_URL = process.env.SUPABASE_URL;
+// Using Service Role Key for admin operations
+const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
+if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
+  console.warn("SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY is missing from environment variables.");
+}
+
+const supabase = createClient(SUPABASE_URL || "", SUPABASE_SERVICE_ROLE_KEY || "", {
   auth: {
     autoRefreshToken: false,
     persistSession: false
