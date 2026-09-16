@@ -13,7 +13,7 @@ async function startServer() {
   app.use(cors());
   app.use(express.json());
 
-  // Mock Auth Routes (Supabase removed)
+  // Mock Auth Routes (Supabase removed to fix Cloudflare Build)
   app.post("/api/auth/signup", async (req, res) => {
     const { email, fullName } = req.body;
     try {
@@ -46,7 +46,6 @@ async function startServer() {
     }
   });
 
-  // API health check
   app.get("/api/health", (req, res) => {
     res.json({ status: "ok", engine: "mock-auth" });
   });
@@ -54,11 +53,7 @@ async function startServer() {
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
-      server: { 
-        middlewareMode: true,
-        host: '0.0.0.0',
-        port: 3000
-      },
+      server: { middlewareMode: true },
       appType: "spa",
     });
     app.use(vite.middlewares);
@@ -71,10 +66,8 @@ async function startServer() {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`Server running on http://localhost:${PORT}`);
   });
 }
 
-startServer().catch((err) => {
-  console.error("Failed to start server:", err);
-});
+startServer();
